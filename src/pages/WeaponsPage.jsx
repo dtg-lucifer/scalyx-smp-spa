@@ -1,0 +1,644 @@
+import React, { useState } from 'react';
+import CraftingGrid, { MYTHIC_RECIPES } from '../components/CraftingGrid';
+import HeartDisplay from '../components/HeartDisplay';
+import { 
+  Sword, Sparkles, Skull, Flame, Eye, Shield, Zap, Pickaxe, 
+  Radio, Clock, Heart, Award, Crosshair, Wind, Anchor, 
+  ChevronRight, AlertTriangle, Target, CheckCircle2 
+} from 'lucide-react';
+import { playClickSound } from '../utils/audio';
+
+export default function WeaponsPage() {
+  const [selectedMythic, setSelectedMythic] = useState('lifestealer');
+
+  const mythicWeapons = [
+    {
+      id: 'lifestealer',
+      name: 'Lifestealer',
+      fullName: '⚔ Lifestealer ⚔',
+      type: 'Netherite Sword',
+      attackSpeed: '1.6 Attack Speed (Classic)',
+      enchantments: 'Sharpness VIII, Sweeping Edge V, Looting V, Fire Aspect II, Unbreaking V, Mending I',
+      badge: 'SERVER RELIC • LIMIT: 1 ONLY',
+      badgeColor: 'bg-red-950/80 text-red-300 border-red-700',
+      themeColor: 'text-red-500',
+      borderColor: 'border-red-600',
+      bgGlow: 'shadow-[0_0_25px_rgba(239,68,68,0.25)]',
+      icon: '/assets/items/netherite_sword.png',
+      iconRotate: '-rotate-45',
+      command: '/lifestealer status',
+      loreSnippet: 'Forged from the singular Dragon Egg. The wielder siphons the life force of fallen foes.',
+      passives: [
+        {
+          title: 'Heart Theft (On-Hit)',
+          icon: Heart,
+          color: 'text-red-400',
+          desc: 'Each melee blow permanently steals 1 Heart (up to +4 Max Hearts) from victims, animals, or mobs. Stolen vitality returns after 60s.'
+        },
+        {
+          title: 'Wither II Decay (10% Proc)',
+          icon: Skull,
+          color: 'text-purple-400',
+          desc: '10% chance on strike to inflict debilitating Wither II decay, rapidly draining health and bypassing standard defenses.'
+        }
+      ],
+      ultimate: {
+        name: 'Heart Siphon Nova',
+        cooldown: '5m Cooldown',
+        trigger: 'Hold Right-Click for 5 Seconds',
+        icon: Zap,
+        color: 'text-yellow-400',
+        desc: 'Hold Right-Click for 5s to rip 1 Heart from up to 10 entities in a 10-block radius! Grants the wielder up to +10 Max Hearts for 5 full minutes.'
+      },
+      hasHeartDisplay: true,
+      recipeSummary: '1x Dragon Egg (center) + 4x Netherite Blocks (corners) + 4x Enchanted Golden Apples (sides)'
+    },
+    {
+      id: 'mace',
+      name: 'Worldbreaker Mace',
+      fullName: '⚡ Worldbreaker Mace ⚡',
+      type: 'Heavy Mace',
+      attackSpeed: 'Fast 1.6 Sword Speed (No Sluggish Cooldown)',
+      enchantments: 'Density V, Breach IV, Wind Burst III, Sharpness VII, Fire Aspect II, Knockback II, Unbreaking V, Mending I',
+      badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
+      badgeColor: 'bg-amber-950/80 text-amber-300 border-amber-600',
+      themeColor: 'text-amber-400',
+      borderColor: 'border-amber-500',
+      bgGlow: 'shadow-[0_0_25px_rgba(245,158,11,0.25)]',
+      icon: '/assets/items/mace.png',
+      iconRotate: '',
+      command: '/artifacts',
+      loreSnippet: 'Forged with a Heavy Core and Breeze Rods. Smashes the earth with catastrophic seismic fury.',
+      passives: [
+        {
+          title: '100% Lightning Stun (On-Hit)',
+          icon: Zap,
+          color: 'text-yellow-400',
+          desc: '100% chance on-hit against players and mobs to strike them with lightning and paralyze them for 5s (AI disabled for mobs; walk speed 0 and jump locked for players).'
+        },
+        {
+          title: 'Double Jump (Mid-Air)',
+          icon: Wind,
+          color: 'text-[#00ffff]',
+          desc: 'Press Jump twice in mid-air to launch 15 blocks into the sky with an explosive wind burst for rapid repositioning or aerial assaults.'
+        }
+      ],
+      ultimate: {
+        name: 'Seismic Cataclysm',
+        cooldown: '2m Cooldown',
+        trigger: 'Crouch + Jump',
+        icon: Flame,
+        color: 'text-amber-400',
+        desc: 'Crouch and Jump to launch 20 blocks skyward! Negates 100% fall damage upon landing and detonates a devastating 10-block ground explosion dealing uncapped area damage.'
+      },
+      hasHeartDisplay: false,
+      recipeSummary: '1x Heavy Core (center) + 4x Netherite Blocks (corners) + 2x Breeze Rods (top/bottom) + 2x Enchanted Golden Apples (sides)'
+    },
+    {
+      id: 'spear',
+      name: 'Gungnir, Sovereign Spear',
+      fullName: '🌿 Gungnir, Sovereign Spear 🌿',
+      type: 'Netherite Spear',
+      attackSpeed: 'Fast 1.6 Sword Speed (Lunge Animation)',
+      enchantments: 'Sharpness VII, Lunge V, Fire Aspect II, Knockback II, Unbreaking V, Mending I',
+      badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
+      badgeColor: 'bg-emerald-950/80 text-emerald-300 border-emerald-600',
+      themeColor: 'text-emerald-400',
+      borderColor: 'border-emerald-500',
+      bgGlow: 'shadow-[0_0_25px_rgba(16,185,129,0.25)]',
+      icon: '/assets/items/netherite_spear.png',
+      iconRotate: '',
+      command: '/artifacts',
+      loreSnippet: 'Piercing spear of ancient sovereigns. Pulls targets violently into melee range and negates fall impact.',
+      passives: [
+        {
+          title: 'Infinite Stamina & Light Foot',
+          icon: Shield,
+          color: 'text-emerald-400',
+          desc: 'Zero Hunger Cost while carrying or wielding! Furthermore, negates 100% of all fall damage from any height.'
+        },
+        {
+          title: 'Breaker of Chains & 100% Stun',
+          icon: Zap,
+          color: 'text-yellow-400',
+          desc: 'Always shatters and disables enemy shields on-hit with audio feedback, while striking with lightning and paralyzing foes for 5 seconds.'
+        }
+      ],
+      ultimate: {
+        name: 'Verdant Harpoon',
+        cooldown: '1m Cooldown',
+        trigger: 'Sneak + Right-Click',
+        icon: Target,
+        color: 'text-emerald-400',
+        desc: 'Fires a 35-block grasping vine beam. Hooking an enemy violently yanks them directly into melee combat; hitting blocks or ledges instantly hoists you up!'
+      },
+      hasHeartDisplay: false,
+      recipeSummary: '1x Nether Star (center) + 4x Netherite Blocks (sides) + 4x Echo Shards (corners) + 1x Heart of the Sea (bottom)'
+    },
+    {
+      id: 'trident',
+      name: "Poseidon's Abyssal Tempest",
+      fullName: "🔱 Poseidon's Abyssal Tempest 🔱",
+      type: 'Legendary Trident',
+      attackSpeed: 'Fast 1.6 Sword Speed (Melee & Anywhere Riptide)',
+      enchantments: 'Impaling VII, Sharpness VII, Loyalty III, Channeling I, Unbreaking V, Mending I',
+      badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
+      badgeColor: 'bg-cyan-950/80 text-cyan-300 border-cyan-600',
+      themeColor: 'text-[#00ffff]',
+      borderColor: 'border-[#00ffff]',
+      bgGlow: 'shadow-[0_0_25px_rgba(6,182,212,0.25)]',
+      icon: '/assets/items/trident.png',
+      iconRotate: '',
+      command: '/artifacts',
+      loreSnippet: 'Embodied fury of the ocean depths. Grants unrestricted Anywhere Riptide and crushes foes in whirlpools.',
+      passives: [
+        {
+          title: 'Ocean Sovereign & Anywhere Riptide',
+          icon: Anchor,
+          color: 'text-[#00ffff]',
+          desc: 'Permanent Water Breathing, Dolphin Grace & Conduit Power. Right-Click dashes with Anywhere Riptide (on land or in air) with action bar ready indicator.'
+        },
+        {
+          title: 'Whirlpool Maelstrom (On-Hit)',
+          icon: Wind,
+          color: 'text-blue-400',
+          desc: 'On-hit drowning vortex always traps victims in inescapable Slowness IV and water damage ticks for 6 seconds.'
+        }
+      ],
+      ultimate: {
+        name: 'Tsunami Cataclysm',
+        cooldown: '2m Cooldown',
+        trigger: 'Sneak + Right-Click',
+        icon: Sparkles,
+        color: 'text-[#00ffff]',
+        desc: 'Summons a crushing 25-block surging tidal wave accompanied by lightning strikes, sweeping enemies up and inflicting heavy water damage and Slowness III.'
+      },
+      hasHeartDisplay: false,
+      recipeSummary: '1x Heart of the Sea (center) + 2x Tridents (top corners) + 4x Netherite Blocks + 2x Enchanted Golden Apples (sides) + 1x Conduit (bottom)'
+    },
+    {
+      id: 'crossbow',
+      name: 'Doomherald, Oblivion Ballista',
+      fullName: '💥 Doomherald, Oblivion Ballista 💥',
+      type: 'Heavy Crossbow',
+      attackSpeed: 'Quick Charge V Heavy Artillery',
+      enchantments: 'Quick Charge V, Piercing IV, Infinity I, Unbreaking V, Mending I',
+      badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
+      badgeColor: 'bg-rose-950/80 text-rose-300 border-rose-700',
+      themeColor: 'text-rose-400',
+      borderColor: 'border-rose-500',
+      bgGlow: 'shadow-[0_0_25px_rgba(244,63,94,0.25)]',
+      icon: '/assets/items/crossbow.png',
+      iconRotate: '',
+      command: '/artifacts',
+      loreSnippet: 'Ancient void siege weapon. Fires true-damage bolts and detonates tactical oblivion nukes.',
+      passives: [
+        {
+          title: 'True Oblivion Pierce (Every Shot)',
+          icon: Target,
+          color: 'text-rose-400',
+          desc: 'Every single hit directly deals 2 Hearts (4 HP) of pure true damage, completely ignoring armor, Protection IV, and enchantments!'
+        },
+        {
+          title: '30% Rapid Barrage & Void Toxin',
+          icon: Zap,
+          color: 'text-purple-400',
+          desc: '30% chance on shoot to grant 10 free instant rapid-fire shots without reloading! 30% chance on hit to inflict Darkness and Poison for 15s.'
+        }
+      ],
+      ultimate: {
+        name: 'Calamity Nuke',
+        cooldown: '1m Cooldown',
+        trigger: 'Sneak + Shoot',
+        icon: Flame,
+        color: 'text-rose-500',
+        desc: 'Fires a primed oblivion warhead that detonates a massive 10-block explosion upon impact, dealing devastating uncapped area damage, knockback, and fire!'
+      },
+      hasHeartDisplay: false,
+      recipeSummary: '1x Nether Star (center) + 1x Crossbow (top) + 4x Netherite Blocks (sides) + 4x Dragon\'s Breath (corners) + 1x Enchanted Golden Apple (bottom)'
+    }
+  ];
+
+  const currentWeapon = mythicWeapons.find((w) => w.id === selectedMythic) || mythicWeapons[0];
+
+  const rankSwords = [
+    {
+      id: 'warden',
+      name: 'Sculk Annihilator',
+      rank: 'WARDEN RANK',
+      color: 'text-[#00ffff]',
+      borderColor: 'border-[#00ffff]/60',
+      bgGlow: 'shadow-[0_0_20px_rgba(0,255,255,0.2)]',
+      icon: '/assets/items/diamond_sword.png',
+      tint: 'filter hue-rotate-180 drop-shadow-[0_0_8px_#00ffff]',
+      wielderPerk: 'Complete immunity to Wardens & Sonic Booms; Wardens never aggro; auto-cleanses Darkness and Blindness.',
+      onHitPassive: '10% chance to unleash a sonic shockwave burst dealing +4 Hearts True Sculk Damage.',
+      ultimate: 'Sonic Shockwave: 25-block piercing sonic blast dealing up to 4 hearts + darkness and slowness.',
+      cooldown: '60s Cooldown (Hold Right-Click for 5s)'
+    },
+    {
+      id: 'eternal',
+      name: 'Eternal Zenith Blade',
+      rank: 'ETERNAL RANK',
+      color: 'text-amber-400',
+      borderColor: 'border-amber-500/60',
+      bgGlow: 'shadow-[0_0_20px_rgba(255,170,0,0.2)]',
+      icon: '/assets/items/diamond_sword.png',
+      tint: 'filter sepia(1) saturate(5) hue-rotate(330deg) drop-shadow-[0_0_8px_#ffaa00]',
+      wielderPerk: 'Permanent Fire & Lava immunity; instantly extinguishes all fire ticks.',
+      onHitPassive: '10% chance to strip enemy Fire Resistance potions and ignite targets in infernal flames for 12 seconds.',
+      ultimate: 'Solar Flame Laser: 30-block searing laser beam dealing up to 4 hearts damage and setting targets ablaze.',
+      cooldown: '60s Cooldown (Hold Right-Click for 5s)'
+    },
+    {
+      id: 'wither',
+      name: 'Wither Reaper Blade',
+      rank: 'WITHER RANK',
+      color: 'text-purple-400',
+      borderColor: 'border-purple-500/60',
+      bgGlow: 'shadow-[0_0_20px_rgba(180,50,255,0.2)]',
+      icon: '/assets/items/netherite_sword.png',
+      tint: 'filter hue-rotate(270deg) brightness(0.9) drop-shadow-[0_0_8px_#a855f7]',
+      wielderPerk: 'Total immunity to Wither effects and damage; auto-cleanses wither decay ticks.',
+      onHitPassive: '10% chance on strike to inflict debilitating Wither II decay for 5 seconds with dark smoke particles.',
+      ultimate: 'Wither Skull Strike: Launches a homing Wither Skull dealing up to 4 hearts damage and Wither II.',
+      cooldown: '60s Cooldown (Hold Right-Click for 5s)'
+    },
+    {
+      id: 'ender',
+      name: 'Void Sovereign World-Ender',
+      rank: 'ENDER RANK',
+      color: 'text-emerald-400',
+      borderColor: 'border-emerald-500/60',
+      bgGlow: 'shadow-[0_0_20px_rgba(85,255,85,0.2)]',
+      icon: '/assets/items/netherite_sword.png',
+      tint: 'filter hue-rotate(90deg) drop-shadow-[0_0_8px_#55ff55]',
+      wielderPerk: 'Poison, Darkness & Blindness immunity; Endermen never aggro on eye contact (and attacking Endermen are eradicated).',
+      onHitPassive: '10% chance to inflict Poison II (15s) and Darkness/Blindness (15s).',
+      ultimate: 'Void Rupture: 5-block radial blast + dragon breath cloud (12s) + Darkness & Blindness (60s) dealing up to 4 hearts.',
+      cooldown: '60s Cooldown (Hold Right-Click for 5s)'
+    }
+  ];
+
+  return (
+    <div className="space-y-16 max-w-7xl mx-auto px-4 py-8">
+      
+      {/* Page Header */}
+      <div className="text-center space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-950/60 border border-amber-500/50 text-amber-300 text-xs font-minecraft rounded-full">
+          <Sword className="w-4 h-4" />
+          <span>ARSENAL OF THE CONQUERORS • SERVER ARTIFACTS</span>
+        </div>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-minecraft text-white font-bold tracking-wider mc-shadow">
+          THE 5 SERVER-UNIQUE MYTHIC ARTIFACTS
+        </h1>
+        <p className="max-w-3xl mx-auto text-zinc-300 font-sans text-xs sm:text-sm leading-relaxed">
+          Across the entire universe of Scalyx SMP, each Mythic Weapon can only ever be forged <strong className="text-white">ONCE</strong>. Unobtainable via pay-to-win, donor ranks, or staff kits. Independent cooldowns allow players to loot fallen enemies' weapons and unleash their full power.
+        </p>
+      </div>
+
+      {/* 4 Pillars of Mythic Combat Rules */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mc-panel p-4 rounded-lg border border-red-900/60 bg-[#161218]">
+          <div className="flex items-center gap-2 text-red-400 font-minecraft mb-1.5 text-sm font-bold">
+            <Radio className="w-4 h-4 text-red-500 animate-pulse" />
+            <span>30m Global Hunt</span>
+          </div>
+          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+            Forging triggers a server siren! Carrier coordinates <code className="text-yellow-400">[X, Y, Z]</code> and world are broadcast every 60s. Slaying the wielder passes the weapon; timer does not reset!
+          </p>
+        </div>
+
+        <div className="mc-panel p-4 rounded-lg border border-yellow-900/60 bg-[#171612]">
+          <div className="flex items-center gap-2 text-yellow-400 font-minecraft mb-1.5 text-sm font-bold">
+            <Award className="w-4 h-4 text-yellow-400" />
+            <span>Absolute Singularity</span>
+          </div>
+          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+            Only <strong>ONE</strong> of each Mythic Weapon can exist in the world at any given time. Strictly zero clones or P2W shortcuts—crafted only through sheer endgame mastery.
+          </p>
+        </div>
+
+        <div className="mc-panel p-4 rounded-lg border border-purple-900/60 bg-[#15121a]">
+          <div className="flex items-center gap-2 text-purple-400 font-minecraft mb-1.5 text-sm font-bold">
+            <Skull className="w-4 h-4 text-purple-400" />
+            <span>Severed Head Trophies</span>
+          </div>
+          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+            Slaying any player with a Mythic Weapon (melee or abilities) <strong>guarantees their severed player head drops</strong> with custom trophy lore recording victim, killer, and weapon!
+          </p>
+        </div>
+
+        <div className="mc-panel p-4 rounded-lg border border-cyan-900/60 bg-[#11161a]">
+          <div className="flex items-center gap-2 text-[#00ffff] font-minecraft mb-1.5 text-sm font-bold">
+            <Shield className="w-4 h-4 text-[#00ffff]" />
+            <span>Always Drops on Death</span>
+          </div>
+          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+            Mythic weapons are never soulbound—they always drop upon death in combat. Hunt down carriers, claim their relics, and command the realm.
+          </p>
+        </div>
+      </div>
+
+      {/* SECTION 1: THE 5 MYTHIC ARTIFACTS SHOWCASE */}
+      <div className="space-y-6">
+        
+        {/* Weapon Selector Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 p-2 bg-[#12131d] border border-[#2b2c3d] rounded-xl">
+          {mythicWeapons.map((weapon) => {
+            const isSelected = weapon.id === selectedMythic;
+            return (
+              <button
+                key={weapon.id}
+                onClick={() => {
+                  setSelectedMythic(weapon.id);
+                  playClickSound();
+                }}
+                className={`flex items-center gap-2.5 px-3 sm:px-4 py-2 rounded-lg font-minecraft text-xs sm:text-sm transition-all ${
+                  isSelected
+                    ? `${weapon.badgeColor} font-bold shadow-lg scale-105 border-2`
+                    : 'bg-[#181926] text-zinc-400 hover:text-white hover:bg-[#202234] border border-[#2e3046]'
+                }`}
+              >
+                <img
+                  src={weapon.icon}
+                  alt={weapon.name}
+                  className={`w-5 h-5 pixelated ${weapon.iconRotate}`}
+                />
+                <span>{weapon.name}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Selected Mythic Weapon Card */}
+        <div className={`mc-panel p-6 sm:p-8 rounded-xl shadow-2xl border-2 ${currentWeapon.borderColor} ${currentWeapon.bgGlow} bg-gradient-to-b from-[#151622] via-[#12131c] to-[#151622] space-y-6`}>
+          
+          {/* Card Top Banner */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-4 border-b border-[#303146] gap-4">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#1a1b2b] border-2 border-[#3d405a] rounded-lg flex items-center justify-center shadow-lg shrink-0">
+                <img
+                  src={currentWeapon.icon}
+                  alt={currentWeapon.name}
+                  className={`w-10 h-10 sm:w-11 sm:h-11 pixelated filter drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] ${currentWeapon.iconRotate}`}
+                />
+              </div>
+              <div>
+                <span className={`text-[10px] font-minecraft uppercase tracking-wider px-2 py-0.5 rounded border ${currentWeapon.badgeColor}`}>
+                  {currentWeapon.badge}
+                </span>
+                <h2 className={`text-xl sm:text-2xl md:text-3xl font-minecraft font-bold tracking-wider mc-shadow mt-1 ${currentWeapon.themeColor}`}>
+                  {currentWeapon.fullName}
+                </h2>
+                <div className="flex flex-wrap items-center gap-2 text-xs font-sans text-zinc-400 mt-0.5">
+                  <span className="text-zinc-200 font-minecraft">{currentWeapon.type}</span>
+                  <span>•</span>
+                  <span className="text-yellow-400 font-minecraft">{currentWeapon.attackSpeed}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2.5 bg-[#111118] px-3.5 py-2 rounded border border-[#2b2b3d] shrink-0">
+              <Radio className="w-4 h-4 text-red-500 animate-pulse" />
+              <div className="text-left font-minecraft">
+                <div className="text-[10px] text-zinc-400">IN-GAME COMMAND</div>
+                <div className="text-[#00ffff] text-xs font-bold">{currentWeapon.command}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Lore and Enchantments */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#0e0f16] p-4 rounded-lg border border-[#252636]">
+            <div>
+              <span className="text-[10px] font-minecraft text-zinc-400 uppercase tracking-wider block mb-1">
+                ANCIENT WEAPON LORE
+              </span>
+              <p className="text-xs sm:text-sm text-zinc-300 font-sans italic">
+                "{currentWeapon.loreSnippet}"
+              </p>
+            </div>
+            <div>
+              <span className="text-[10px] font-minecraft text-zinc-400 uppercase tracking-wider block mb-1">
+                GOD ENCHANTMENTS PRE-APPLIED
+              </span>
+              <p className="text-xs text-yellow-300 font-minecraft leading-relaxed">
+                {currentWeapon.enchantments}
+              </p>
+            </div>
+          </div>
+
+          {/* Mechanics & Abilities Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            {/* Passive 1 */}
+            <div className="mc-panel p-4 rounded-lg border border-[#303146] bg-[#141520]">
+              <div className="flex items-center gap-2 mb-2 font-minecraft text-sm font-bold">
+                {React.createElement(currentWeapon.passives[0].icon, {
+                  className: `w-4 h-4 ${currentWeapon.passives[0].color}`
+                })}
+                <span className={currentWeapon.passives[0].color}>
+                  {currentWeapon.passives[0].title}
+                </span>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+                {currentWeapon.passives[0].desc}
+              </p>
+            </div>
+
+            {/* Passive 2 */}
+            <div className="mc-panel p-4 rounded-lg border border-[#303146] bg-[#141520]">
+              <div className="flex items-center gap-2 mb-2 font-minecraft text-sm font-bold">
+                {React.createElement(currentWeapon.passives[1].icon, {
+                  className: `w-4 h-4 ${currentWeapon.passives[1].color}`
+                })}
+                <span className={currentWeapon.passives[1].color}>
+                  {currentWeapon.passives[1].title}
+                </span>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+                {currentWeapon.passives[1].desc}
+              </p>
+            </div>
+
+            {/* Ultimate Ability */}
+            <div className="mc-panel p-4 rounded-lg border-2 border-yellow-500/50 bg-[#1a1710]">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-2 font-minecraft text-sm font-bold text-yellow-400">
+                  <Zap className="w-4 h-4 text-yellow-400" />
+                  <span>{currentWeapon.ultimate.name}</span>
+                </div>
+                <span className="text-[10px] font-minecraft bg-yellow-950/80 border border-yellow-600 text-yellow-300 px-1.5 py-0.5 rounded">
+                  {currentWeapon.ultimate.cooldown}
+                </span>
+              </div>
+              <div className="text-[10px] font-minecraft text-zinc-400 mb-2">
+                Trigger: <strong className="text-white">{currentWeapon.ultimate.trigger}</strong>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+                {currentWeapon.ultimate.desc}
+              </p>
+            </div>
+
+          </div>
+
+          {/* Lifestealer Vitality Demo if applicable */}
+          {currentWeapon.hasHeartDisplay && (
+            <div className="p-4 bg-[#101016] border border-[#2d2e40] rounded-lg">
+              <HeartDisplay
+                hearts={14}
+                maxHearts={20}
+                label="Lifestealer Vitality Pool: Base 10 + 4 Stolen Hearts (Expands to 24 with Siphon Nova!)"
+                type="hardcore"
+              />
+            </div>
+          )}
+
+        </div>
+
+        {/* SECTION: 3X3 CRAFTING ALTAR (SYNCED TO SELECTION) */}
+        <div className="space-y-4 pt-4">
+          <div className="text-center space-y-1">
+            <h3 className="font-minecraft text-xl sm:text-2xl text-yellow-300 font-bold tracking-wider">
+              3x3 CRAFTING RECIPE ALTAR (/artifacts)
+            </h3>
+            <p className="text-zinc-400 text-xs font-sans max-w-xl mx-auto">
+              Inspect the exact crafting pattern for <strong className="text-white">{currentWeapon.name}</strong> or switch recipes using the tabs below. Once crafted, no other copy can ever be forged!
+            </p>
+          </div>
+
+          <CraftingGrid
+            activeWeaponId={selectedMythic}
+            onSelectWeapon={(id) => setSelectedMythic(id)}
+            showSelector={true}
+          />
+        </div>
+
+      </div>
+
+      {/* SECTION 2: THE 4 MYTHIC RANK SWORDS */}
+      <div className="space-y-6 pt-6 border-t border-[#252636]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-purple-950/80 border border-purple-500/50 text-purple-300 text-[10px] font-minecraft rounded mb-1">
+              <Award className="w-3.5 h-3.5" />
+              <span>EARNED VIA HIGH-TIER RANKS (/swords)</span>
+            </div>
+            <h2 className="font-minecraft text-lg sm:text-2xl text-white font-bold tracking-wider mc-shadow">
+              THE 4 MYTHIC RANK SWORDS
+            </h2>
+            <p className="text-xs text-zinc-400 font-sans mt-0.5">
+              Featuring independent cooldowns and a strict <strong className="text-yellow-400">4 Hearts (8 HP) combat hard cap</strong> for fair, competitive PvP.
+            </p>
+          </div>
+          <span className="text-[11px] font-minecraft bg-[#1d1e2c] border border-[#3b3c54] text-zinc-300 px-3 py-1.5 rounded shrink-0">
+            HOLD RIGHT-CLICK FOR 5s TO UNLEASH ULTIMATE
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {rankSwords.map((sword) => (
+            <div
+              key={sword.id}
+              className={`mc-panel p-5 rounded-xl border-2 ${sword.borderColor} ${sword.bgGlow} transition-all hover:-translate-y-0.5`}
+            >
+              <div className="flex items-center justify-between pb-3 border-b border-[#303142] mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#171824] border border-[#323348] rounded flex items-center justify-center shrink-0">
+                    <img
+                      src={sword.icon}
+                      alt={sword.name}
+                      className={`w-7 h-7 pixelated ${sword.tint} transform -rotate-45`}
+                    />
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-minecraft uppercase tracking-wider text-zinc-400">
+                      {sword.rank}
+                    </span>
+                    <h3 className={`font-minecraft text-base sm:text-lg font-bold tracking-wider ${sword.color} mc-shadow`}>
+                      {sword.name}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              {/* Abilities */}
+              <div className="space-y-2.5 font-sans text-xs">
+                
+                <div className="p-3 bg-[#13141f] rounded border border-[#2b2c3d]">
+                  <div className="flex items-center gap-2 font-minecraft text-xs text-yellow-300 mb-1">
+                    <Shield className="w-3.5 h-3.5 text-yellow-400" />
+                    <span>PERMANENT WIELDER PERK</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">{sword.wielderPerk}</p>
+                </div>
+
+                <div className="p-3 bg-[#13141f] rounded border border-[#2b2c3d]">
+                  <div className="flex items-center gap-2 font-minecraft text-xs text-red-400 mb-1">
+                    <Zap className="w-3.5 h-3.5 text-red-400" />
+                    <span>10% ON-HIT COMBAT PASSIVE</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">{sword.onHitPassive}</p>
+                </div>
+
+                <div className="p-3 bg-[#13141f] rounded border border-[#2b2c3d]">
+                  <div className="flex items-center gap-2 font-minecraft text-xs text-[#00ffff] mb-1">
+                    <Sparkles className="w-3.5 h-3.5 text-[#00ffff]" />
+                    <span>CHARGED ULTIMATE ({sword.cooldown})</span>
+                  </div>
+                  <p className="text-zinc-300 leading-relaxed">{sword.ultimate}</p>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* SECTION 3: DONUTSMP 3x3x1 SUPER PICKAXES */}
+      <div className="mc-panel p-6 sm:p-8 rounded-xl shadow-2xl border-2 border-emerald-600/50 bg-[#12141c] space-y-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-emerald-950/60 border border-emerald-500 rounded flex items-center justify-center">
+              <Pickaxe className="w-7 h-7 text-emerald-400" />
+            </div>
+            <div>
+              <span className="text-xs font-minecraft text-emerald-400 uppercase tracking-widest">
+                DONUTSMP STYLE TOOL (/pickaxe)
+              </span>
+              <h3 className="font-minecraft text-lg sm:text-xl text-white font-bold tracking-wider mc-shadow">
+                3x3x1 SUPER PICKAXES
+              </h3>
+            </div>
+          </div>
+          <span className="text-xs font-minecraft bg-black/50 border border-emerald-500/40 text-emerald-300 px-3 py-1.5 rounded">
+            TOGGLE: RIGHT-CLICK WHILE WIELDING
+          </span>
+        </div>
+
+        <p className="text-zinc-300 font-sans text-xs sm:text-sm leading-relaxed max-w-3xl">
+          Designed for high-speed quarrying and bunker excavation. Available in high-tier kits and rewards, these super pickaxes shatter 9 blocks at once in an instant 3x3x1 plane. <strong className="text-emerald-300">Right-click once while holding the pickaxe</strong> to switch seamlessly between 3x3x1 excavation and standard 1x1 mining mode with action bar audio-visual feedback!
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div className="p-4 bg-[#171926] rounded border border-[#2d2f44] flex items-center gap-4">
+            <img src="/assets/items/netherite_pickaxe.png" alt="Netherite Pickaxe" className="w-12 h-12 pixelated filter drop-shadow-[0_0_8px_#a855f7]" />
+            <div>
+              <h4 className="font-minecraft text-base sm:text-lg text-purple-300 font-bold">Netherite Super Pickaxe</h4>
+              <p className="text-xs text-zinc-400 font-sans mt-0.5">Maximum excavation velocity. Fortune multiplies drops across all 9 mined blocks; Silk Touch collects ores intact.</p>
+            </div>
+          </div>
+
+          <div className="p-4 bg-[#171926] rounded border border-[#2d2f44] flex items-center gap-4">
+            <img src="/assets/items/netherite_pickaxe.png" alt="Diamond Pickaxe" className="w-12 h-12 pixelated filter hue-rotate-180 drop-shadow-[0_0_8px_#00ffff]" />
+            <div>
+              <h4 className="font-minecraft text-base sm:text-lg text-[#00ffff] font-bold">Diamond Super Pickaxe</h4>
+              <p className="text-xs text-zinc-400 font-sans mt-0.5">Reliable 3x3 quarrying tool with container and bedrock safety protection against accidental destruction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  );
+}
