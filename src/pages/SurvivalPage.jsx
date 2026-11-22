@@ -1,12 +1,12 @@
 import React from 'react';
 import { 
   Skull, Shield, Box, Home, Compass, Trash2, User, Send, 
-  CheckCircle2, AlertOctagon, Award, Sword, Radio 
+  CheckCircle2, AlertOctagon, Award, Sword, Radio, Scroll, Gavel 
 } from 'lucide-react';
 import ServerIPBadge from '../components/ServerIPBadge';
 import { playClickSound } from '../utils/audio';
 
-export default function SurvivalPage() {
+export default function SurvivalPage({ setActiveTab }) {
   const survivalFeatures = [
     {
       icon: Box,
@@ -126,6 +126,34 @@ export default function SurvivalPage() {
             <span className="text-[11px] text-zinc-400 font-sans mt-0.5">Slay your rivals to seize their mythical weapons.</span>
           </div>
         </div>
+      </div>
+
+      {/* Rules Notice Banner */}
+      <div className="mc-panel p-4 sm:p-5 rounded-xl border border-red-900/60 bg-[#161217] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="p-2.5 bg-red-950 border border-red-600 rounded text-red-400 shrink-0">
+            <Gavel className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="font-minecraft text-sm sm:text-base text-yellow-300 font-bold">
+              STRICT COMBAT &amp; ELYTRA RULES IN EFFECT
+            </h3>
+            <p className="text-xs text-zinc-300 font-sans mt-0.5">
+              Players cannot use Kit Armor and Mythic Swords simultaneously. No Elytra fleeing in combat. Violations lead to rank demotion and item confiscation.
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={() => {
+            if (setActiveTab) setActiveTab('rules');
+            playClickSound();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="mc-button mc-button-red flex items-center gap-1.5 shrink-0 whitespace-nowrap"
+        >
+          <Scroll className="w-4 h-4" />
+          <span>VIEW SERVER RULES</span>
+        </button>
       </div>
 
       {/* Feature Grid */}

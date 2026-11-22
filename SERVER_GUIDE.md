@@ -32,6 +32,7 @@ A comprehensive technical and operational documentation guide for the custom sys
 | **`/spawn`** | - | Teleports back to the safe central spawn hub. |
 | **`/tpa <player>`** | `/tpaccept`, `/tpdeny` | Sends a teleport request to another online player. |
 | **`/trash`** | `/disposal` | Opens an instant trash bin to dispose of unwanted items safely. |
+| **`/asse stats`** | `/assassin stats` | View your assigned bounty target, distance in blocks (or dimension), and total event kills. |
 | **`/sb`** | - | Toggles the sidebar scoreboard on/off. |
 | **`/skin`** | `/skins` | Change your player skin via username or direct image URL. |
 
@@ -177,6 +178,51 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 
 ---
 
+## 🎯 Dynamic Server-Wide Events
+
+Scalyx SMP features 4 custom, fully-automated server events designed to drive community engagement, PvP warfare, and PvE survival:
+
+---
+
+### 1. 🎯 The Assassin's Event System (`/asse`)
+* **Circular Target Assignment**: Initiated via `/asse start`, all online players are randomized into a circular bounty loop ($P_1 \to P_2 \dots \to P_1$) where no player is ever assigned themselves.
+* **Real-Time Distance & Dimension Tracking**: Action Bar HUD updates every 2 seconds with live proximity data (`🎯 TARGET: PlayerName │ 142 blocks away │ Kills: 3` or dimension status `[In Nether]`, `[In End]`).
+* **Target Elimination & Inheritance**: Slaying your target grants +1 kill and immediately inherits your victim's target!
+* **Conclusion & Archive**: Broadcasts podium with wither sound, outputs to console, and appends records to `ASSASSINS_EVENT.md`.
+
+---
+
+### 2. 👑 Crown of the Warlord (`/warlord`)
+* **~5000-Block Spawn Drop**: Initiated via `/warlord start`, the celestial **Crown of the Warlord** spawns at a randomized location ~5000 blocks away from world spawn to ensure a fair race for every player! Coordinates are broadcasted to chat.
+* **Warlord Transformation**: Holding or wearing the crown makes the player the **Warlord**, granting **Permanent Glowing**, **+4 Extra Hearts** (Absorption II), **Strength I**, and **Resistance I**.
+* **Curse of Burden**: To preserve fair combat, the Warlord **cannot teleport, throw ender pearls, or fly**.
+* **Score Accumulation**: Holding the crown earns **1 Point every 3 seconds**. Action bar radar tracks distance to the crown or current Warlord for all players.
+* **Drop on Death / Disconnect**: Dropped immediately upon death or quit. Slay the Warlord to seize it!
+* **Conclusion & Archive**: On `/warlord stop`, top 3 point holders are announced with wither sound and recorded in `WARLORD_EVENT.md`.
+
+---
+
+### 3. 🩸 The Blood Moon: Eclipse of the Abyss (`/bloodmoon`)
+* **Apocalyptic Atmosphere**: Sky plunges into pitch black thunder and goat horn sound effects (`/bloodmoon start`).
+* **Empowered Abyssal Mobs**: Hostile mob spawns have a 40% chance to become elite nightmare variants:
+  * **🕷 Abyssal Crawler**: Speed II, Jump Boost II, inflicts Poison II and Darkness on hit (3 Blood Essence).
+  * **⚡ Storm Skeleton**: Fires flaming arrows with lightning strikes (4 Blood Essence).
+  * **☠ Void Dreadnought**: Netherite/Iron axe juggernaut with 40 HP, Strength I, Resistance I; drops diamonds/netherite scraps (6 Blood Essence).
+  * Standard mobs grant 1 Blood Essence.
+* **Death Penalty**: Dying during the Blood Moon docks 20% of your accumulated essence!
+* **Conclusion & Archive**: On `/bloodmoon stop`, restores daytime/clear weather, announces top 3 slayers, and appends records to `BLOOD_MOON_EVENT.md`.
+
+---
+
+### 4. 💰 The High Bounty: Most Wanted (`/bounty`)
+* **Target Selection**: Initiated via `/bounty start [player]`, designates a chosen or randomized player as the **Most Wanted Outlaw**.
+* **Outlaw Juggernaut**: Outlaw receives **Glowing outline**, **Speed I**, and **+4 Extra Hearts**.
+* **Radar & Coordinate Pings**: Outlaw's exact coordinates are broadcasted to the entire server every 60 seconds. Hunters receive real-time action bar radar pointing directly to the Outlaw.
+* **Execution Rewards**: The hunter who executes the Outlaw claims **+10 Bounty Points**, the **Outlaw's Severed Head**, and **5 Diamonds**. If the Outlaw kills hunters in self-defense, they gain **+3 Survival Points**.
+* **Conclusion & Archive**: On `/bounty stop`, announces top podium winners with wither sound and appends records to `BOUNTY_EVENT.md`.
+
+---
+
 ## 👑 Master Staff & Admin Commands Reference
 
 Staff with OP or `scalyx.kit.admin` have complete administrative control over all server subsystems:
@@ -223,12 +269,53 @@ Staff with OP or `scalyx.kit.admin` have complete administrative control over al
 | Command | Permission | Description |
 | :--- | :--- | :--- |
 | **`/scalyxdrophead <victim> [killer] [weapon]`** | `scalyx.mechanics` | Spawns a textured player head of `<victim>` with custom lore (killer, weapon, date). |
-| **`/scalyxstun <entity> [durationTicks]`** | `scalyx.mechanics` | Strikes target with lightning and freezes them (disables AI for mobs; locks walk speed & jump for players). Default 100 ticks (5s). |
+| **`/scalyxstun <entity> [durationTicks]`** | `scalyx.mechanics` | Strikes target with lightning and freezes them (disables AI for mobs; locks walk speed & jump for players, safe mid-air flight handling & auto-restore on reconnect). |
 | **`/scalyxpull <victim> <puller>`** | `scalyx.mechanics` | High-power Harpoon velocity vector pulling the victim smoothly directly into melee range of the puller. |
 | **`/scalyxcharge <player>`** | `scalyx.mechanics` | Instantly charges an arrow into a player's held crossbow natively without NBT command errors. |
 | **`/scalyxcooldown <player> [ticks]`** | `scalyx.mechanics` | Sets client-side item cooldown packet on tridents to prevent right-click charge jitter. |
+| **`/scalyxrecordevent <start> \| <end> \| <p1> \| <p2> \| <p3>`** | `scalyx.mechanics` | Appends Assassin's Event podium winners and timestamps directly to `ASSASSINS_EVENT.md`. |
 
-### 6. Moderation, Inspection & Player Utilities
+### 6. 🎯 Server Events Management
+
+#### A. 🎯 The Assassin's Event (`/asse`)
+| Command | Permission | Description |
+| :--- | :--- | :--- |
+| **`/asse start`** | `scalyx.asse.admin` | Starts the Assassin's Event. Shuffles all online participants into a circular bounty loop and activates target tracking HUD. |
+| **`/asse stop`** | `scalyx.asse.admin` | Stops the event. Broadcasts Top 3 winners with wither spawn sound, logs to console, and appends records to `ASSASSINS_EVENT.md`. |
+| **`/asse leaderboard`** | `scalyx.asse.admin` | Displays a real-time admin leaderboard of all participants sorted by assassin kills. |
+| **`/asse reset <player>`** | `scalyx.asse.admin` | Resets a specific player's assassin kill count to 0 and reassigns them a fresh target. |
+| **`/asse kick <player>`** | `scalyx.asse.admin` | Removes a player from the active event, clearing their bounty and repairing the target chain. |
+| **`/asse stats`** | Default (All Players) | Displays personal event statistics, current target, distance in blocks (or dimension: `"In Nether"`, `"In End"`), and total kills. |
+
+#### B. 👑 Crown of the Warlord (`/warlord`)
+| Command | Permission | Description |
+| :--- | :--- | :--- |
+| **`/warlord start`** | `scalyx.admin` / OP | Spawns the Crown ~5000 blocks away from world spawn, strikes lightning, broadcasts coords, and starts scoring. |
+| **`/warlord stop`** | `scalyx.admin` / OP | Ends event, plays wither sound, announces podium winners, and logs results to `WARLORD_EVENT.md`. |
+| **`/warlord leaderboard`** | Default (All Players) | Displays real-time top 10 point holders. |
+| **`/warlord reset <player>`** | `scalyx.admin` / OP | Resets a specific player's accumulated Warlord points to 0. |
+| **`/warlord kick <player>`** | `scalyx.admin` / OP | Strips the Crown from the carrier (drops it at their feet) and removes them from the event. |
+| **`/warlord stats`** | Default (All Players) | Displays personal points, current Warlord wielder, and crown coordinates if on the ground. |
+
+#### C. 🩸 The Blood Moon (`/bloodmoon`)
+| Command | Permission | Description |
+| :--- | :--- | :--- |
+| **`/bloodmoon start`** | `scalyx.admin` / OP | Plunges server into midnight & thunder, plays ominous horn, and spawns empowered mob waves. |
+| **`/bloodmoon stop`** | `scalyx.admin` / OP | Ends eclipse, resets daytime/clear weather, announces top 3 monster slayers, and logs to `BLOOD_MOON_EVENT.md`. |
+| **`/bloodmoon leaderboard`** | Default (All Players) | Displays real-time leaderboard of players sorted by Blood Essence. |
+| **`/bloodmoon reset <player>`** | `scalyx.admin` / OP | Resets a player's Blood Essence to 0. |
+| **`/bloodmoon stats`** | Default (All Players) | Displays personal Blood Essence and active eclipse status. |
+
+#### D. 💰 The High Bounty (`/bounty`)
+| Command | Permission | Description |
+| :--- | :--- | :--- |
+| **`/bounty start [<player>]`** | `scalyx.admin` / OP | Declares the specified player (or random online player) as the Most Wanted Outlaw with buffs & periodic radar pings. |
+| **`/bounty stop`** | `scalyx.admin` / OP | Concludes the manhunt, announces podium winners with wither sound, and logs to `BOUNTY_EVENT.md`. |
+| **`/bounty leaderboard`** | Default (All Players) | Displays real-time bounty points leaderboard for hunters and outlaws. |
+| **`/bounty reset <player>`** | `scalyx.admin` / OP | Resets a player's bounty score and outlaw kill count. |
+| **`/bounty stats`** | Default (All Players) | Displays personal bounty score, kills, and current active outlaw. |
+
+### 7. Moderation, Inspection & Player Utilities
 | Command | Permission | Description |
 | :--- | :--- | :--- |
 | **`/ecsee <player>`** / **`/endersee`** | `enhancedechest.admin.view` | Live inspect and edit any player's 54-slot deluxe Ender Chest. |
@@ -240,7 +327,7 @@ Staff with OP or `scalyx.kit.admin` have complete administrative control over al
 | **`/rules`** | Default | Displays the official server rules. |
 | **`/discord`** | Default | Sends the server Discord community invite link. |
 
-### 7. Economy & Rewards Controls
+### 8. Economy & Rewards Controls
 | Command | Permission | Description |
 | :--- | :--- | :--- |
 | **`/daily`** | Default | Claim daily login money reward with streak multipliers. |
@@ -251,14 +338,14 @@ Staff with OP or `scalyx.kit.admin` have complete administrative control over al
 | **`/ah`** | Default | Open DonutAuctionHouse player auctions. |
 | **`/trade <player>`** | Default | Open AxTrade secure two-way trading window. |
 
-### 8. Group, Permission & Rank Administration (LuckPerms)
+### 9. Group, Permission & Rank Administration (LuckPerms)
 | Command | Permission | Description |
 | :--- | :--- | :--- |
 | **`/lp user <player> parent set <rank>`** | `luckperms.*` | Set a player's primary rank (`coal`, `iron`, `gold`, `blaze`, `warden`, `eternal`, `wither`, `ender`, `admin`, `owner`). |
 | **`/lp user <player> parent add <rank>`** | `luckperms.*` | Add an additional group/rank to a player. |
 | **`/lp user <player> info`** | `luckperms.*` | View detailed permission nodes, inheritance, and groups for a player. |
 
-### 9. Server Operations & Maintenance
+### 10. Server Operations & Maintenance
 | Command | Terminal / Console | Description |
 | :--- | :--- | :--- |
 | **`make restart`** | Terminal (`make -C ... restart`) | Gracefully stops the Paper server, saves all chunk and player data, and restarts cleanly in tmux session `paper:1`. |

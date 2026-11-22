@@ -7,22 +7,28 @@ import WeaponsPage from './pages/WeaponsPage';
 import WorldPage from './pages/WorldPage';
 import EconomyPage from './pages/EconomyPage';
 import RanksPage from './pages/RanksPage';
+import RulesPage from './pages/RulesPage';
+import EventsPage from './pages/EventsPage';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
 
   const renderPage = () => {
     switch (activeTab) {
+      case 'events':
+        return <EventsPage setActiveTab={setActiveTab} />;
+      case 'rules':
+        return <RulesPage setActiveTab={setActiveTab} />;
       case 'survival':
-        return <SurvivalPage />;
+        return <SurvivalPage setActiveTab={setActiveTab} />;
       case 'weapons':
-        return <WeaponsPage />;
+        return <WeaponsPage setActiveTab={setActiveTab} />;
       case 'world':
-        return <WorldPage />;
+        return <WorldPage setActiveTab={setActiveTab} />;
       case 'economy':
-        return <EconomyPage />;
+        return <EconomyPage setActiveTab={setActiveTab} />;
       case 'ranks':
-        return <RanksPage />;
+        return <RanksPage setActiveTab={setActiveTab} />;
       case 'home':
       default:
         return <HomePage setActiveTab={setActiveTab} />;

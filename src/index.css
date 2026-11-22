@@ -85,6 +85,14 @@
     border: 2px solid #0d0d10;
     box-shadow: inset 2px 2px 0px 0px #0d0d10, inset -2px -2px 0px 0px #2d2d35;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 /* Custom Minecraft Button Component */

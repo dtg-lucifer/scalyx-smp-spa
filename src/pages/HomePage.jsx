@@ -3,7 +3,8 @@ import ServerIPBadge from '../components/ServerIPBadge';
 import CraftingGrid, { MYTHIC_RECIPES } from '../components/CraftingGrid';
 import { 
   Sword, Shield, Flame, Compass, Skull, Coins, Zap, Users, 
-  Trophy, ChevronRight, Award, AlertTriangle, Target, Radio 
+  Trophy, ChevronRight, Award, AlertTriangle, Target, Radio, Scroll, 
+  Crown, Moon, Gift 
 } from 'lucide-react';
 import { playClickSound } from '../utils/audio';
 
@@ -135,6 +136,14 @@ export default function HomePage({ setActiveTab }) {
             </button>
 
             <button
+              onClick={() => { setActiveTab('events'); playClickSound(); }}
+              className="mc-button mc-button-red flex items-center gap-1.5"
+            >
+              <Flame className="w-4 h-4 text-orange-400" />
+              <span>SERVER EVENTS &amp; PRIZES</span>
+            </button>
+
+            <button
               onClick={() => { setActiveTab('world'); playClickSound(); }}
               className="mc-button flex items-center gap-1.5"
             >
@@ -149,12 +158,20 @@ export default function HomePage({ setActiveTab }) {
               <Trophy className="w-4 h-4" />
               <span>VIEW RANKS &amp; KITS</span>
             </button>
+
+            <button
+              onClick={() => { setActiveTab('rules'); playClickSound(); }}
+              className="mc-button flex items-center gap-1.5"
+            >
+              <Scroll className="w-4 h-4 text-red-400" />
+              <span>SERVER RULES &amp; CODE</span>
+            </button>
           </div>
 
         </div>
       </section>
 
-      {/* Warning Banner: KeepInventory Disabled */}
+      {/* Warning Banner: KeepInventory Disabled & Rules */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="bg-gradient-to-r from-red-950/60 via-[#181216] to-red-950/60 border-2 border-red-700/60 p-5 rounded-lg shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
@@ -166,16 +183,24 @@ export default function HomePage({ setActiveTab }) {
                 RULE #1: KEEPINVENTORY IS PERMANENTLY DISABLED
               </h3>
               <p className="text-xs text-zinc-300 font-sans mt-0.5">
-                Zero exceptions. Donators, staff, and top ranks drop everything upon death. Guard your base, protect your gear, and trust no one.
+                Zero exceptions. Donators, staff, and top ranks drop everything upon death. Check our strict loadout and combat flight rules before engaging!
               </p>
             </div>
           </div>
-          <button
-            onClick={() => { setActiveTab('survival'); playClickSound(); }}
-            className="mc-button mc-button-red whitespace-nowrap shrink-0"
-          >
-            SURVIVAL HANDBOOK
-          </button>
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => { setActiveTab('rules'); playClickSound(); }}
+              className="mc-button mc-button-red whitespace-nowrap"
+            >
+              VIEW SERVER RULES
+            </button>
+            <button
+              onClick={() => { setActiveTab('survival'); playClickSound(); }}
+              className="mc-button whitespace-nowrap"
+            >
+              SURVIVAL GUIDE
+            </button>
+          </div>
         </div>
       </section>
 
@@ -279,6 +304,102 @@ export default function HomePage({ setActiveTab }) {
         </div>
       </section>
 
+      {/* Dynamic Server Events Teaser */}
+      <section className="max-w-7xl mx-auto px-4">
+        <div className="mc-panel p-6 sm:p-8 rounded-xl border-2 border-yellow-500/50 bg-[#12131d] space-y-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-3 border-b border-[#2d2e40]">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-yellow-950/80 border border-yellow-600 text-yellow-300 text-[10px] font-minecraft rounded mb-1">
+                <Trophy className="w-3.5 h-3.5" />
+                <span>SERVER-WIDE EVENTS &amp; PODIUM PRIZES</span>
+              </div>
+              <h2 className="font-minecraft text-lg sm:text-2xl text-white font-bold tracking-wider mc-shadow">
+                DYNAMIC EVENTS: COMPETE &amp; WIN REWARDS
+              </h2>
+              <p className="text-xs text-zinc-400 font-sans mt-0.5">
+                Join Assassin hunts, race for the 5000-block Warlord Crown, harvest Blood Moon essence, and claim big bounties!
+              </p>
+            </div>
+            <button
+              onClick={() => { setActiveTab('events'); playClickSound(); }}
+              className="mc-button mc-button-gold flex items-center gap-1.5 shrink-0"
+            >
+              <span>EXPLORE ALL EVENTS</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-4 bg-[#171827] rounded-lg border border-red-900/60 hover:border-red-500 transition-colors">
+              <div className="flex items-center gap-2 mb-2 text-red-400 font-minecraft font-bold text-sm">
+                <Target className="w-4 h-4 text-red-400" />
+                <span>The Assassin's Event</span>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed mb-3">
+                Circular target ring with live distance radar HUD. Execute your mark to inherit their target!
+              </p>
+              <span className="text-[10px] font-minecraft text-[#00ffff] bg-black/50 px-2 py-0.5 rounded border border-[#2b2c3d]">
+                /asse stats
+              </span>
+            </div>
+
+            <div className="p-4 bg-[#171827] rounded-lg border border-amber-900/60 hover:border-amber-500 transition-colors">
+              <div className="flex items-center gap-2 mb-2 text-amber-400 font-minecraft font-bold text-sm">
+                <Crown className="w-4 h-4 text-amber-400" />
+                <span>Crown of the Warlord</span>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed mb-3">
+                Celestial crown drops ~5000 blocks away. Wield it for +4 hearts and resistance while enduring the flight curse.
+              </p>
+              <span className="text-[10px] font-minecraft text-[#00ffff] bg-black/50 px-2 py-0.5 rounded border border-[#2b2c3d]">
+                /warlord stats
+              </span>
+            </div>
+
+            <div className="p-4 bg-[#171827] rounded-lg border border-purple-900/60 hover:border-purple-500 transition-colors">
+              <div className="flex items-center gap-2 mb-2 text-purple-400 font-minecraft font-bold text-sm">
+                <Moon className="w-4 h-4 text-purple-400" />
+                <span>The Blood Moon</span>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed mb-3">
+                Midnight sky &amp; thunderous eclipse. Elite nightmare horrors drop rare Blood Essence.
+              </p>
+              <span className="text-[10px] font-minecraft text-[#00ffff] bg-black/50 px-2 py-0.5 rounded border border-[#2b2c3d]">
+                /bloodmoon stats
+              </span>
+            </div>
+
+            <div className="p-4 bg-[#171827] rounded-lg border border-yellow-900/60 hover:border-yellow-500 transition-colors">
+              <div className="flex items-center gap-2 mb-2 text-yellow-400 font-minecraft font-bold text-sm">
+                <Coins className="w-4 h-4 text-yellow-400" />
+                <span>The High Bounty</span>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed mb-3">
+                Most Wanted Outlaw manhunt with real-time compass pings. Execute the outlaw for diamonds &amp; head!
+              </p>
+              <span className="text-[10px] font-minecraft text-[#00ffff] bg-black/50 px-2 py-0.5 rounded border border-[#2b2c3d]">
+                /bounty stats
+              </span>
+            </div>
+          </div>
+
+          <div className="p-3.5 bg-black/50 border border-yellow-900/50 rounded-lg flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-sans">
+            <div className="flex items-center gap-2.5 text-yellow-300">
+              <Gift className="w-5 h-5 text-yellow-400 shrink-0" />
+              <span>
+                <strong>Event Winners Receive:</strong> Mythic weapon crafting items (Dragon Eggs, Heavy Cores, Nether Stars), $50,000+ economy money, custom rank kits &amp; mythic rank swords!
+              </span>
+            </div>
+            <button
+              onClick={() => { setActiveTab('events'); playClickSound(); }}
+              className="text-[#00ffff] font-minecraft hover:underline whitespace-nowrap"
+            >
+              View Full Prize Vault &gt;
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* World Dimensions Gallery Teaser */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-3">
@@ -302,13 +423,16 @@ export default function HomePage({ setActiveTab }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Terralith */}
           <div className="mc-panel overflow-hidden group rounded-lg">
-            <div className="relative h-40 overflow-hidden bg-zinc-900">
+            <div className="relative h-44 overflow-hidden bg-zinc-900">
               <img
-                src="/assets/images/datapacks/terralith.png"
-                alt="Terralith"
+                src="/assets/images/gallery/hero_landscape.jpg"
+                alt="Terralith Overworld"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <div className="absolute top-2.5 right-2.5 w-8 h-8 rounded bg-black/70 border border-emerald-500/50 p-1">
+                <img src="/assets/images/datapacks/terralith.png" alt="Icon" className="w-full h-full object-contain pixelated" />
+              </div>
               <span className="absolute bottom-2 left-3 font-minecraft text-sm sm:text-base text-emerald-300 font-bold">
                 Terralith 2.5
               </span>
@@ -320,55 +444,64 @@ export default function HomePage({ setActiveTab }) {
 
           {/* Incendium */}
           <div className="mc-panel overflow-hidden group rounded-lg">
-            <div className="relative h-40 overflow-hidden bg-zinc-900">
+            <div className="relative h-44 overflow-hidden bg-zinc-900">
               <img
-                src="/assets/images/datapacks/incendium.png"
-                alt="Incendium"
+                src="/assets/images/nether/nether_quartz_cathedral.png"
+                alt="Incendium Nether Cathedral"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <div className="absolute top-2.5 right-2.5 w-8 h-8 rounded bg-black/70 border border-red-500/50 p-1">
+                <img src="/assets/images/datapacks/incendium.png" alt="Icon" className="w-full h-full object-contain pixelated" />
+              </div>
               <span className="absolute bottom-2 left-3 font-minecraft text-sm sm:text-base text-red-400 font-bold">
                 Incendium Nether
               </span>
             </div>
             <div className="p-3.5 text-xs text-zinc-400 font-sans">
-              Ash Barrens, Infernal Sanctums, custom Nether fortresses, and terrifying subterranean hazards.
+              Floating Quartz Cathedrals, Ash Barrens citadels, custom fortress bastions, and fiery hazards.
             </div>
           </div>
 
           {/* Nullscape & Stellarity */}
           <div className="mc-panel overflow-hidden group rounded-lg">
-            <div className="relative h-40 overflow-hidden bg-zinc-900">
+            <div className="relative h-44 overflow-hidden bg-zinc-900">
               <img
-                src="/assets/images/datapacks/stellarity.png"
-                alt="Stellarity"
+                src="/assets/images/end/end_the_hallow.png"
+                alt="The End Revamp"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <div className="absolute top-2.5 right-2.5 w-8 h-8 rounded bg-black/70 border border-purple-500/50 p-1">
+                <img src="/assets/images/datapacks/stellarity.png" alt="Icon" className="w-full h-full object-contain pixelated" />
+              </div>
               <span className="absolute bottom-2 left-3 font-minecraft text-sm sm:text-base text-purple-300 font-bold">
                 The End Revamp
               </span>
             </div>
             <div className="p-3.5 text-xs text-zinc-400 font-sans">
-              500-block tall void pillars, crystalline citadels, and a brutal multi-phase Ender Dragon boss fight.
+              The Hallow rainbow forests, Amethyst Forest amphitheaters, and 500-block Dragon arena.
             </div>
           </div>
 
           {/* Dungeons & Taverns */}
           <div className="mc-panel overflow-hidden group rounded-lg">
-            <div className="relative h-40 overflow-hidden bg-zinc-900">
+            <div className="relative h-44 overflow-hidden bg-zinc-900">
               <img
-                src="/assets/images/datapacks/dungeons_taverns.png"
+                src="/assets/images/nether/nether_ash_citadel.png"
                 alt="Dungeons and Taverns"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <div className="absolute top-2.5 right-2.5 w-8 h-8 rounded bg-black/70 border border-amber-500/50 p-1">
+                <img src="/assets/images/datapacks/dungeons_taverns.png" alt="Icon" className="w-full h-full object-contain pixelated" />
+              </div>
               <span className="absolute bottom-2 left-3 font-minecraft text-sm sm:text-base text-amber-300 font-bold">
                 Dungeons &amp; Taverns
               </span>
             </div>
             <div className="p-3.5 text-xs text-zinc-400 font-sans">
-              Loot-filled procedural castles, sprawling underground strongholds, and mysterious ocean keeps.
+              Loot-filled procedural keeps, sprawling underground strongholds, and volcanic clocktowers.
             </div>
           </div>
         </div>

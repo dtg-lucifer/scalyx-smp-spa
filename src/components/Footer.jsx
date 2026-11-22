@@ -37,6 +37,16 @@ export default function Footer({ setActiveTab }) {
                 </button>
               </li>
               <li>
+                <button onClick={() => { setActiveTab('events'); window.scrollTo({top:0, behavior:'smooth'}); }} className="hover:text-[#00ffff] transition-colors">
+                  &gt; Dynamic Server Events &amp; Prizes
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setActiveTab('rules'); window.scrollTo({top:0, behavior:'smooth'}); }} className="hover:text-[#00ffff] transition-colors">
+                  &gt; Server Rules &amp; Combat Code
+                </button>
+              </li>
+              <li>
                 <button onClick={() => { setActiveTab('survival'); window.scrollTo({top:0, behavior:'smooth'}); }} className="hover:text-[#00ffff] transition-colors">
                   &gt; Survival Rules &amp; Heads
                 </button>

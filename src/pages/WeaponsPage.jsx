@@ -4,12 +4,13 @@ import HeartDisplay from '../components/HeartDisplay';
 import { 
   Sword, Sparkles, Skull, Flame, Eye, Shield, Zap, Pickaxe, 
   Radio, Clock, Heart, Award, Crosshair, Wind, Anchor, 
-  ChevronRight, AlertTriangle, Target, CheckCircle2 
+  ChevronRight, AlertTriangle, Target, CheckCircle2, Camera, ZoomIn, X
 } from 'lucide-react';
 import { playClickSound } from '../utils/audio';
 
 export default function WeaponsPage() {
   const [selectedMythic, setSelectedMythic] = useState('lifestealer');
+  const [previewModal, setPreviewModal] = useState(null);
 
   const mythicWeapons = [
     {
@@ -638,6 +639,231 @@ export default function WeaponsPage() {
           </div>
         </div>
       </div>
+
+      {/* SECTION 4: AUTHENTIC IN-GAME ARSENAL & GUI SHOWCASE */}
+      <div className="space-y-6 pt-6 border-t border-[#252636]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-yellow-950/80 border border-yellow-500/50 text-yellow-300 text-[10px] font-minecraft rounded mb-1">
+              <Camera className="w-3.5 h-3.5" />
+              <span>LIVE SERVER SCREENSHOTS</span>
+            </div>
+            <h2 className="font-minecraft text-lg sm:text-2xl text-white font-bold tracking-wider mc-shadow">
+              IN-GAME ARSENAL &amp; CRAFTING INSPECTION
+            </h2>
+            <p className="text-xs text-zinc-400 font-sans mt-0.5">
+              Live in-game captures of the 3x3 Mythic Crafting GUI, Tier IV Ender God Armor with 20 Hearts, and custom combat animations.
+            </p>
+          </div>
+          <span className="text-[11px] font-minecraft bg-[#1d1e2c] border border-[#3b3c54] text-zinc-300 px-3 py-1.5 rounded shrink-0">
+            CLICK ANY PREVIEW TO ZOOM
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          {/* Card 1: Live Mythic GUI */}
+          <div 
+            onClick={() => {
+              setPreviewModal({
+                title: 'In-Game 3x3 Mythic Crafting GUI & Mace Tooltip',
+                image: '/assets/images/gui/gui_mythic_crafting.png',
+                tag: 'Crafting Altar Preview',
+                desc: 'Real server capture of the Worldbreaker Mace recipe in the 3x3 crafting grid. Shows the custom Heavy Core + 4x Netherite Blocks + 2x Breeze Rods + 2x God Apples layout, recipe validation, and glowing item lore tooltip.'
+              });
+              playClickSound();
+            }}
+            className="mc-panel overflow-hidden group rounded-lg cursor-pointer hover:border-amber-500/80 transition-all duration-300 hover:-translate-y-1 shadow-lg bg-[#141522]"
+          >
+            <div className="relative h-44 overflow-hidden bg-black">
+              <img 
+                src="/assets/images/gui/gui_mythic_crafting.png" 
+                alt="Mythic Crafting GUI" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span className="absolute top-2 left-2 text-[10px] font-minecraft px-2 py-0.5 bg-amber-950/80 border border-amber-600 text-amber-300 rounded">
+                GUI &amp; RECIPE
+              </span>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="px-2.5 py-1 bg-black/80 text-white text-[11px] font-minecraft rounded flex items-center gap-1 border border-white/20">
+                  <ZoomIn className="w-3.5 h-3.5 text-[#00ffff]" /> Inspect
+                </span>
+              </div>
+            </div>
+            <div className="p-3.5">
+              <h4 className="font-minecraft text-sm text-yellow-300 font-bold mb-1">
+                In-Game 3x3 Mythic Crafting GUI
+              </h4>
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed line-clamp-2">
+                Live in-game capture of the Worldbreaker Mace recipe and custom tooltip.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Ender God Armor & 20 Hearts */}
+          <div 
+            onClick={() => {
+              setPreviewModal({
+                title: 'Ender God Armor Set & Void Sovereign (20 Full Hearts)',
+                image: '/assets/images/gear/gear_ender_armor_sword.png',
+                tag: 'Tier IV Endgame Gear',
+                desc: 'Player clad in the glowing purple Ender God Armor set wielding the Void Sovereign blade. Notice the double-layered HUD displaying 20 Full Hearts (40 HP) — representing the peak of Scalyx survival progression.'
+              });
+              playClickSound();
+            }}
+            className="mc-panel overflow-hidden group rounded-lg cursor-pointer hover:border-purple-500/80 transition-all duration-300 hover:-translate-y-1 shadow-lg bg-[#141522]"
+          >
+            <div className="relative h-44 overflow-hidden bg-black">
+              <img 
+                src="/assets/images/gear/gear_ender_armor_sword.png" 
+                alt="Ender God Armor" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span className="absolute top-2 left-2 text-[10px] font-minecraft px-2 py-0.5 bg-purple-950/80 border border-purple-600 text-purple-300 rounded">
+                20 FULL HEARTS
+              </span>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="px-2.5 py-1 bg-black/80 text-white text-[11px] font-minecraft rounded flex items-center gap-1 border border-white/20">
+                  <ZoomIn className="w-3.5 h-3.5 text-[#00ffff]" /> Inspect
+                </span>
+              </div>
+            </div>
+            <div className="p-3.5">
+              <h4 className="font-minecraft text-sm text-purple-300 font-bold mb-1">
+                Ender God Armor &amp; 20 Hearts
+              </h4>
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed line-clamp-2">
+                Double health bar with 40 HP, purple glowing armor, and Void Sovereign.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Inventory & Active Buffs HUD */}
+          <div 
+            onClick={() => {
+              setPreviewModal({
+                title: 'Custom Armor Progression & Active Potion Effects HUD',
+                image: '/assets/images/gui/gui_inventory_loadout.png',
+                tag: 'Inventory & Perks HUD',
+                desc: 'Server inventory inspection highlighting all 4 custom gear tiers, mythic weapon storage, and active permanent status buffs: Speed III, Fire Resistance, Strength II, Absorption II, and Night Vision.'
+              });
+              playClickSound();
+            }}
+            className="mc-panel overflow-hidden group rounded-lg cursor-pointer hover:border-emerald-500/80 transition-all duration-300 hover:-translate-y-1 shadow-lg bg-[#141522]"
+          >
+            <div className="relative h-44 overflow-hidden bg-black">
+              <img 
+                src="/assets/images/gui/gui_inventory_loadout.png" 
+                alt="Inventory Loadout" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span className="absolute top-2 left-2 text-[10px] font-minecraft px-2 py-0.5 bg-emerald-950/80 border border-emerald-600 text-emerald-300 rounded">
+                INVENTORY &amp; BUFFS
+              </span>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="px-2.5 py-1 bg-black/80 text-white text-[11px] font-minecraft rounded flex items-center gap-1 border border-white/20">
+                  <ZoomIn className="w-3.5 h-3.5 text-[#00ffff]" /> Inspect
+                </span>
+              </div>
+            </div>
+            <div className="p-3.5">
+              <h4 className="font-minecraft text-sm text-emerald-300 font-bold mb-1">
+                Gear Tiers &amp; Active Buffs
+              </h4>
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed line-clamp-2">
+                4-tier custom armor sets with Speed III, Strength II, and Absorption HUD.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4: Starless Scythe */}
+          <div 
+            onClick={() => {
+              setPreviewModal({
+                title: 'The Starless Scythe in The End',
+                image: '/assets/images/gear/gear_starless_scythe.png',
+                tag: 'Custom Relic Weapon',
+                desc: '3rd-person stance holding the custom Starless Scythe blade against the backdrop of Nullscape obsidian monoliths. Handcrafted vanilla-compatible textures.'
+              });
+              playClickSound();
+            }}
+            className="mc-panel overflow-hidden group rounded-lg cursor-pointer hover:border-fuchsia-500/80 transition-all duration-300 hover:-translate-y-1 shadow-lg bg-[#141522]"
+          >
+            <div className="relative h-44 overflow-hidden bg-black">
+              <img 
+                src="/assets/images/gear/gear_starless_scythe.png" 
+                alt="Starless Scythe" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span className="absolute top-2 left-2 text-[10px] font-minecraft px-2 py-0.5 bg-fuchsia-950/80 border border-fuchsia-600 text-fuchsia-300 rounded">
+                RELIC SCYTHE
+              </span>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="px-2.5 py-1 bg-black/80 text-white text-[11px] font-minecraft rounded flex items-center gap-1 border border-white/20">
+                  <ZoomIn className="w-3.5 h-3.5 text-[#00ffff]" /> Inspect
+                </span>
+              </div>
+            </div>
+            <div className="p-3.5">
+              <h4 className="font-minecraft text-sm text-fuchsia-300 font-bold mb-1">
+                Starless Scythe Showcase
+              </h4>
+              <p className="text-xs text-zinc-400 font-sans leading-relaxed line-clamp-2">
+                Scythe relic wielded in combat amid End dimension void pillars.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Lightbox Preview Modal */}
+      {previewModal && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+          onClick={() => { setPreviewModal(null); playClickSound(); }}
+        >
+          <div 
+            className="mc-panel max-w-4xl w-full max-h-[95vh] overflow-y-auto rounded-xl border-2 border-[#454763] relative flex flex-col shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-4 bg-[#141521] border-b border-[#2b2c3d] flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] font-minecraft px-2.5 py-0.5 rounded border uppercase tracking-wider bg-yellow-950/80 text-yellow-300 border-yellow-600">
+                  {previewModal.tag}
+                </span>
+                <h3 className="text-base sm:text-lg font-minecraft text-white font-bold truncate">
+                  {previewModal.title}
+                </h3>
+              </div>
+              <button
+                onClick={() => { setPreviewModal(null); playClickSound(); }}
+                className="p-1.5 bg-red-950/60 hover:bg-red-900 border border-red-700/60 rounded text-red-200 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="relative bg-black flex items-center justify-center min-h-[300px] max-h-[65vh] overflow-hidden">
+              <img
+                src={previewModal.image}
+                alt={previewModal.title}
+                className="max-w-full max-h-[65vh] object-contain"
+              />
+            </div>
+
+            <div className="p-4 bg-[#12131d] border-t border-[#2b2c3d]">
+              <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
+                {previewModal.desc}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
