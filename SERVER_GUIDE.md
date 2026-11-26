@@ -68,6 +68,21 @@ All rank kits are packaged inside permanent, color-coded Shulker Boxes.
 - **One-Time Claim Rule**: Each individual kit tier can be redeemed **once** per player account. Once claimed, that kit is marked as claimed in `/kits`.
 - **Safe Delivery**: Kits will not redeem if the player's inventory lacks free space.
 
+### 🛡️ Fair Play Armor & Inventory Balancing
+- **No Thorns Across All Kits**: The Thorns enchantment has been **completely removed** from all rank kit armor sets to keep combat clean and enjoyable without annoying passive damage reflection.
+- **Protection Hard Cap (Max Protection V)**: All higher-tier armor sets are strictly capped at **Protection V maximum** to preserve PvP balance and eliminate pay-to-win armor advantages.
+- **Quartz Armor Trims for Ender**: The supreme Tier VIII Ender Netherite armor features authentic **Quartz** material trims:
+  - *Flow Trim*: Netherite Helmet & Netherite Boots
+  - *Eye Trim*: Netherite Chestplate
+  - *Bolt Trim*: Netherite Leggings
+- **Higher Rank Kit Inventory Additions** *(Warden, Eternal, Wither, Ender only)*:
+  - **64x Experience Bottles**: Added to all 4 high-rank kits that feature Super Pickaxes.
+  - **Dual 3x3x1 Super Pickaxes**: Every high rank kit provides **TWO** distinct 3x3x1 Super Pickaxes:
+    - **1x Fortune Super Pickaxe**: Standard 3x3 area mining with Fortune IV (or III).
+    - **1x Silk Touch Super Pickaxe**: Dedicated 3x3 area mining with Silk Touch I.
+  - **64x Oak Logs (1 Stack)**: Added exclusively to the highest rank kit (**Ender**).
+  - *Lower-tier kits (Coal, Iron, Gold, Blaze) do NOT receive these items.*
+
 ### 🩸 Armor Health Scaling & Set Perks
 Wearing a complete 4-piece set of ranked armor activates permanent potion effects, perks, and heart increases. Removing any piece immediately resets max health back to 10 hearts (20 HP) with no lingering glitches:
 
@@ -87,9 +102,14 @@ Wearing a complete 4-piece set of ranked armor activates permanent potion effect
 
 Custom area-mining pickaxes (modeled after DonutSMP) are equipped in high-tier kits (**Warden**, **Eternal**, **Wither**, and **Ender**):
 
+- **Dual Pickaxe Setup**: Each eligible kit includes both a **Fortune** version and a **Silk Touch** version:
+  - *Warden (Tier V)*: **Sculk Resonator** (Fortune III) & **Sculk Silk Resonator** (Silk Touch I)
+  - *Eternal (Tier VI)*: **Eternal Nebula Pickaxe** (Fortune IV) & **Eternal Silk Nebula Pickaxe** (Silk Touch I)
+  - *Wither (Tier VII)*: **Wither Core Obliterator** (Fortune IV) & **Wither Silk Core Obliterator** (Silk Touch I)
+  - *Ender (Tier VIII)*: **Void Sovereign World-Shaper** (Fortune IV) & **Void Sovereign Silk Shaper** (Silk Touch I)
 - **Ability**: Mines a 3-wide × 3-high × 1-deep (3×3×1) area centered on the target block.
-- **Toggle Mode**: Right-Clicking while holding the pickaxe toggles between **Super Pickaxe Mode (3x3x1)** and **Normal Mining Mode** with audio feedback and action bar confirmation.
-- **Full Enchantment Support**: Fortune drops multiplied drops for every broken ore block; Silk Touch collects intact blocks.
+- **Toggle Mode**: Right-Clicking while holding any Super Pickaxe toggles between **Super Pickaxe Mode (3x3x1)** and **Normal Mining Mode (1x1)** with audio feedback and action bar confirmation.
+- **Full Enchantment Support**: Fortune multiplies ore yields for every broken block; Silk Touch extracts raw intact blocks natively across the entire 3x3 area.
 - **Unbreakable Block Protection**: Strictly protects Bedrock, End Portal Frames, Portals, Command Blocks, Barriers, Spawners, and storage containers from area mining.
 
 ---
@@ -102,15 +122,16 @@ Each high-rank sword features **Ultimate Abilities**, **Combat Passives (10% Cha
 
 - **Activation**: Hold **Right-Click for 5 seconds** (works with or without a shield equipped). An action bar displays charging progress `[■■■□□] 60%` with chime sounds.
 - **Independent Cooldowns**: 60 seconds per activation, tracked **independently per individual sword ID**. Looting or trading other players' swords allows using each weapon's ultimate without sharing cooldowns!
-- **Damage Hard Cap**: All abilities are strictly capped at **4 Hearts (8 HP)** to keep PvP balanced.
+- **Damage Rebalancing**: Custom swords and mythics deal slightly elevated damage with signature skills, but are strictly balanced so they **never deal 2x or more damage than a maxed vanilla sword**, preventing pay-to-win dominance.
+- **Damage Hard Cap**: All ultimate abilities are strictly capped at **4 Hearts (8 HP)** to keep PvP balanced.
 - **Inventory Safety Rules**: `keepInventory` is permanently **disabled** for all ranks, members, and admins. All loot drops on death.
 
 | Rank Sword | Base & Enchants | Ultimate Ability (Hold R-Click 5s) | Combat Passive (10% On-Hit) | Wielder Passive Perk |
 | :--- | :--- | :--- | :--- | :--- |
-| **Sculk Annihilator** *(Warden)* | Diamond Sword<br>Sharp V, KB II, Loot III, Unb III | **Sonic Shockwave Blast**<br>Raycasts Warden sonic boom up to 25 blocks forward, piercing targets, dealing up to 4 hearts damage, inflicting Darkness & Slowness. | **Sculk Annihilation Burst**<br>10% chance to deal massive Sculk bonus damage (+8 damage / 4 hearts) with sonic boom shockwaves. | **Warden Immunity**<br>Immune to Warden attacks & Sonic Booms; Wardens will not aggro; auto-cleanses Darkness and Blindness. |
-| **Eternal Zenith Blade** *(Eternal)* | Diamond Sword<br>Sharp VI, Sweep IV, Loot IV, Fire Asp II, Unb IV, Mend | **Solar Flame Laser**<br>Projects a dense solar flame laser beam up to 30 blocks ahead, damaging up to 4 hearts and igniting enemies for 4s. | **True Fire Ignition**<br>10% chance to pierce enemy defenses: strips Fire Resistance if present and burns the victim for 12 seconds. | **Fire & Lava Immunity**<br>Permanent Fire & Lava Resistance while wielding; extinguishes fire ticks instantly. |
-| **Wither Reaper Blade** *(Wither)* | Netherite Sword<br>Sharp VII, Sweep IV, Loot IV, Fire Asp II, KB II, Unb IV, Mend | **Wither Skull Strike**<br>Launches a homing Wither Skull dealing up to 4 hearts damage and applying Wither II (block griefing disabled). | **Wither Affliction**<br>10% chance to inflict Wither II for 5 seconds with dark smoke particles. | **Wither Immunity**<br>Immune to Wither effects and wither damage; auto-cleanses wither ticks. |
-| **Void Sovereign World-Ender** *(Ender)* | Netherite Sword<br>Sharp VII, Sweep V, Loot V, Fire Asp II, KB II, Unb V, Mend | **Void Rupture, Breath & Darkness**<br>5-block radial blast pushing enemies back + forward blast wave (up to 4 hearts) + lingering **Dragon's Breath** cloud (12s) + **Darkness & Blindness (60s)** on struck foes. | **Void Curse**<br>10% chance to inflict Poison II (15s) and Darkness & Blindness (15s). | **Void Cloak**<br>Immune to Poison, Darkness & Blindness; Endermen never aggro on direct eye contact; any attacking Enderman is instantly eradicated. |
+| **Sculk Annihilator** *(Warden)* | Diamond Sword<br>Sharp V, KB II, Loot III, Unb III | **Sonic Shockwave Blast**<br>Raycasts Warden sonic boom up to 25 blocks forward, piercing targets, dealing up to 4 hearts damage, inflicting Darkness & Slowness. | **Sculk Annihilation Burst**<br>10% chance to deal bonus Sculk damage (+1.5 Hearts) with sonic boom shockwaves. | **Warden Immunity**<br>Immune to Warden attacks & Sonic Booms; Wardens will not aggro; auto-cleanses Darkness and Blindness. |
+| **Eternal Zenith Blade** *(Eternal)* | Diamond Sword<br>Sharp V, Sweep IV, Loot IV, Fire Asp II, Unb IV, Mend | **Solar Flame Laser**<br>Projects a dense solar flame laser beam up to 30 blocks ahead, damaging up to 4 hearts and igniting enemies for 4s. | **True Fire Ignition**<br>10% chance to pierce enemy defenses: strips Fire Resistance if present and burns the victim for 12 seconds. | **Fire & Lava Immunity**<br>Permanent Fire & Lava Resistance while wielding; extinguishes fire ticks instantly. |
+| **Wither Reaper Blade** *(Wither)* | Netherite Sword<br>Sharp VI, Sweep IV, Loot IV, Fire Asp II, KB II, Unb IV, Mend | **Wither Skull Strike**<br>Launches a homing Wither Skull dealing up to 4 hearts damage and applying Wither II (block griefing disabled). | **Wither Affliction**<br>10% chance to inflict Wither II for 5 seconds with dark smoke particles. | **Wither Immunity**<br>Immune to Wither effects and wither damage; auto-cleanses wither ticks. |
+| **Void Sovereign World-Ender** *(Ender)* | Netherite Sword<br>Sharp VI, Sweep V, Loot V, Fire Asp II, KB II, Unb V, Mend | **Void Rupture, Breath & Darkness**<br>5-block radial blast pushing enemies back + forward blast wave (up to 4 hearts) + lingering **Dragon's Breath** cloud (12s) + **Darkness & Blindness (60s)** on struck foes. | **Void Curse**<br>10% chance to inflict Poison II (15s) and Darkness & Blindness (15s). | **Void Cloak**<br>Immune to Poison, Darkness & Blindness; Endermen never aggro on direct eye contact; any attacking Enderman is instantly eradicated. |
 
 ---
 
@@ -118,10 +139,16 @@ Each high-rank sword features **Ultimate Abilities**, **Combat Passives (10% Cha
 
 Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic Weapons**. Each can only ever be forged **ONCE** in a Crafting Table.
 
-### 🔒 Absolute Server Singularity
+### 🔒 Absolute Server Singularity & Event Unlock Control
+- **CRAFTING LOCKED BY DEFAULT**: Mythic weapon crafting is **completely disabled** until an Administrator explicitly starts the event.
+  - If a player places ingredients into a Crafting Table while an event is locked, the craft is immediately cancelled and an alert warns: `Crafting Locked! The Mythic Event for <Weapon> is not active yet.`
+  - Administrators trigger event releases via `/mythics <weapon|all> start`, which broadcasts an ancient awakening announcement with dragon growls across the server.
+  - Administrators can pause or seal crafting at any time with `/mythics <weapon|all> stop`.
 - **ONLY 1 CAN EXIST**: Only 1 copy of each weapon can exist simultaneously in the world.
 - **Unobtainable via P2W / Ranks**: Cannot be purchased, claimed from rank kits, or spawned by donor perks.
-- **Dedicated Artifacts GUI (`/artifacts` or `/mythics`)**: Full interactive 54-slot showcase showing status, live wielders, ability breakdowns, and interactive 3x3 crafting recipes.
+- **Dedicated Artifacts GUI (`/artifacts` or `/mythics`)**: Full interactive 54-slot showcase showing status (`LOCKED`, `EVENT ACTIVE`, or `ALREADY FORGED`), live wielders, ability breakdowns, and interactive 3x3 crafting recipes.
+- **30-Second Stun Cooldown**: Stun abilities on the Mace and Spear feature an enforced **30-second cooldown** to prevent team stun-locking.
+- **Balanced Damage Scaling (Non-P2W)**: Weapons are tuned with high-tier enchantments (Sharpness VI, Density V, Breach IV, Lunge V) and unique abilities, while ensuring no weapon deals twice the damage of a maxed vanilla sword.
 - **30-Minute Hunt & Drop on Death**:
   - Forging triggers an emergency global server broadcast!
   - Permanent glowing effect on the carrier.
@@ -136,7 +163,7 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 
 ### 1. ⚔️ Lifestealer (Netherite Sword)
 - **Crafting Recipe**: `1x Dragon Egg` surrounded by `4x Netherite Blocks` and `4x Enchanted Golden Apples`.
-- **Enchantments**: Sharpness VIII, Sweeping Edge V, Looting V, Fire Aspect II, Unbreaking V, Mending I.
+- **Enchantments**: Sharpness VI, Sweeping Edge V, Looting V, Fire Aspect II, Unbreaking V, Mending I.
 - **Passive 1 (Heart Theft)**: Steals 1 Heart (up to 4 Hearts) on-hit for 60 seconds.
 - **Passive 2 (Wither Decay)**: 10% chance on-hit to inflict Wither II decay.
 - **Ultimate (Heart Siphon Nova - 5m Cooldown)**: Hold Right-Click for 5s to siphon 1 Heart each from up to 10 entities in a 10-block radius, granting the wielder up to **+10 Max Hearts for 5 minutes**!
@@ -144,8 +171,8 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 ### 2. ⚡ Worldbreaker Mace (Mace)
 - **Crafting Recipe**: `1x Heavy Core` (center), `4x Netherite Blocks` (corners), `2x Breeze Rods` (top/bottom), `2x Enchanted Golden Apples` (sides).
 - **Attack Speed Modifier**: **Minimal Attack Cooldown** (Sword-speed 1.6 attack speed / fast combat cadence).
-- **Enchantments**: Density V, Breach IV, Wind Burst III, Sharpness VII, Fire Aspect II, Knockback II, Unbreaking V, Mending I.
-- **Passive 1 (Stun)**: 100% chance on-hit against players and mobs to strike them with lightning and completely paralyze them (AI disabled for mobs; walk speed 0, jump locked, mining fatigue for players) for 5 seconds!
+- **Enchantments**: Density V, Breach IV, Wind Burst III, Sharpness VI, Fire Aspect II, Knockback II, Unbreaking V, Mending I.
+- **Passive 1 (Stun - 30s Cooldown)**: 100% chance on-hit against players and mobs to strike them with lightning and completely paralyze them (AI disabled for mobs; walk speed 0, jump locked, mining fatigue for players) for 5 seconds (30-second cooldown per player).
 - **Passive 2 (Double Jump)**: Press Jump twice in mid-air to launch 15 blocks into the sky with an explosive wind burst!
 - **Ultimate (Seismic Cataclysm - Crouch + Jump, 2m Cooldown)**: Crouch and Jump to rocket 20 blocks into the sky. Negates 100% fall damage on landing and detonates a massive **10-block ground explosion** dealing devastating damage to surrounding enemies! *(Normal vanilla fall smash attack remains uncapped).*
 
@@ -154,16 +181,16 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 - **Attack Speed Modifier**: **Minimal Attack Cooldown** (Sword-speed 1.6 attack speed / fast combat cadence).
 - **Infinite Stamina**: **Zero Hunger Cost** while carrying or wielding the spear.
 - **Crafting Recipe**: `1x Nether Star` (center), `4x Netherite Blocks` (sides), `4x Echo Shards` (corners), `1x Heart of the Sea` (bottom).
-- **Enchantments**: Sharpness VII, Lunge V, Fire Aspect II, Knockback II, Unbreaking V, Mending I.
+- **Enchantments**: Sharpness VI, Lunge V, Fire Aspect II, Knockback II, Unbreaking V, Mending I.
 - **Passive 1 (Light Foot)**: Negates 100% of all fall damage while holding or carrying the spear!
-- **Passive 2 (Stun)**: 100% chance on-hit against players and mobs to strike them with lightning and paralyze them for 5 seconds.
+- **Passive 2 (Stun - 30s Cooldown)**: 100% chance on-hit against players and mobs to strike them with lightning and paralyze them for 5 seconds (30-second cooldown per player).
 - **Passive 3 (Breaker of Chains)**: Always shatters and disables enemy shields on-hit with audio-visual break feedback.
 - **Ultimate (Verdant Harpoon - Sneak + Right-Click, 1m Cooldown)**: Fires a 35-block grasping vine raycast. Hooking an enemy pulls them violently directly into melee range; hitting a block or ledge hoists the wielder up to that vantage point!
 
 ### 4. 🔱 Poseidon's Abyssal Tempest (Trident)
 - **Crafting Recipe**: `1x Heart of the Sea` (center), `2x Tridents` (top corners), `4x Netherite Blocks`, `2x Enchanted Golden Apples` (middle sides), `1x Conduit` (bottom).
 - **Attack Speed Modifier**: **Minimal Attack Cooldown** (Sword-speed 1.6 attack speed / fast combat cadence).
-- **Enchantments**: Impaling VII, Loyalty III, Channeling I, Sharpness VII, Unbreaking V, Mending I *(Trident Throw Disabled: Melee & Anywhere Riptide only)*.
+- **Enchantments**: Impaling VII, Loyalty III, Channeling I, Sharpness VI, Unbreaking V, Mending I *(Trident Throw Disabled: Melee & Anywhere Riptide only)*.
 - **Passive 1 (Ocean's Sovereign & Anywhere Riptide)**: Permanent Water Breathing, Dolphin's Grace, and Conduit Power while held. Right-Click triggers **Anywhere Riptide Dash** with client cooldown protection and an Action Bar status indicator (`RIPTIDE READY` / `RECHARGING`).
 - **Passive 2 (Whirlpool Maelstrom)**: Always triggers on-hit, trapping the victim in an inescapable whirlpool applying Slowness IV and drowning damage for 6 seconds.
 - **Ultimate (Tsunami Cataclysm - Sneak + Right-Click, 2m Cooldown)**: Summons a surging 25-block tsunami tidal wave with lightning strikes, sweeping enemies up, dealing heavy water damage and Slowness III.
@@ -230,6 +257,9 @@ Staff with OP or `scalyx.kit.admin` have complete administrative control over al
 ### 1. Mythic Artifacts & Singularity Management
 | Command | Permission | Description |
 | :--- | :--- | :--- |
+| **`/mythics <weapon\|all> start`** | `scalyx.kit.admin` / OP | **Unleash Mythic Event**: Activates crafting for the designated mythic weapon (or all 5), broadcasting a server-wide announcement. |
+| **`/mythics <weapon\|all> stop`** | `scalyx.kit.admin` / OP | **Lock Mythic Event**: Disables and seals crafting for the designated mythic weapon (or all 5). |
+| **`/mythics status`** | Default (All Players) | View real-time status of all 5 mythics (`LOCKED`, `EVENT ACTIVE`, or `FORGED`) and active carrier. |
 | **`/artifacts`** or **`/mythics`** | `scalyx.mythics.gui` | Open the interactive Mythic Weapons & 3x3 Recipe Showcase GUI. (Shift-Right-Click allows staff to claim weapons). |
 | **`/artifact give <weapon\|all> [player]`** | `scalyx.mythics.admin` | **Admin Bypass**: Directly grant any or all mythic weapons to yourself or a player, completely bypassing the 1-per-server limit. |
 | **`/artifact admin status`** | `scalyx.mythics.admin` | View global crafted state, active wielders, and hunt status for all 5 mythics. |
@@ -355,12 +385,66 @@ Staff with OP or `scalyx.kit.admin` have complete administrative control over al
 
 ---
 
+## 🌐 Wilderness RTP, WorldGuard & Spawn Protection
+
+- **BetterRTP 10,000-Block Wild Distribution**:
+  - The BetterRTP plugin is configured with a maximum radius of **10,000 blocks** (`max-radius: 10000`).
+  - Players running `/rtp` or `/wild` are spread deep across uncharted terrain rather than clustering within 1,000 blocks of spawn.
+- **Spawn Protection Zeroed (`spawn-protection=0`)**:
+  - Vanilla spawn protection in `server.properties` is set to `0`.
+  - All hub protection, non-break flags, and non-pvp zones are exclusively governed by **WorldGuard** regions, eliminating vanilla override glitches and allowing non-OP staff and WorldEdit builders to operate seamlessly.
+
+---
+
+## 💬 Chat & Direct Message Formatting
+
+All in-game communication channels adhere to a unified, clean, and recognizable format:
+
+- **Public Chat**: Managed via EssentialsChat & LuckPerms prefixes:
+  - Format: `<Prefix> <PlayerName> » <Message>`
+  - Example: `[MEMBER] Piush » Hello everyone!`
+- **Private Messages & Whispers (`/msg`, `/tell`, `/w`, `/r`)**:
+  - Standardized in `messages_en.properties` and `config.yml` to mirror the server styling:
+  - Sender View: `[M] You -> <Recipient> >> <Message>`
+  - Recipient View: `[M] <Sender> -> You >> <Message>`
+  - Example: `[M] MightNotBePiush -> Piush >> Hey, want to team up?`
+
+---
+
+## 🛡️ Permissions & Security Lockdown
+
+- **OP Command Restriction**:
+  - Unprivileged players (and de-opped users) have zero access to `/op`, `/deop`, `/minecraft:op`, or any elevation vectors.
+  - Command permissions are restricted strictly to server administrators and owners via LuckPerms (`luckperms.*` / Bukkit default commands blocked).
+- **WorldGuard Region Protection**:
+  - Players without explicit bypass permissions (`worldguard.region.bypass.*`) cannot break blocks, place blocks, or open containers inside defined WorldGuard regions (including Spawn Hub, Markets, and Arenas).
+
+---
+
+## ⚙️ Event Recorder Daemon & VPS Operations
+
+When deploying Scalyx SMP to a dedicated VPS or cloud host:
+
+- **Event Record Logging**:
+  - Automated events (such as the Assassin's Event) record winners, podium statistics, and completion timestamps natively into markdown archives (`ASSASSINS_EVENT.md`, `WARLORD_EVENT.md`, `BLOOD_MOON_EVENT.md`, `BOUNTY_EVENT.md`) via the server plugin engine without requiring external Python daemon scripts.
+- **Background Daemon / Service Management**:
+  - The server runs under a clean `tmux` or `systemd` unit file (managed via `make start`, `make stop`, and `make restart`).
+  - Logs are persisted in `logs/latest.log` and compressed daily by Paper.
+
+---
+
 ## ✅ SMP Launch Pre-Flight Checklist
 
-1. **KeepInventory**: Verified false globally across all worlds.
+1. **KeepInventory**: Verified `false` globally across all worlds.
 2. **Kits Hierarchy**: Higher rank players can claim all lower rank kits with zero permission conflicts.
-3. **Super Pickaxes**: 3x3x1 mining active with bedrock protection enabled.
-4. **Rank Swords**: 60s independent cooldowns, 4-heart damage hard cap, and on-hit passives operational.
-5. **Ender Chest**: 54-slot deluxe storage saving correctly across sessions.
-6. **Homes**: GUI home manager with rank-scaled limits functioning smoothly.
-7. **Economy**: `/shop` prices and `/ah` functioning with safe trading protections.
+3. **Kit Armor Enchants**: No Thorns on any kit armor; Protection capped at Max Protection V; Quartz trims applied to Ender set.
+4. **Kit Inventories**: 64x XP Bottles on higher-tier kits; dual Fortune & Silk Touch 3x3 pickaxes included; 64x Oak Logs in Ender kit.
+5. **Super Pickaxes**: 3x3x1 mining active with bedrock protection enabled (Fortune and Silk Touch versions).
+6. **Rank Swords**: 60s independent cooldowns, 4-heart damage hard cap, and on-hit passives operational.
+7. **Mythic Weapons**: Crafting disabled/locked by default; released manually via `/mythics <weapon|all> start`; 30s stun cooldowns on Mace & Spear; balanced non-P2W damage.
+8. **Wilderness RTP**: Configured to 10k radius distribution; vanilla `spawn-protection=0` for clean WorldGuard region enforcement.
+9. **Chat & DMs**: Whispers formatted as `[M] Sender -> Recipient >> message`.
+10. **Security & Permissions**: `/op` and WorldGuard bypass rights strictly locked to verified administrators.
+11. **Ender Chest**: 54-slot deluxe storage saving correctly across sessions.
+12. **Homes**: GUI home manager with rank-scaled limits functioning smoothly.
+13. **Economy**: `/shop` prices and `/ah` functioning with safe trading protections.

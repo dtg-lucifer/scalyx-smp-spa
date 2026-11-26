@@ -145,6 +145,26 @@ export default function RulesPage({ setActiveTab }) {
       iconColor: 'text-emerald-400',
       panelBorder: 'border-emerald-600/70',
       panelBg: 'bg-gradient-to-r from-emerald-950/30 to-[#121815]'
+    },
+    {
+      id: 'mythic-drops',
+      category: 'combat',
+      number: 'RULE 08',
+      title: 'Mythic Relics Always Drop on Death & Fair Stun Limits',
+      badge: 'RELIC ENGAGEMENT LAW',
+      badgeColor: 'bg-cyan-950/80 text-cyan-300 border-cyan-600',
+      tagline: 'Never Soulbound — Slay Carriers to Loot Relics',
+      description: 'Mythic weapons are never soulbound under any circumstance; they always drop on death in PvP. Stun abilities carry a strict 30-second per-player cooldown.',
+      details: [
+        'KeepInventory is permanently disabled across all worlds for all players and ranks. When a mythic carrier dies, the mythic weapon drops on the ground immediately.',
+        'During active 30-minute hunts, killing the carrier transfers the hunt timer to the slayer without resetting the clock.',
+        'Executing any player with a Mythic Weapon guarantees a severed player head drop with authentic skin and kill lore.',
+        'Stun mechanics on the Worldbreaker Mace and Gungnir Spear are enforced with a 30-second cooldown per player to prevent toxic team stun-locking.'
+      ],
+      icon: Sparkles,
+      iconColor: 'text-[#00ffff]',
+      panelBorder: 'border-cyan-600/70',
+      panelBg: 'bg-gradient-to-r from-cyan-950/30 to-[#12161d]'
     }
   ];
 

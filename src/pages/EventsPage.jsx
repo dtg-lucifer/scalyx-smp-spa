@@ -3,14 +3,56 @@ import {
   Trophy, Target, Crown, Moon, Coins, Radio, Clock, 
   Sparkles, Shield, Sword, Skull, Gift, ChevronRight, 
   Zap, Compass, Award, AlertTriangle, Flame, ArrowRight, 
-  CheckCircle2 
+  CheckCircle2, Lock, Unlock, Eye, Crosshair, Users, HelpCircle
 } from 'lucide-react';
 import { playClickSound } from '../utils/audio';
 
 export default function EventsPage({ setActiveTab }) {
-  const [selectedEvent, setSelectedEvent] = useState('assassin');
+  const [selectedEvent, setSelectedEvent] = useState('mythic-hunt');
+  const [activeMythicPhase, setActiveMythicPhase] = useState('forged');
 
   const events = [
+    {
+      id: 'mythic-hunt',
+      name: 'The Mythic Awakening & 30m Hunt',
+      command: '/artifacts & /mythics status',
+      adminCommand: '/mythics <weapon|all> start / stop',
+      type: 'Server Singularity Awakening & Manhunt',
+      badge: 'SERVER RELIC EVENT',
+      badgeColor: 'bg-cyan-950/80 text-cyan-300 border-cyan-600',
+      icon: Sparkles,
+      iconColor: 'text-[#00ffff]',
+      accentColor: 'text-[#00ffff]',
+      borderColor: 'border-[#00ffff]',
+      bgGlow: 'shadow-[0_0_25px_rgba(6,182,212,0.25)]',
+      logFile: 'SERVER RELIC REGISTRY',
+      tagline: 'Locked by default. When awakened by staff, only 1 of each mythic weapon can ever be forged, igniting a 30-minute global manhunt!',
+      hudSimulation: {
+        title: 'GLOBAL BROADCAST ALERT (EVERY 60s)',
+        content: '☠ [MYTHIC CARRIER]: X: 1,842, Y: 68, Z: -720 (Nether) │ 18m 42s Left │ Carrier: GLOWING',
+        theme: 'border-cyan-500/70 bg-black/80 text-[#00ffff]'
+      },
+      flow: {
+        start: {
+          title: '1. Ancient Awakening (/mythics start)',
+          desc: 'Crafting is locked by default. When administrators unleash the event via /mythics start, an ancient dragon roar echoes globally and the 3x3 crafting altar unlocks for all players!'
+        },
+        gameplay: {
+          title: '2. The 30-Minute Global Hunt',
+          desc: 'The moment any player forges a mythic in a crafting table, an emergency siren triggers! The carrier is crowned with permanent Glowing, and their coordinates [X, Y, Z] broadcast every 60 seconds.'
+        },
+        ending: {
+          title: '3. Inheritance & Severed Head Trophies',
+          desc: 'Mythics ALWAYS drop on death! If the carrier dies, the slayer inherits the target and remaining timer (clock never resets!). Any player slain by a mythic drops their authentic severed player head!'
+        }
+      },
+      rewards: [
+        '💎 Ownership of the 1-of-a-Kind Mythic Relic in the universe',
+        '☠️ Guaranteed Severed Player Head Trophy of any slain victim',
+        '👑 Permanent Server Prestige, Dominance & Wielder Perks',
+        '💰 Loot all gear, armor, and inventory dropped by fallen rivals'
+      ]
+    },
     {
       id: 'assassin',
       name: "The Assassin's Event",
@@ -90,7 +132,7 @@ export default function EventsPage({ setActiveTab }) {
         '💎 Heavy Core & Netherite Blocks (Mace Catalyst)',
         '💰 $75,000 Server Treasury Jackpot',
         '👑 Eternal / Wither Donor Rank Vouchers',
-        '⚔️ 3x3x1 Super Pickaxe & God Armor Sets'
+        '⚔️ Dual 3x3x1 Super Pickaxe & God Armor Sets'
       ]
     },
     {
@@ -174,51 +216,96 @@ export default function EventsPage({ setActiveTab }) {
         '👑 Custom Rank Kits & Deluxe Shulker Boxes',
         '☠️ Outlaw\'s Authentic Severed Player Head Trophy'
       ]
-    },
-    {
-      id: 'mythic-hunt',
-      name: 'The 30-Minute Mythic Hunt Event',
-      command: '/artifacts & /lifestealer status',
-      adminCommand: 'Triggered Globally on Crafting',
-      type: 'Server Singularity Awakening',
-      badge: 'LIMIT 1 ONLY',
-      badgeColor: 'bg-cyan-950/80 text-cyan-300 border-cyan-600',
-      icon: Radio,
-      iconColor: 'text-[#00ffff]',
-      accentColor: 'text-[#00ffff]',
-      borderColor: 'border-[#00ffff]',
-      bgGlow: 'shadow-[0_0_25px_rgba(6,182,212,0.25)]',
-      logFile: 'SERVER BROADCAST LOGS',
-      tagline: 'When an ancient Mythic Weapon is forged, an emergency siren sounds and a 30-minute global hunt begins!',
-      hudSimulation: {
-        title: 'GLOBAL BROADCAST ALERT (EVERY 60s)',
-        content: '☠ [MYTHIC CARRIER]: X: 1,842, Y: 68, Z: -720 (Nether) │ 18m 42s Left │ Carrier: GLOWING',
-        theme: 'border-cyan-500/70 bg-black/80 text-[#00ffff]'
-      },
-      flow: {
-        start: {
-          title: '1. The Awakening Siren',
-          desc: 'Forging any of the 5 Mythic Weapons (Lifestealer, Worldbreaker Mace, Gungnir, Poseidon, Doomherald) triggers an emergency global server alarm and Ender Dragon growl!'
-        },
-        gameplay: {
-          title: '2. 30 Minutes of Pure Adrenaline',
-          desc: 'For 30 minutes, the carrier is crowned with permanent Glowing, and their exact [X, Y, Z] coordinates and world are broadcasted every 60 seconds. Mythic weapons ALWAYS drop on death!'
-        },
-        ending: {
-          title: '3. Slay or Soulbound',
-          desc: 'If the carrier is slain, the killer loots the mythic weapon—the 30-minute hunt timer DOES NOT reset! Mythic kills guarantee dropping the victim\'s authentic severed player head with custom trophy lore!'
-        }
-      },
-      rewards: [
-        '💎 Ownership of the 1-of-a-Kind Mythic Weapon in the universe',
-        '☠️ Guaranteed Severed Player Head Trophy of the victim',
-        '👑 Supreme Server Prestige & Combat Dominance',
-        '💰 Loot all gear and inventory dropped by fallen rivals'
-      ]
     }
   ];
 
   const currentEvent = events.find((e) => e.id === selectedEvent) || events[0];
+
+  // Detailed lifecycle breakdown for the Mythics Event
+  const mythicLifecyclePhases = {
+    locked: {
+      badge: 'STAGE 0: DEFAULT STATE',
+      badgeColor: 'bg-zinc-800 text-zinc-300 border-zinc-600',
+      title: 'Crafting Locked & Sealed by Default',
+      command: '/artifacts & /mythics status',
+      statusTag: 'STATUS: LOCKED 🔒',
+      statusColor: 'text-red-400 bg-red-950/80 border-red-700',
+      screenPreview: '⛔ [CRAFTING CANCELLED]: Crafting Locked! The Mythic Event for Worldbreaker Mace is not active yet.',
+      desc: 'To maintain server integrity and prevent early-game exploitation, mythic weapon crafting is completely disabled by default. If a player places ingredients into a Crafting Table while an event is locked, the craft is immediately cancelled and an alert sounds.',
+      keyPoints: [
+        'Crafting is 100% disabled until an Administrator awakens the event.',
+        'Ingredients placed in crafting tables are safely returned to your inventory.',
+        '/artifacts GUI displays status as LOCKED 🔒 with ability previews.',
+        'Zero pay-to-win bypasses: ranks cannot buy or spawn mythic items.'
+      ]
+    },
+    awakened: {
+      badge: 'STAGE 1: EVENT RELEASE',
+      badgeColor: 'bg-yellow-950/80 text-yellow-300 border-yellow-600',
+      title: 'Ancient Awakening Broadcast (/mythics start)',
+      command: '/mythics <weapon|all> start',
+      statusTag: 'STATUS: EVENT ACTIVE ⚡',
+      statusColor: 'text-yellow-300 bg-yellow-950/80 border-yellow-600',
+      screenPreview: '⚡ [GLOBAL BROADCAST]: An ancient relic stirs... The Mythic Awakening for ⚡ Worldbreaker Mace ⚡ is now ACTIVE! Forging is UNLOCKED!',
+      desc: 'Administrators trigger the event release manually via /mythics <weapon|all> start. The awakening triggers a terrifying Ender Dragon roar across the entire server, title banners across all screens, and unlocks the 3x3 recipe altar in crafting tables.',
+      keyPoints: [
+        'Server-wide dragon growl audio cue and cinematic title banner.',
+        'The 3x3 crafting recipe is officially unlocked for all players.',
+        'First player to forge the weapon claims it—only 1 can ever be crafted!',
+        'Administrators can pause or seal crafting at any time with /mythics stop.'
+      ]
+    },
+    forged: {
+      badge: 'STAGE 2: THE 30-MINUTE HUNT',
+      badgeColor: 'bg-red-950/80 text-red-300 border-red-600',
+      title: 'Emergency Siren & 30-Minute Global Carrier Hunt',
+      command: '/mythicadmin status',
+      statusTag: 'STATUS: FORGED / HUNT ACTIVE ⚔️',
+      statusColor: 'text-red-400 bg-red-950/80 border-red-700',
+      screenPreview: '☠ [GLOBAL EMERGENCY]: Player1 has forged ⚡ Worldbreaker Mace ⚡! THE 30-MINUTE HUNT HAS BEGUN! Carrier Coordinates: X: 1,842, Y: 68, Z: -720 (Nether)',
+      desc: 'The instant a player crafts the weapon, an emergency server alarm rings out! The carrier is cloaked in a permanent Glowing outline visible through walls, and their exact coordinates and dimension are broadcasted to all players every 60 seconds.',
+      keyPoints: [
+        'Carrier has a permanent Glowing aura visible through terrain.',
+        'Exact [X, Y, Z] coordinates and dimension broadcast every 60 seconds.',
+        '30-minute survival countdown begins immediately upon crafting.',
+        'Mythic weapons ALWAYS drop on death (keepInventory is disabled server-wide).'
+      ]
+    },
+    inheritance: {
+      badge: 'STAGE 3: SLAYER INHERITANCE',
+      badgeColor: 'bg-purple-950/80 text-purple-300 border-purple-600',
+      title: 'Target Slay & Timer Inheritance (Clock Never Resets)',
+      command: '/artifacts & /mythics status',
+      statusTag: 'STATUS: INHERITED / CLOCK CONTINUES ⏱️',
+      statusColor: 'text-purple-300 bg-purple-950/80 border-purple-600',
+      screenPreview: '☠ [SLAYER INHERITANCE]: Piush executed Player1! Piush has seized the ⚡ Worldbreaker Mace ⚡! 14m 12s remaining on the Hunt!',
+      desc: 'Mythic weapons are NEVER soulbound. If the carrier is slain in combat, the killer loots the weapon. Crucially, the 30-minute hunt timer DOES NOT reset! The slayer immediately inherits the carrier status, glowing aura, coordinate broadcasts, and remaining time on the clock.',
+      keyPoints: [
+        'Weapon drops on the ground upon death—anyone can steal it!',
+        'The 30-minute hunt timer NEVER resets back to 30:00.',
+        'The killer immediately inherits glowing and 60s coordinate broadcasts.',
+        'Promotes nonstop, breathless king-of-the-hill PvP combat.'
+      ]
+    },
+    trophy: {
+      badge: 'STAGE 4: TROPHIES & REWARDS',
+      badgeColor: 'bg-emerald-950/80 text-emerald-300 border-emerald-600',
+      title: '☠️ Guaranteed Severed Player Head Trophies',
+      command: '/artifacts & /scalyxdrophead',
+      statusTag: 'STATUS: REIGNING RELIC WIELDER 👑',
+      statusColor: 'text-emerald-300 bg-emerald-950/80 border-emerald-600',
+      screenPreview: '🏆 [HEAD TROPHY]: Severed Head of AlexCraft │ Executed by: Piush │ Weapon: ⚡ Worldbreaker Mace ⚡ │ Date: Nov 26, 2026',
+      desc: 'Whenever ANY player is slain by a Mythic Weapon (via melee, piercing arrow, Calamity Nuke, Seismic shockwave, or Harpoon pull), the victim\'s authentic severed player head drops at their death location! Once the 30m hunt ends, the carrier becomes the recognized singular wielder.',
+      keyPoints: [
+        'Guaranteed player head drop on every single mythic weapon execution.',
+        'Head features victim\'s authentic player skin and custom lore stamp.',
+        'Lore displays: Victim Name, Slayer Name, Weapon Used, and Server Date.',
+        'Surviving the 30m hunt removes glowing & coordinate broadcasts.'
+      ]
+    }
+  };
+
+  const activePhaseData = mythicLifecyclePhases[activeMythicPhase];
 
   return (
     <div className="space-y-16 max-w-7xl mx-auto px-4 py-8">
@@ -248,71 +335,222 @@ export default function EventsPage({ setActiveTab }) {
               <span className="text-[10px] font-minecraft text-yellow-300 uppercase tracking-wider bg-yellow-950 px-2 py-0.5 rounded border border-yellow-700">
                 OFFICIAL PODIUM PRIZES
               </span>
-              <h2 className="text-xl sm:text-2xl font-minecraft text-yellow-400 font-bold tracking-wider mc-shadow mt-0.5">
-                WHAT DO EVENT WINNERS RECEIVE?
+              <h2 className="text-xl sm:text-2xl font-minecraft text-white font-bold tracking-wider mc-shadow mt-0.5">
+                GRAND CHAMPION REWARDS VAULT
               </h2>
             </div>
           </div>
-          <span className="text-xs font-minecraft text-emerald-400 bg-black/60 px-3 py-1 rounded border border-emerald-600/50">
-            AUTOMATIC PODIUM PAYOUTS
-          </span>
+          <div className="text-left sm:text-right font-minecraft">
+            <div className="text-[10px] text-zinc-400">AUTOMATIC DISTRIBUTION</div>
+            <div className="text-emerald-400 text-xs sm:text-sm font-bold">Instantly Credited to Winners</div>
+          </div>
         </div>
 
-        <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
-          Every automated event concludes with a global server broadcast and wither roar declaring the Top 3 champions. Event winners receive high-tier prizes directly deposited into their inventory and account:
-        </p>
-
-        {/* 4 Prize Pillars */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
-          
-          <div className="p-4 bg-[#18161f] rounded-lg border border-purple-900/60 space-y-2">
-            <div className="flex items-center gap-2 font-minecraft text-purple-300 text-sm font-bold">
-              <Sparkles className="w-4 h-4 text-purple-400" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-4 bg-[#181926] rounded-lg border border-yellow-900/40 space-y-1.5">
+            <div className="flex items-center gap-2 text-yellow-400 font-minecraft text-xs font-bold">
+              <Sparkles className="w-4 h-4 text-yellow-400" />
               <span>Mythic Crafting Items</span>
             </div>
-            <p className="text-xs text-zinc-400 font-sans leading-relaxed">
-              Rare catalysts needed to forge the 5 Server Mythics: <strong className="text-white">Dragon Eggs, Heavy Cores, Nether Stars, Echo Shards, Hearts of the Sea, and Breeze Rods</strong>.
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              Rare ingredients: Dragon Eggs, Heavy Cores, Nether Stars, Echo Shards, and Hearts of the Sea to forge the 5 Server Relics.
             </p>
           </div>
 
-          <div className="p-4 bg-[#18161f] rounded-lg border border-amber-900/60 space-y-2">
-            <div className="flex items-center gap-2 font-minecraft text-amber-300 text-sm font-bold">
-              <Coins className="w-4 h-4 text-amber-400" />
-              <span>Massive Economy Money</span>
+          <div className="p-4 bg-[#181926] rounded-lg border border-yellow-900/40 space-y-1.5">
+            <div className="flex items-center gap-2 text-emerald-400 font-minecraft text-xs font-bold">
+              <Coins className="w-4 h-4 text-emerald-400" />
+              <span>Server Economy Cash</span>
             </div>
-            <p className="text-xs text-zinc-400 font-sans leading-relaxed">
-              Tens of thousands of server dollars (<strong className="text-yellow-400">$25,000 to $100,000+</strong>) to dominate the DonutAuctionHouse (<code className="text-[#00ffff]">/ah</code>) and market.
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              Massive cash rewards ranging from <strong className="text-emerald-400">$25,000 to $100,000+</strong> credited directly to player balance.
             </p>
           </div>
 
-          <div className="p-4 bg-[#18161f] rounded-lg border border-emerald-900/60 space-y-2">
-            <div className="flex items-center gap-2 font-minecraft text-emerald-300 text-sm font-bold">
-              <Crown className="w-4 h-4 text-emerald-400" />
-              <span>Custom Kits &amp; Ranks</span>
+          <div className="p-4 bg-[#181926] rounded-lg border border-yellow-900/40 space-y-1.5">
+            <div className="flex items-center gap-2 text-purple-400 font-minecraft text-xs font-bold">
+              <Crown className="w-4 h-4 text-purple-400" />
+              <span>Rank Kits &amp; Upgrades</span>
             </div>
-            <p className="text-xs text-zinc-400 font-sans leading-relaxed">
-              Opportunities to win donor rank upgrades (<strong className="text-emerald-300">Warden, Eternal, Wither, Ender</strong>), shulker kit deliveries, and downward kit claims!
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              Unlock prestigious donor kits (Warden, Eternal, Wither, Ender) packed in color-coded shulker boxes with dual 3x3 Super Pickaxes!
             </p>
           </div>
 
-          <div className="p-4 bg-[#18161f] rounded-lg border border-red-900/60 space-y-2">
-            <div className="flex items-center gap-2 font-minecraft text-red-300 text-sm font-bold">
+          <div className="p-4 bg-[#181926] rounded-lg border border-yellow-900/40 space-y-1.5">
+            <div className="flex items-center gap-2 text-red-400 font-minecraft text-xs font-bold">
               <Sword className="w-4 h-4 text-red-400" />
-              <span>Custom Swords &amp; Heads</span>
+              <span>Mythic Rank Swords</span>
             </div>
-            <p className="text-xs text-zinc-400 font-sans leading-relaxed">
-              Pre-enchanted mythic rank blades with charged ultimates, plus <strong className="text-red-400">guaranteed severed player heads</strong> recording the victim's name and kill lore!
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              Exclusive claim rights to high-tier swords featuring 4-heart charged ultimate abilities and devastating on-hit passives.
             </p>
           </div>
-
         </div>
       </div>
 
-      {/* EVENT SELECTOR TABS */}
+      {/* DEDICATED SPOTLIGHT: HOW THE MYTHIC AWAKENING & HUNT EVENT WORKS */}
+      <div className="mc-panel p-6 sm:p-8 rounded-xl shadow-2xl border-2 border-[#00ffff]/80 bg-gradient-to-b from-[#0f1722] via-[#10121c] to-[#121422] space-y-6">
+        
+        {/* Banner Header */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-4 border-b border-[#253244] gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-13 h-13 sm:w-14 sm:h-14 bg-cyan-950/80 border-2 border-[#00ffff] rounded-lg flex items-center justify-center text-[#00ffff] shrink-0 shadow-[0_0_20px_rgba(0,255,255,0.4)]">
+              <Sparkles className="w-8 h-8 animate-pulse" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-minecraft text-[#00ffff] uppercase tracking-wider bg-cyan-950 px-2.5 py-0.5 rounded border border-cyan-600">
+                  SERVER SINGULARITY EVENT • COMPLETE LIFECYCLE
+                </span>
+                <span className="text-[10px] font-minecraft text-yellow-300 bg-yellow-950/80 px-2 py-0.5 rounded border border-yellow-700">
+                  LIMIT: 1 OF EACH ONLY
+                </span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-minecraft text-white font-bold tracking-wider mc-shadow mt-1">
+                HOW THE MYTHICS FORGING EVENT WORKS
+              </h2>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <div className="bg-[#111118] px-3.5 py-2 rounded border border-[#2b2b3d] font-minecraft text-xs">
+              <div className="text-[10px] text-zinc-400">INSPECTION GUI</div>
+              <div className="text-[#00ffff] font-bold">/artifacts &amp; /mythics</div>
+            </div>
+            <button
+              onClick={() => { setActiveTab('weapons'); playClickSound(); }}
+              className="mc-button mc-button-gold flex items-center gap-1.5 text-xs"
+            >
+              <Sword className="w-4 h-4" />
+              <span>VIEW 5 MYTHICS</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Phase Navigation Tabs */}
+        <div className="space-y-3">
+          <div className="text-xs font-minecraft text-zinc-400 uppercase tracking-wider flex items-center justify-between">
+            <span>STEP-BY-STEP EVENT WORKFLOW (CLICK ANY STAGE TO INSPECT)</span>
+            <span className="text-yellow-400 text-[11px]">Lifecycle Stages 0 Through 4</span>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+            {[
+              { id: 'locked', num: '0', title: 'Locked by Default', icon: Lock },
+              { id: 'awakened', num: '1', title: 'Awakening Release', icon: Unlock },
+              { id: 'forged', num: '2', title: 'Forging & 30m Hunt', icon: Radio },
+              { id: 'inheritance', num: '3', title: 'Slayer Inheritance', icon: Sword },
+              { id: 'trophy', num: '4', title: 'Head Trophies', icon: Skull }
+            ].map((phase) => {
+              const isSelected = activeMythicPhase === phase.id;
+              const Icon = phase.icon;
+              return (
+                <button
+                  key={phase.id}
+                  onClick={() => { setActiveMythicPhase(phase.id); playClickSound(); }}
+                  className={`p-2.5 rounded-lg border text-left flex flex-col justify-between transition-all ${
+                    isSelected
+                      ? 'border-[#00ffff] bg-cyan-950/70 shadow-lg scale-105'
+                      : 'border-[#2d2e3f] bg-[#141520] hover:bg-[#1a1b2a] text-zinc-400'
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className={`text-[10px] font-minecraft px-1.5 py-0.5 rounded border ${
+                      isSelected ? 'bg-[#00ffff] text-black border-[#00ffff] font-bold' : 'bg-black/50 text-zinc-400 border-zinc-700'
+                    }`}>
+                      STAGE {phase.num}
+                    </span>
+                    <Icon className={`w-3.5 h-3.5 ${isSelected ? 'text-[#00ffff]' : 'text-zinc-500'}`} />
+                  </div>
+                  <span className={`font-minecraft text-xs truncate ${isSelected ? 'text-white font-bold' : 'text-zinc-300'}`}>
+                    {phase.title}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Active Phase Deep Dive Card */}
+        <div className="p-5 sm:p-6 bg-[#131522] rounded-xl border border-[#2b3346] space-y-5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3.5 border-b border-[#25283a] gap-3">
+            <div>
+              <span className={`text-[10px] font-minecraft px-2.5 py-0.5 rounded border uppercase tracking-wider ${activePhaseData.badgeColor}`}>
+                {activePhaseData.badge}
+              </span>
+              <h3 className="text-lg sm:text-xl font-minecraft text-white font-bold tracking-wider mt-1">
+                {activePhaseData.title}
+              </h3>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className={`text-xs font-minecraft px-3 py-1 rounded border font-bold ${activePhaseData.statusColor}`}>
+                {activePhaseData.statusTag}
+              </span>
+            </div>
+          </div>
+
+          {/* Screen Broadcast Simulation */}
+          <div className="space-y-1.5">
+            <span className="text-[10px] font-minecraft text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+              <Radio className="w-3.5 h-3.5 text-red-500 animate-pulse" />
+              IN-GAME SCREEN &amp; CHAT PACKET BROADCAST:
+            </span>
+            <div className="p-3.5 bg-black/80 rounded-lg border border-cyan-500/50 font-minecraft text-xs sm:text-sm text-[#00ffff] text-center shadow-inner tracking-wide">
+              {activePhaseData.screenPreview}
+            </div>
+          </div>
+
+          {/* Description & Key Points */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-1">
+            <div className="space-y-2">
+              <h4 className="font-minecraft text-xs sm:text-sm text-yellow-300 font-bold uppercase tracking-wider">
+                CORE EVENT MECHANICS
+              </h4>
+              <p className="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
+                {activePhaseData.desc}
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h4 className="font-minecraft text-xs sm:text-sm text-emerald-400 font-bold uppercase tracking-wider">
+                CRITICAL SERVER RULES
+              </h4>
+              <ul className="space-y-1.5">
+                {activePhaseData.keyPoints.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-xs text-zinc-300 font-sans">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* EVENT BROWSER SECTION */}
       <div className="space-y-6">
-        <div className="flex flex-wrap items-center justify-center gap-2 p-2 bg-[#12131d] border border-[#2b2c3d] rounded-xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div>
+            <h2 className="font-minecraft text-lg sm:text-2xl text-white font-bold tracking-wider mc-shadow">
+              EXPLORE ALL 5 SERVER EVENTS
+            </h2>
+            <p className="text-xs text-zinc-400 font-sans mt-0.5">
+              Select an event below to preview its HUD simulation, 3-stage lifecycle, and podium rewards.
+            </p>
+          </div>
+          <span className="text-[11px] font-minecraft bg-[#181926] border border-[#2e3046] text-zinc-300 px-3 py-1.5 rounded shrink-0">
+            AUTO-ARCHIVED IN SERVER REPOSITORIES
+          </span>
+        </div>
+
+        {/* EVENT TABS */}
+        <div className="flex flex-wrap items-center gap-2">
           {events.map((event) => {
-            const isSelected = event.id === selectedEvent;
+            const isSelected = selectedEvent === event.id;
             const Icon = event.icon;
             return (
               <button
@@ -491,7 +729,7 @@ export default function EventsPage({ setActiveTab }) {
 
           <div className="p-4 bg-[#171826] rounded border border-[#2b2c3e]">
             <strong className="text-yellow-400 font-minecraft block mb-1">3. Check Discord Announcements</strong>
-            Major scheduled weekend events and prize pools are announced ahead of time in our Discord announcements channel (<code className="text-[#00ffff]">discord.gg/sclayx</code>).
+            Major scheduled weekend events and prize pools are announced ahead of time in our Discord announcements channel (<code className="text-[#00ffff]">discord.gg/scalyx</code>).
           </div>
         </div>
       </div>

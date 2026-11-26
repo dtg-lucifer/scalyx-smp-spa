@@ -267,6 +267,10 @@ export default function HomePage({ setActiveTab }) {
 
               <div className="space-y-1.5 font-sans text-xs text-zinc-300">
                 <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+                  <span><strong>Event Awakened:</strong> Forging is locked until staff trigger <code className="text-[#00ffff]">/mythics start</code> with a global dragon roar!</span>
+                </div>
+                <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
                   <span><strong>30-Minute Global Hunt:</strong> Server alarm triggers and broadcasts live coordinates every 60s!</span>
                 </div>

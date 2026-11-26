@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import HeartDisplay from '../components/HeartDisplay';
-import { Trophy, Shield, Zap, Sparkles, Check, ChevronDown, Award, AlertTriangle, ArrowDown } from 'lucide-react';
+import { 
+  Trophy, Shield, Zap, Sparkles, Check, ChevronDown, 
+  Award, AlertTriangle, ArrowDown, Pickaxe, Flame, 
+  Sparkle, ShieldCheck, Box, Package
+} from 'lucide-react';
 import { playClickSound } from '../utils/audio';
 
 export default function RanksPage() {
@@ -15,7 +19,7 @@ export default function RanksPage() {
       border: 'border-zinc-600',
       badgeBg: 'bg-zinc-800 text-zinc-300',
       hearts: 10,
-      kitSummary: 'Full Iron Gear, Food Rations, 3 Homes, 1x Daily Coal Kit',
+      kitSummary: 'Full Iron Armor (No Thorns), Iron Sword, Golden Apples, 3 Homes, 1x Daily Coal Kit',
       setPerks: 'Speed I with complete Coal armor set.',
       perks: [
         'Access to /kit coal (Tier I Kit)',
@@ -32,7 +36,7 @@ export default function RanksPage() {
       border: 'border-slate-500',
       badgeBg: 'bg-slate-700 text-slate-200',
       hearts: 10,
-      kitSummary: 'Diamond Sword, Iron Armor, Golden Apples, Claims Iron + Coal Kits',
+      kitSummary: 'Diamond Sword, Iron Armor (No Thorns), Golden Apples, Claims Iron + Coal Kits',
       setPerks: 'Speed I & Resistance I with complete Iron armor set.',
       perks: [
         'Access to /kit iron and /kit coal downward',
@@ -49,7 +53,7 @@ export default function RanksPage() {
       border: 'border-amber-500',
       badgeBg: 'bg-amber-900/60 text-amber-200 border-amber-600',
       hearts: 10,
-      kitSummary: 'Full Diamond Armor, Enchanted Golden Apples, Claims Gold + Iron + Coal Kits',
+      kitSummary: 'Full Diamond Armor (No Thorns), Enchanted Golden Apples, Claims Gold + Iron + Coal Kits',
       setPerks: 'Resistance I & Haste I with complete Gold armor set.',
       perks: [
         'Access to /kit gold, /kit iron, /kit coal',
@@ -66,7 +70,7 @@ export default function RanksPage() {
       border: 'border-orange-500',
       badgeBg: 'bg-orange-900/60 text-orange-200 border-orange-600',
       hearts: 10,
-      kitSummary: 'Protection III Diamond Armor, Fire Resistance, Claims Blaze & lower kits',
+      kitSummary: 'Protection III Diamond Armor (No Thorns), Fire Resistance, Claims Blaze & lower kits',
       setPerks: 'Permanent Fire Resistance & Speed I (Auto-extinguishes fire/lava).',
       perks: [
         'Access to /kit blaze and all subordinate kits',
@@ -83,11 +87,12 @@ export default function RanksPage() {
       border: 'border-[#00ffff]',
       badgeBg: 'bg-cyan-950 text-[#00ffff] border-[#00ffff]',
       hearts: 12,
-      kitSummary: 'Netherite Protection IV Set, Sculk Annihilator Sword, 3x3x1 Super Pickaxe, Claims Warden & lower kits',
+      kitSummary: 'Netherite Protection IV Set (No Thorns), Sculk Annihilator Sword, DUAL 3x3 Super Pickaxes (Fortune III + Silk Touch I), 64x XP Bottles, Claims Warden & lower kits',
       setPerks: '12 Hearts (24 HP Max), Night Vision, Resistance I, Blindness & Darkness Immunity.',
       perks: [
         'Access to the Mythic Sculk Annihilator Sword (/swords)',
-        'DonutSMP 3x3x1 Super Pickaxe (/pickaxe)',
+        'DUAL 3x3x1 Super Pickaxes: Sculk Resonator (Fortune III) & Sculk Silk Resonator (Silk Touch I)',
+        '64x Experience Bottles included directly in the kit',
         'Health Scales to 12 HEARTS (24 HP) with full Warden set',
         'Immunity to Wardens & Sonic Booms (Wardens never aggro)',
         '8 Set Homes and downward claim on Warden, Blaze, Gold, Iron & Coal kits'
@@ -101,11 +106,12 @@ export default function RanksPage() {
       border: 'border-yellow-400',
       badgeBg: 'bg-yellow-950 text-yellow-300 border-yellow-500',
       hearts: 14,
-      kitSummary: 'Protection IV Netherite Set, Eternal Zenith Blade, 3x3x1 Super Pickaxe, Claims Eternal & lower kits',
+      kitSummary: 'Protection IV Netherite Set (No Thorns), Eternal Zenith Blade, DUAL 3x3 Super Pickaxes (Fortune IV + Silk Touch I), 64x XP Bottles, Claims Eternal & lower kits',
       setPerks: '14 Hearts (28 HP Max), Speed I, Strength I, Resistance I, Absorption I & No Fall Damage.',
       perks: [
         'Access to the Mythic Eternal Zenith Blade (/swords)',
-        'DonutSMP 3x3x1 Super Pickaxe (/pickaxe)',
+        'DUAL 3x3x1 Super Pickaxes: Eternal Nebula Pickaxe (Fortune IV) & Eternal Silk Nebula Pickaxe (Silk Touch I)',
+        '64x Experience Bottles included directly in the kit',
         'Health Scales to 14 HEARTS (28 HP) with full Eternal set',
         'Permanent Fire & Lava immunity at all times',
         '10 Set Homes and downward claim on Eternal and all lower kits'
@@ -119,11 +125,12 @@ export default function RanksPage() {
       border: 'border-purple-400',
       badgeBg: 'bg-purple-950 text-purple-300 border-purple-500',
       hearts: 16,
-      kitSummary: 'Protection IV Netherite Set, Wither Reaper Blade, 3x3x1 Super Pickaxe, Claims Wither & lower kits',
+      kitSummary: 'Protection IV/V Netherite Set (No Thorns), Wither Reaper Blade, DUAL 3x3 Super Pickaxes (Fortune IV + Silk Touch I), 64x XP Bottles, Claims Wither & lower kits',
       setPerks: '16 Hearts (32 HP Max), Speed II, Strength II, Resistance II, Absorption I, Wither Immunity & No Fall Damage.',
       perks: [
         'Access to the Mythic Wither Reaper Blade (/swords)',
-        'DonutSMP 3x3x1 Super Pickaxe (/pickaxe)',
+        'DUAL 3x3x1 Super Pickaxes: Wither Core Obliterator (Fortune IV) & Wither Silk Core Obliterator (Silk Touch I)',
+        '64x Experience Bottles included directly in the kit',
         'Health Scales to 16 HEARTS (32 HP) with full Wither set',
         'Total immunity to Wither effects and decay damage',
         '12 Set Homes and downward claim on Wither and all lower kits'
@@ -137,11 +144,13 @@ export default function RanksPage() {
       border: 'border-emerald-400',
       badgeBg: 'bg-emerald-950 text-emerald-300 border-emerald-400',
       hearts: 20,
-      kitSummary: 'Apex God Armor, Void Sovereign World-Ender Blade, 3x3x1 Super Pickaxe, Claims ALL 8 KITS',
+      kitSummary: 'Apex Quartz-Trimmed Netherite God Armor (Max Prot V, No Thorns), Void Sovereign Blade, DUAL 3x3 Super Pickaxes (Fortune IV + Silk Touch I), 64x XP Bottles, 64x Oak Logs, Claims ALL 8 KITS',
       setPerks: '20 Hearts (40 HP Max), Speed III, Strength II, Fire Resistance, No Fall Damage & Absorption II (+4 Absorption Hearts).',
       perks: [
         'Access to the Mythic Void Sovereign World-Ender Blade (/swords)',
-        'DonutSMP 3x3x1 Super Pickaxe (/pickaxe)',
+        'DUAL 3x3x1 Super Pickaxes: Void Sovereign World-Shaper (Fortune IV) & Void Sovereign Silk Shaper (Silk Touch I)',
+        'Quartz Armor Trims: Flow Trim (Helmet & Boots), Eye Trim (Chestplate), Bolt Trim (Leggings)',
+        '64x Experience Bottles & 64x Oak Logs (1 full stack) included in the kit',
         'MAX HP SCALING: 20 FULL HEARTS (40 HP) with full Ender Set!',
         'Immunity to Poison, Darkness & Blindness; Endermen never aggro on you',
         '15 Set Homes and downward claim on ALL 8 RANK KITS in the server!'
@@ -182,6 +191,72 @@ export default function RanksPage() {
         <div className="p-2.5 bg-black/50 border border-[#2b2c3d] rounded text-center font-minecraft text-xs text-zinc-400 shrink-0">
           <div className="text-emerald-400 text-sm font-bold">100% FAIR COMBAT</div>
           <div className="text-red-400 text-[10px] mt-0.5">KeepInventory: OFF For All Ranks</div>
+        </div>
+      </div>
+
+      {/* FAIR PLAY ARMOR & INVENTORY BALANCING SPOTLIGHT */}
+      <div className="mc-panel p-6 sm:p-7 rounded-xl border border-yellow-700/60 bg-[#15141d] space-y-5">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 border-b border-[#2d2e40] gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded bg-yellow-950/80 border border-yellow-600 flex items-center justify-center text-yellow-400 shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-[10px] font-minecraft text-yellow-400 uppercase tracking-wider">
+                COMPETITIVE PVP BALANCING (SERVER GUIDE)
+              </span>
+              <h3 className="font-minecraft text-base sm:text-lg text-white font-bold tracking-wider">
+                FAIR PLAY ARMOR &amp; INVENTORY STANDARDS
+              </h3>
+            </div>
+          </div>
+          <span className="text-[11px] font-minecraft bg-black/50 border border-yellow-600/50 text-yellow-300 px-3 py-1 rounded">
+            NO PAY-TO-WIN JUGGERNAUTS
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <div className="p-3.5 bg-[#1a1b28] rounded border border-[#2b2d42] space-y-1.5">
+            <div className="flex items-center gap-2 text-red-400 font-minecraft text-xs font-bold">
+              <Shield className="w-4 h-4 text-red-400" />
+              <span>No Thorns Enchantment</span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              Thorns has been <strong>completely removed</strong> from all rank kit armor sets to ensure clean, skill-based melee combat without annoying passive reflection damage.
+            </p>
+          </div>
+
+          <div className="p-3.5 bg-[#1a1b28] rounded border border-[#2b2d42] space-y-1.5">
+            <div className="flex items-center gap-2 text-yellow-400 font-minecraft text-xs font-bold">
+              <Award className="w-4 h-4 text-yellow-400" />
+              <span>Max Protection V Cap</span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              All higher-tier armor sets are strictly capped at <strong>Protection V maximum</strong>, eliminating impossible-to-kill armor advantages in player wars.
+            </p>
+          </div>
+
+          <div className="p-3.5 bg-[#1a1b28] rounded border border-[#2b2d42] space-y-1.5">
+            <div className="flex items-center gap-2 text-[#00ffff] font-minecraft text-xs font-bold">
+              <Pickaxe className="w-4 h-4 text-[#00ffff]" />
+              <span>Dual 3x3x1 Super Pickaxes</span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              Warden, Eternal, Wither, and Ender kits include <strong>TWO distinct 3x3 pickaxes</strong>: one Fortune IV/III version and one Silk Touch I version!
+            </p>
+          </div>
+
+          <div className="p-3.5 bg-[#1a1b28] rounded border border-[#2b2d42] space-y-1.5">
+            <div className="flex items-center gap-2 text-emerald-400 font-minecraft text-xs font-bold">
+              <Sparkles className="w-4 h-4 text-emerald-400" />
+              <span>Quartz Trims &amp; Supplies</span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans leading-relaxed">
+              Ender armor features authentic <strong>Quartz trims</strong> (Flow, Eye, Bolt). Higher kits include 64x Experience Bottles; Ender includes 64x Oak Logs!
+            </p>
+          </div>
+
         </div>
       </div>
 

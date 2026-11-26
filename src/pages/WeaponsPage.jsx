@@ -298,45 +298,55 @@ export default function WeaponsPage() {
         </p>
       </div>
 
-      {/* 4 Pillars of Mythic Combat Rules */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="mc-panel p-4 rounded-lg border border-red-900/60 bg-[#161218]">
-          <div className="flex items-center gap-2 text-red-400 font-minecraft mb-1.5 text-sm font-bold">
+      {/* 5 Pillars of Mythic Combat & Event Rules */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        <div className="mc-panel p-3.5 rounded-lg border border-amber-900/60 bg-[#171512]">
+          <div className="flex items-center gap-2 text-yellow-400 font-minecraft mb-1 text-xs sm:text-sm font-bold">
+            <Sparkles className="w-4 h-4 text-yellow-400" />
+            <span>Event Awakened</span>
+          </div>
+          <p className="text-[11px] text-zinc-300 font-sans leading-relaxed">
+            Crafting is <strong>locked by default</strong>. Administrators awaken crafting via <code className="text-[#00ffff]">/mythics start</code> with a global dragon growl!
+          </p>
+        </div>
+
+        <div className="mc-panel p-3.5 rounded-lg border border-red-900/60 bg-[#161218]">
+          <div className="flex items-center gap-2 text-red-400 font-minecraft mb-1 text-xs sm:text-sm font-bold">
             <Radio className="w-4 h-4 text-red-500 animate-pulse" />
             <span>30m Global Hunt</span>
           </div>
-          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
-            Forging triggers a server siren! Carrier coordinates <code className="text-yellow-400">[X, Y, Z]</code> and world are broadcast every 60s. Slaying the wielder passes the weapon; timer does not reset!
+          <p className="text-[11px] text-zinc-300 font-sans leading-relaxed">
+            Carrier glows and coords <code className="text-yellow-400">[X, Y, Z]</code> broadcast every 60s. Slaying the wielder passes the weapon; timer <strong>never resets</strong>!
           </p>
         </div>
 
-        <div className="mc-panel p-4 rounded-lg border border-yellow-900/60 bg-[#171612]">
-          <div className="flex items-center gap-2 text-yellow-400 font-minecraft mb-1.5 text-sm font-bold">
-            <Award className="w-4 h-4 text-yellow-400" />
-            <span>Absolute Singularity</span>
-          </div>
-          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
-            Only <strong>ONE</strong> of each Mythic Weapon can exist in the world at any given time. Strictly zero clones or P2W shortcuts—crafted only through sheer endgame mastery.
-          </p>
-        </div>
-
-        <div className="mc-panel p-4 rounded-lg border border-purple-900/60 bg-[#15121a]">
-          <div className="flex items-center gap-2 text-purple-400 font-minecraft mb-1.5 text-sm font-bold">
+        <div className="mc-panel p-3.5 rounded-lg border border-purple-900/60 bg-[#15121a]">
+          <div className="flex items-center gap-2 text-purple-400 font-minecraft mb-1 text-xs sm:text-sm font-bold">
             <Skull className="w-4 h-4 text-purple-400" />
-            <span>Severed Head Trophies</span>
+            <span>Head Trophies</span>
           </div>
-          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
-            Slaying any player with a Mythic Weapon (melee or abilities) <strong>guarantees their severed player head drops</strong> with custom trophy lore recording victim, killer, and weapon!
+          <p className="text-[11px] text-zinc-300 font-sans leading-relaxed">
+            Every mythic execution <strong>guarantees a severed player head drop</strong> featuring the victim's authentic player skin, killer, weapon &amp; timestamp lore!
           </p>
         </div>
 
-        <div className="mc-panel p-4 rounded-lg border border-cyan-900/60 bg-[#11161a]">
-          <div className="flex items-center gap-2 text-[#00ffff] font-minecraft mb-1.5 text-sm font-bold">
+        <div className="mc-panel p-3.5 rounded-lg border border-cyan-900/60 bg-[#11161a]">
+          <div className="flex items-center gap-2 text-[#00ffff] font-minecraft mb-1 text-xs sm:text-sm font-bold">
             <Shield className="w-4 h-4 text-[#00ffff]" />
-            <span>Always Drops on Death</span>
+            <span>Drops on Death</span>
           </div>
-          <p className="text-xs text-zinc-300 font-sans leading-relaxed">
-            Mythic weapons are never soulbound—they always drop upon death in combat. Hunt down carriers, claim their relics, and command the realm.
+          <p className="text-[11px] text-zinc-300 font-sans leading-relaxed">
+            Mythics are never soulbound—they always drop upon death. KeepInventory is false across the realm, so weapons can be lost and stolen in combat.
+          </p>
+        </div>
+
+        <div className="mc-panel p-3.5 rounded-lg border border-emerald-900/60 bg-[#111714]">
+          <div className="flex items-center gap-2 text-emerald-400 font-minecraft mb-1 text-xs sm:text-sm font-bold">
+            <Zap className="w-4 h-4 text-emerald-400" />
+            <span>30s Stun Cooldown</span>
+          </div>
+          <p className="text-[11px] text-zinc-300 font-sans leading-relaxed">
+            Paralyzing stuns on Mace &amp; Spear carry an enforced 30-second cooldown per player. Weapons never exceed 2x vanilla damage for fair PvP.
           </p>
         </div>
       </div>
@@ -596,7 +606,7 @@ export default function WeaponsPage() {
         </div>
       </div>
 
-      {/* SECTION 3: DONUTSMP 3x3x1 SUPER PICKAXES */}
+      {/* SECTION 3: DONUTSMP 3x3x1 DUAL SUPER PICKAXES */}
       <div className="mc-panel p-6 sm:p-8 rounded-xl shadow-2xl border-2 border-emerald-600/50 bg-[#12141c] space-y-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -605,38 +615,105 @@ export default function WeaponsPage() {
             </div>
             <div>
               <span className="text-xs font-minecraft text-emerald-400 uppercase tracking-widest">
-                DONUTSMP STYLE TOOL (/pickaxe)
+                DONUTSMP STYLE TOOL (/pickaxe toggle)
               </span>
               <h3 className="font-minecraft text-lg sm:text-xl text-white font-bold tracking-wider mc-shadow">
-                3x3x1 SUPER PICKAXES
+                3x3x1 DUAL SUPER PICKAXES (FORTUNE &amp; SILK TOUCH)
               </h3>
             </div>
           </div>
           <span className="text-xs font-minecraft bg-black/50 border border-emerald-500/40 text-emerald-300 px-3 py-1.5 rounded">
-            TOGGLE: RIGHT-CLICK WHILE WIELDING
+            TOGGLE: RIGHT-CLICK WHILE WIELDING (3x3x1 ⇄ 1x1)
           </span>
         </div>
 
         <p className="text-zinc-300 font-sans text-xs sm:text-sm leading-relaxed max-w-3xl">
-          Designed for high-speed quarrying and bunker excavation. Available in high-tier kits and rewards, these super pickaxes shatter 9 blocks at once in an instant 3x3x1 plane. <strong className="text-emerald-300">Right-click once while holding the pickaxe</strong> to switch seamlessly between 3x3x1 excavation and standard 1x1 mining mode with action bar audio-visual feedback!
+          Equipped in all 4 high-tier rank kits (<strong className="text-cyan-400">Warden</strong>, <strong className="text-yellow-400">Eternal</strong>, <strong className="text-purple-400">Wither</strong>, and <strong className="text-emerald-400">Ender</strong>). Every eligible kit provides <strong className="text-white">TWO dedicated 3x3x1 Super Pickaxes</strong>—one for maximum ore yield (Fortune IV/III) and one for extracting pristine blocks (Silk Touch I). Full protection prevents breaking Bedrock, End Portal Frames, Spawners, and storage chests!
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-          <div className="p-4 bg-[#171926] rounded border border-[#2d2f44] flex items-center gap-4">
-            <img src="/assets/items/netherite_pickaxe.png" alt="Netherite Pickaxe" className="w-12 h-12 pixelated filter drop-shadow-[0_0_8px_#a855f7]" />
-            <div>
-              <h4 className="font-minecraft text-base sm:text-lg text-purple-300 font-bold">Netherite Super Pickaxe</h4>
-              <p className="text-xs text-zinc-400 font-sans mt-0.5">Maximum excavation velocity. Fortune multiplies drops across all 9 mined blocks; Silk Touch collects ores intact.</p>
+        {/* 4 Rank Dual Pickaxe Tiers Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+          
+          {/* Warden Tier */}
+          <div className="p-4 bg-[#161824] rounded-lg border border-cyan-800/60 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-cyan-950 text-[#00ffff] border border-cyan-700">
+                WARDEN (TIER V)
+              </span>
+              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+            </div>
+            <div className="space-y-1">
+              <div className="text-xs font-minecraft text-yellow-300 font-bold">
+                ⛏ Sculk Resonator
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
+              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
+                ⛏ Sculk Silk Resonator
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
             </div>
           </div>
 
-          <div className="p-4 bg-[#171926] rounded border border-[#2d2f44] flex items-center gap-4">
-            <img src="/assets/items/netherite_pickaxe.png" alt="Diamond Pickaxe" className="w-12 h-12 pixelated filter hue-rotate-180 drop-shadow-[0_0_8px_#00ffff]" />
-            <div>
-              <h4 className="font-minecraft text-base sm:text-lg text-[#00ffff] font-bold">Diamond Super Pickaxe</h4>
-              <p className="text-xs text-zinc-400 font-sans mt-0.5">Reliable 3x3 quarrying tool with container and bedrock safety protection against accidental destruction.</p>
+          {/* Eternal Tier */}
+          <div className="p-4 bg-[#161824] rounded-lg border border-yellow-800/60 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-yellow-950 text-yellow-300 border border-yellow-700">
+                ETERNAL (TIER VI)
+              </span>
+              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+            </div>
+            <div className="space-y-1">
+              <div className="text-xs font-minecraft text-yellow-300 font-bold">
+                ⛏ Eternal Nebula Pickaxe
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Fortune IV • 3x3x1 Area Mining</div>
+              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
+                ⛏ Eternal Silk Nebula Pickaxe
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
             </div>
           </div>
+
+          {/* Wither Tier */}
+          <div className="p-4 bg-[#161824] rounded-lg border border-purple-800/60 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-700">
+                WITHER (TIER VII)
+              </span>
+              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+            </div>
+            <div className="space-y-1">
+              <div className="text-xs font-minecraft text-yellow-300 font-bold">
+                ⛏ Wither Core Obliterator
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Fortune IV • 3x3x1 Area Mining</div>
+              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
+                ⛏ Wither Silk Core Obliterator
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
+            </div>
+          </div>
+
+          {/* Ender Tier */}
+          <div className="p-4 bg-[#161824] rounded-lg border border-emerald-800/60 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700">
+                ENDER (APEX TIER VIII)
+              </span>
+              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+            </div>
+            <div className="space-y-1">
+              <div className="text-xs font-minecraft text-yellow-300 font-bold">
+                ⛏ Void Sovereign World-Shaper
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Fortune IV • 3x3x1 Area Mining</div>
+              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
+                ⛏ Void Sovereign Silk Shaper
+              </div>
+              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
+            </div>
+          </div>
+
         </div>
       </div>
 

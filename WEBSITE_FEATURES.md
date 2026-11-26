@@ -53,9 +53,9 @@ Wield weapons endowed with devastating powers designed to turn the tide of battl
 | Sword | Tier | Ultimate Ability | 10% On-Hit Passive | Wielder Perk |
 | :--- | :---: | :--- | :--- | :--- |
 | **Sculk Annihilator** | Warden | **Sonic Shockwave**: 25-block piercing sonic blast dealing up to 4 hearts + darkness. | +1.5 Hearts True Sculk Burst Damage | Complete immunity to Wardens & Sonic Booms. |
-| **Eternal Zenith Blade** | Eternal | **Solar Flame Laser**: 30-block searing laser beam setting targets ablaze. | Fire Res Pierce + 6s Inferno Burn | Permanent Fire & Lava immunity. |
+| **Eternal Zenith Blade** | Eternal | **Solar Flame Laser**: 30-block searing laser beam setting targets ablaze. | Fire Res Pierce + 12s Inferno Burn | Permanent Fire & Lava immunity. |
 | **Wither Reaper Blade** | Wither | **Wither Skull Strike**: Launches a homing Wither Skull dealing 4 hearts damage. | Wither II Decay for 5 seconds | Total immunity to Wither effects & damage. |
-| **Void Sovereign World-Ender** | Ender | **Void Rupture, Breath & Darkness**: 5-block radial blast + dragon breath cloud (12s) + Darkness & Blindness (60s). | Poison I (6s) & Darkness/Blindness (6s) | Poison, Darkness & Blindness immunity + Endermen never aggro. |
+| **Void Sovereign World-Ender** | Ender | **Void Rupture, Breath & Darkness**: 5-block radial blast + dragon breath cloud (12s) + Darkness & Blindness (60s). | Poison II (15s) & Darkness/Blindness (15s) | Poison, Darkness & Blindness immunity + Endermen never aggro. |
 
 ---
 
