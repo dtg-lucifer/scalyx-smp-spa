@@ -1,12 +1,12 @@
 # Scalyx SMP - Complete Server & Custom Systems Guide
 
-A comprehensive technical and operational documentation guide for the custom systems, rank kits, weapons, abilities, economy, and administration configured on **Scalyx SMP** (Minecraft 1.21.4 / Paper 26.3).
+A comprehensive technical and operational documentation guide for the custom systems, rank kits, weapons, abilities, economy, and administration configured on **Scalyx SMP** (Minecraft 26.3 (Latest)).
 
 ---
 
 ## 🚀 Server Overview & Architecture
 
-- **Server Version**: Minecraft Java Edition 1.21.4 (Paper Build 249+)
+- **Server Version**: Minecraft Java Edition 26.3 (Latest) (Paper Build 249+)
 - **Cross-Platform**: Optimized for modern clients with enhanced protocol support
 - **Core Engine**: High-performance Paper engine with asynchronous chunk processing
 - **Game Mode**: Hardcore-influenced Semi-Anarchy / Balanced Economy SMP

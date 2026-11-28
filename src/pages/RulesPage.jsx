@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { 
   Scroll, ShieldAlert, Gavel, AlertTriangle, Sword, Wind, 
   Heart, Shield, Ban, CheckCircle2, XCircle, AlertOctagon, 
-  HelpCircle, MessageSquare, ChevronDown, Award 
+  HelpCircle, MessageSquare, ChevronDown, Award, Sparkles, 
+  Home, Users, Zap, EyeOff
 } from 'lucide-react';
 import { playClickSound } from '../utils/audio';
 
@@ -31,19 +32,19 @@ export default function RulesPage({ setActiveTab }) {
       panelBg: 'bg-gradient-to-r from-red-950/30 to-[#17141a]'
     },
     {
-      id: 'elytra-combat',
+      id: 'no-flying-combat',
       category: 'combat',
       number: 'RULE 02',
-      title: 'No Elytra Flying Away While in Combat',
+      title: 'No Flying Away from a Fight (Outrunning & Hiding is Allowed)',
       badge: 'NO FLIGHT COMBAT',
       badgeColor: 'bg-amber-950/80 text-amber-300 border-amber-600',
-      tagline: 'Fight on Foot — Escaping via Flight is Prohibited',
-      description: 'No elytra flying away while on combat.',
+      tagline: 'Fight on Foot or Outrun — Escaping via Flight is Prohibited',
+      description: 'No flying away from a fight. If you can outrun them on foot, break line of sight, and hide, then that is completely fine.',
       details: [
-        'Once engaged in PvP combat (taking damage from or inflicting damage to another player), you are strictly forbidden from equipping or rocket-boosting with an Elytra to flee.',
-        'Escaping from an active battle using Elytra flight constitutes combat-evasion and is treated the same as combat logging.',
-        'Tactical retreats must be done on foot, utilizing terrain, ender pearls, or combat mechanics — not aerial flight.',
-        'If your Elytra is equipped during a fight, you must fight on ground level without using fireworks to boost away.'
+        'Once engaged in PvP combat (inflicting or receiving damage from another player), you are strictly forbidden from equipping, rocket-boosting, or gliding away with an Elytra to flee.',
+        'If you can outrun your opponents on foot using sprinting, parkour, terrain navigation, ender pearls, or potions, and successfully hide, that is 100% legal and allowed!',
+        'Tactical retreats must remain strictly on foot or ground level without aerial propulsion.',
+        'Using fireworks to shoot up into the sky or fly away from a losing battle is considered combat evasion and will be penalized like combat logging.'
       ],
       icon: Wind,
       iconColor: 'text-amber-400',
@@ -71,9 +72,49 @@ export default function RulesPage({ setActiveTab }) {
       panelBg: 'bg-gradient-to-r from-cyan-950/30 to-[#12161b]'
     },
     {
-      id: 'heart-farming',
-      category: 'lifesteal',
+      id: 'no-thorns',
+      category: 'combat',
       number: 'RULE 04',
+      title: 'Strict Server-Wide Ban on Thorns (NO THORNS)',
+      badge: 'ENCHANTMENT BAN',
+      badgeColor: 'bg-rose-950/80 text-rose-300 border-rose-600',
+      tagline: 'Zero Thorns Allowed on Any Armor Across the Server',
+      description: 'No THORNS allowed on any armor in the server. The Thorns enchantment is completely banned across all armor sets and player-crafted gear.',
+      details: [
+        'The Thorns enchantment has been permanently removed from all rank kit armors and is strictly illegal on any player-crafted or enchanted armor piece.',
+        'No player may enchant, craft, apply via anvil, trade, or wear any armor piece (Helmet, Chestplate, Leggings, or Boots) with Thorns I, II, or III.',
+        'Any armor piece found bearing Thorns will be immediately confiscated or disenchanted by staff.',
+        'This rule ensures clean, skill-based melee combat without toxic passive damage reflection.'
+      ],
+      icon: Zap,
+      iconColor: 'text-rose-400',
+      panelBorder: 'border-rose-600/70',
+      panelBg: 'bg-gradient-to-r from-rose-950/30 to-[#181215]'
+    },
+    {
+      id: 'no-base-griefing-villagers',
+      category: 'survival',
+      number: 'RULE 05',
+      title: 'No Base Griefing & No Killing Villagers',
+      badge: 'PROTECTION LAW',
+      badgeColor: 'bg-emerald-950/80 text-emerald-300 border-emerald-600',
+      tagline: 'Zero Base Destruction — Strict Villager Protection',
+      description: 'No base griefing or killing villagers. Destroying other players\' homes or slaughtering villagers is strictly prohibited.',
+      details: [
+        'No Base Griefing: Purposely breaking, vandalizing, blowing up with TNT, lava-casting, or destroying other players\' bases, builds, and chests is strictly prohibited.',
+        'No Killing Villagers: Under no circumstance may any player kill, execute, or intentionally harm villagers—whether in natural villages, player trading halls, breeders, or iron farms.',
+        'Trading Hall Integrity: Kidnapping, executing, or burning specialized trade villagers (Librarians, Armorers, Toolsmiths) is treated as a severe griefing offense.',
+        'Fair Wilderness Wars: Scalyx SMP is a competitive realm built around player duels and economy, not mindless destruction of community homes and infrastructure.'
+      ],
+      icon: Home,
+      iconColor: 'text-emerald-400',
+      panelBorder: 'border-emerald-600/70',
+      panelBg: 'bg-gradient-to-r from-emerald-950/30 to-[#121815]'
+    },
+    {
+      id: 'heart-farming',
+      category: 'survival',
+      number: 'RULE 06',
       title: 'No Alt Farming or Staged Heart Duping',
       badge: 'LIFESTEAL INTEGRITY',
       badgeColor: 'bg-purple-950/80 text-purple-300 border-purple-600',
@@ -91,8 +132,8 @@ export default function RulesPage({ setActiveTab }) {
     },
     {
       id: 'combat-logging',
-      category: 'lifesteal',
-      number: 'RULE 05',
+      category: 'survival',
+      number: 'RULE 07',
       title: 'No Combat Logging or Teleport Evasion',
       badge: 'FAIR COMBAT',
       badgeColor: 'bg-rose-950/80 text-rose-300 border-rose-600',
@@ -111,7 +152,7 @@ export default function RulesPage({ setActiveTab }) {
     {
       id: 'fair-play',
       category: 'conduct',
-      number: 'RULE 06',
+      number: 'RULE 08',
       title: 'Zero Tolerance for Hacks, Cheats & Exploits',
       badge: 'ANTI-CHEAT LAW',
       badgeColor: 'bg-red-950/80 text-red-300 border-red-700',
@@ -120,7 +161,8 @@ export default function RulesPage({ setActiveTab }) {
       details: [
         'Prohibited modifications include: Killaura, Auto-Totem, Auto-Crystal, Reach, Speed, Fly, Freecam, Baritone, Timer, and X-Ray resource packs.',
         'Approved client modifications: Sodium, Lithium, Iris, JourneyMap (fair-play mode), AppleSkin, and standard cosmetic mods.',
-        'Duplication glitches (item dupes, rail dupes, shulker dupes) and Nether roof exploits are patched and strictly forbidden.'
+        'Duplication glitches (item dupes, rail dupes, shulker dupes) and Nether roof exploits are patched and strictly forbidden.',
+        'Lag machines designed to crash chunks or degrade server TPS are strictly banned.'
       ],
       icon: Ban,
       iconColor: 'text-red-500',
@@ -128,28 +170,9 @@ export default function RulesPage({ setActiveTab }) {
       panelBg: 'bg-gradient-to-r from-red-950/30 to-[#181113]'
     },
     {
-      id: 'spawn-trapping',
-      category: 'conduct',
-      number: 'RULE 07',
-      title: 'No Spawn Trapping or Inescapable Death Loops',
-      badge: 'COMMUNITY INTEGRITY',
-      badgeColor: 'bg-emerald-950/80 text-emerald-300 border-emerald-600',
-      tagline: 'Wilderness Wars Only — Respect Server Entry Points',
-      description: 'Creating inescapable death traps, bed-trapping newcomers at spawn, or camping random teleport locations is strictly prohibited.',
-      details: [
-        'World spawn and safe zones are neutral areas meant for commerce, meeting, and server access.',
-        'Luring players via fake /tpa requests into instant void or lava holes (TP-trapping) is considered scamming.',
-        'Base raiding and griefing in the wild are permitted, but lag machines designed to crash chunks or degrade server TPS are strictly banned.'
-      ],
-      icon: CheckCircle2,
-      iconColor: 'text-emerald-400',
-      panelBorder: 'border-emerald-600/70',
-      panelBg: 'bg-gradient-to-r from-emerald-950/30 to-[#121815]'
-    },
-    {
       id: 'mythic-drops',
       category: 'combat',
-      number: 'RULE 08',
+      number: 'RULE 09',
       title: 'Mythic Relics Always Drop on Death & Fair Stun Limits',
       badge: 'RELIC ENGAGEMENT LAW',
       badgeColor: 'bg-cyan-950/80 text-cyan-300 border-cyan-600',
@@ -225,7 +248,7 @@ export default function RulesPage({ setActiveTab }) {
               <span>1st Infraction</span>
             </div>
             <p className="text-zinc-300 leading-relaxed">
-              Official staff warning, combat rollback, and confiscation of any illegitimately gained items or heads.
+              Official staff warning, combat rollback, and confiscation of any illegitimately gained items, heads, or illegal Thorns gear.
             </p>
           </div>
 
@@ -252,7 +275,7 @@ export default function RulesPage({ setActiveTab }) {
       </div>
 
       {/* Category Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-[#12131d] border border-[#2b2c3d] rounded-xl max-w-lg mx-auto">
+      <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-[#12131d] border border-[#2b2c3d] rounded-xl max-w-xl mx-auto">
         <button
           onClick={() => { setActiveCategory('all'); playClickSound(); }}
           className={`px-3 py-1.5 rounded font-minecraft text-xs transition-all ${
@@ -276,25 +299,25 @@ export default function RulesPage({ setActiveTab }) {
         </button>
 
         <button
-          onClick={() => { setActiveCategory('lifesteal'); playClickSound(); }}
+          onClick={() => { setActiveCategory('survival'); playClickSound(); }}
           className={`px-3 py-1.5 rounded font-minecraft text-xs transition-all ${
-            activeCategory === 'lifesteal'
-              ? 'bg-purple-950/80 text-purple-300 font-bold border border-purple-600 shadow-md'
+            activeCategory === 'survival'
+              ? 'bg-emerald-950/80 text-emerald-300 font-bold border border-emerald-600 shadow-md'
               : 'text-zinc-400 hover:text-white'
           }`}
         >
-          Lifesteal &amp; Hearts
+          Base &amp; Survival
         </button>
 
         <button
           onClick={() => { setActiveCategory('conduct'); playClickSound(); }}
           className={`px-3 py-1.5 rounded font-minecraft text-xs transition-all ${
             activeCategory === 'conduct'
-              ? 'bg-emerald-950/80 text-emerald-300 font-bold border border-emerald-600 shadow-md'
+              ? 'bg-purple-950/80 text-purple-300 font-bold border border-purple-600 shadow-md'
               : 'text-zinc-400 hover:text-white'
           }`}
         >
-          Fair Play &amp; Conduct
+          Anti-Cheat &amp; Conduct
         </button>
       </div>
 
@@ -374,7 +397,7 @@ export default function RulesPage({ setActiveTab }) {
             </div>
           </div>
           <a
-            href="https://discord.gg/sclayx"
+            href="https://discord.gg/scalyx"
             target="_blank"
             rel="noopener noreferrer"
             className="mc-button mc-button-gold flex items-center gap-1.5 shrink-0"
@@ -386,7 +409,7 @@ export default function RulesPage({ setActiveTab }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2 text-xs font-sans text-zinc-300">
           <div className="p-3 bg-[#171826] rounded border border-[#2b2c3e]">
             <strong className="text-yellow-400 font-minecraft block mb-1">1. Record Video Evidence</strong>
-            Capture full screen footage showing combat loadouts, Elytra flight during tags, or illegal behavior.
+            Capture full screen footage showing combat loadouts, Elytra flight during tags, base griefing, or illegal Thorns armor.
           </div>
           <div className="p-3 bg-[#171826] rounded border border-[#2b2c3e]">
             <strong className="text-yellow-400 font-minecraft block mb-1">2. Note Timestamp &amp; Names</strong>
@@ -394,7 +417,7 @@ export default function RulesPage({ setActiveTab }) {
           </div>
           <div className="p-3 bg-[#171826] rounded border border-[#2b2c3e]">
             <strong className="text-yellow-400 font-minecraft block mb-1">3. Submit Ticket</strong>
-            Open a private player report ticket on our official Discord at <code className="text-[#00ffff]">discord.gg/sclayx</code>.
+            Open a private player report ticket on our official Discord at <code className="text-[#00ffff]">discord.gg/scalyx</code>.
           </div>
         </div>
       </div>

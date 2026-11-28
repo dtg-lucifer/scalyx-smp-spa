@@ -109,7 +109,7 @@ export default function HomePage({ setActiveTab }) {
           
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#171822] border border-[#36384d] rounded-full text-[11px] font-minecraft text-[#00ffff] uppercase tracking-wider shadow-md">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-            MINECRAFT JAVA 1.21.4 (PAPER 26.3) • ACTIVE REALM
+            MINECRAFT JAVA 26.3 (LATEST) • ACTIVE REALM
           </div>
 
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-minecraft font-bold tracking-wide text-white mc-shadow leading-tight">
@@ -541,9 +541,9 @@ export default function HomePage({ setActiveTab }) {
               <div className="w-8 h-8 mx-auto mb-2 bg-[#242538] text-[#00ffff] font-minecraft text-base font-bold flex items-center justify-center rounded">
                 1
               </div>
-              <h4 className="font-minecraft text-sm sm:text-base text-white mb-1">Launch 1.21.4</h4>
+              <h4 className="font-minecraft text-sm sm:text-base text-white mb-1">Launch 26.3 (Latest)</h4>
               <p className="text-xs text-zinc-400 font-sans">
-                Open your Minecraft launcher and select Java Version 1.21.4.
+                Open your Minecraft launcher and select Java Version 26.3 (Latest).
               </p>
             </div>
 

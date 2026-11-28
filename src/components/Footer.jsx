@@ -20,7 +20,7 @@ export default function Footer({ setActiveTab }) {
               </div>
             </div>
             <p className="text-xs text-zinc-400 leading-relaxed font-sans">
-              The ultimate Minecraft Java 1.21.4 (Paper 26.3) Semi-Anarchy experience. High-stakes PvP, 5 server-unique mythic artifacts, custom world generation, and true player-driven economy.
+              The ultimate Minecraft Java 26.3 (Latest) Semi-Anarchy experience. High-stakes PvP, 5 server-unique mythic artifacts, custom world generation, and true player-driven economy.
             </p>
             <div className="pt-1">
               <ServerIPBadge size="normal" />
@@ -79,7 +79,7 @@ export default function Footer({ setActiveTab }) {
               </div>
               <div className="flex justify-between py-1 border-b border-[#1b1c26]">
                 <span className="text-zinc-500">Version:</span>
-                <span className="text-yellow-400 font-minecraft">1.21.4 (Paper 26.3)</span>
+                <span className="text-yellow-400 font-minecraft">26.3 (Latest)</span>
               </div>
               <div className="flex justify-between py-1 border-b border-[#1b1c26]">
                 <span className="text-zinc-500">KeepInventory:</span>
@@ -120,7 +120,7 @@ export default function Footer({ setActiveTab }) {
             <span className="text-emerald-400">smp.scalyx.in</span>
             <span className="mx-1">•</span>
             <span>Discord:</span>
-            <span className="text-[#00ffff]">discord.gg/sclayx</span>
+            <span className="text-[#00ffff]">discord.gg/scalyx</span>
           </div>
         </div>
       </div>

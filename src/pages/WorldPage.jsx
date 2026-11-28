@@ -757,7 +757,7 @@ export default function WorldPage() {
                   )}
                 </div>
                 <div className="text-[11px] font-minecraft text-zinc-500 uppercase">
-                  CAPTURED ON SCALYX SMP 1.21.4
+                  CAPTURED ON SCALYX SMP 26.3 (LATEST)
                 </div>
               </div>
 

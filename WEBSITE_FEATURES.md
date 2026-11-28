@@ -1,12 +1,12 @@
 # 🔥 Welcome to Scalyx SMP
 ### *The Ultimate High-Stakes, Economy & Mythic Combat Survival Experience*
-**Minecraft Java 1.21.4 (Paper 26.3) | IP: `smp.scalyx.in` / `play.scalyxsmp.com` | Discord: `discord.gg/sclayx`**
+**Minecraft Java 26.3 (Latest) | IP: `smp.scalyx.in` / `play.scalyxsmp.com` | Discord: `discord.gg/scalyx`**
 
 ---
 
 ## 🌟 Why Play on Scalyx SMP?
 
-Scalyx SMP isn't just another survival server. Engineered on top of cutting-edge Paper 1.21.4 architecture, Scalyx combines **authentic high-stakes vanilla survival**, **DonutSMP-inspired custom mining tools**, **server-unique mythic weapons & armors**, and **5 automated competitive server events** designed for exhilarating, skill-based gameplay.
+Scalyx SMP isn't just another survival server. Engineered on top of cutting-edge Paper 26.3 (Latest) architecture, Scalyx combines **authentic high-stakes vanilla survival**, **DonutSMP-inspired custom mining tools**, **server-unique mythic weapons & armors**, and **5 automated competitive server events** designed for exhilarating, skill-based gameplay.
 
 ---
 
@@ -165,7 +165,7 @@ Scalyx SMP features 5 custom, fully-automated server events designed to drive co
 ---
 
 ### 14. 🚀 High-Performance & Fair Play
-- **Paper 1.21.4 Engine**: Supercharged server performance with no TPS drops during massive fights or TNT detonations.
+- **Paper 26.3 (Latest) Engine**: Supercharged server performance with no TPS drops during massive fights or TNT detonations.
 - **Strict Anti-Cheat & Exploit Patching**: Zero tolerance for unfair advantages. Pure skill, strategy, and dedication.
 - **Cosmetics & Quality of Life**: `/skin` customizer, `/trash` fast disposal, `/guide` in-game helper, and toggleable `/sb` scoreboard.
 

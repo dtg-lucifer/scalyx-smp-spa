@@ -59,7 +59,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#55FF55] animate-pulse shadow-[0_0_4px_#55FF55]"></span>
                   <span className="text-[#55FF55] font-semibold mc-shadow">SEMI-ANARCHY</span>
                   <span className="text-zinc-600 font-bold">•</span>
-                  <span className="text-[#FFFF55] font-semibold mc-shadow">1.21.4</span>
+                  <span className="text-[#FFFF55] font-semibold mc-shadow">26.3 (Latest)</span>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <ServerIPBadge size="normal" />
 
               <a
-                href="https://discord.gg/sclayx"
+                href="https://discord.gg/scalyx"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Join Discord Community"

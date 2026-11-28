@@ -4,7 +4,7 @@ The official Minecraft-themed React web application for **Scalyx SMP** (`smp.sca
 
 ## 🎮 Server Details
 - **Server IP:** `smp.scalyx.in`
-- **Edition:** Minecraft Java Edition 1.21.4
+- **Edition:** Minecraft Java Edition 26.3 (Latest)
 - **Gameplay:** High-Stakes Semi-Anarchy (KeepInventory permanently OFF for all ranks)
 
 ---
@@ -32,7 +32,7 @@ npm run preview
    - Hero banner with Server IP copy button and confetti effect
    - Core server pillars (Semi-Anarchy, Lifestealer Relic, Custom Worlds, Scam-Proof Economy)
    - Interactive preview of the Lifestealer 3x3 crafting altar
-   - Quick Join Guide for Java 1.21.4 players
+   - Quick Join Guide for Java 26.3 (Latest) players
 2. **Survival & Mechanics**:
    - Explicit confirmation of **KeepInventory: OFF** for all ranks
    - 6-Row portable Ender Chest (`/ec` - 54 slots)
