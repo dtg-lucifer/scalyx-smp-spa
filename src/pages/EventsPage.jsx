@@ -216,6 +216,47 @@ export default function EventsPage({ setActiveTab }) {
         '👑 Custom Rank Kits & Deluxe Shulker Boxes',
         '☠️ Outlaw\'s Authentic Severed Player Head Trophy'
       ]
+    },
+    {
+      id: 'scavenger-hunt',
+      name: 'The Scavenger Hunt Event',
+      command: '/scavenger',
+      adminCommand: '/scavenger start / stop / reloaditems',
+      type: 'Sequential Target Race & God Armor Rotation',
+      badge: 'PROGRESSIVE HUNT EVENT',
+      badgeColor: 'bg-amber-950/80 text-amber-300 border-amber-600',
+      icon: Compass,
+      iconColor: 'text-[#ffaa00]',
+      accentColor: 'text-[#ffaa00]',
+      borderColor: 'border-[#ffaa00]',
+      bgGlow: 'shadow-[0_0_25px_rgba(245,158,11,0.25)]',
+      logFile: 'SCAVENGER_HUNT.md',
+      tagline: '10 sequential items dynamically loaded from SCAVENGER_ITEMS.csv. First to collect all 10 wins rotating God Armor with Dune Emerald Trim and all 4 Protection IVs!',
+      hudSimulation: {
+        title: 'ACTION BAR HUD TRACKER (ABOVE LOCATOR BAR)',
+        content: '🔍 #1 -> Oak Log │ Items Found: 0/10 │ Next: Raw Iron',
+        theme: 'border-amber-500/70 bg-black/80 text-[#ffaa00]'
+      },
+      flow: {
+        start: {
+          title: '1. Dynamic CSV Loading (/scavenger start)',
+          desc: 'Loads the 10 target items dynamically from SCAVENGER_ITEMS.csv at runtime. Enlists all online players and broadcasts Item #1 with celebratory audio.'
+        },
+        gameplay: {
+          title: '2. Action Bar Tracking & Pickup Progression',
+          desc: 'The current target item is displayed in real-time above the hotbar as #serial -> item name. Picking the required item up into your inventory promotes you to the next target.'
+        },
+        ending: {
+          title: '3. God Armor Rotation & Inventory Full Claim',
+          desc: 'The first player to 10 items wins! Awards 4 rotating pieces of God Armor (Chestplate -> Leggings -> Boots -> Helmet) with every Protection IV and Dune Emerald Trim. If inventory is full, players run /scavenger claim to collect!'
+        }
+      },
+      rewards: [
+        '🏆 Rotating Server God Armor (Dune Trim Emerald, All 4 Prot IVs)',
+        '💰 $10,000 Server Economy Cash',
+        '🍎 16x Enchanted Golden Apples & 64x Diamonds',
+        '🪙 4x Netherite Ingots'
+      ]
     }
   ];
 

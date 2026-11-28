@@ -33,6 +33,10 @@ A comprehensive technical and operational documentation guide for the custom sys
 | **`/tpa <player>`** | `/tpaccept`, `/tpdeny` | Sends a teleport request to another online player. |
 | **`/trash`** | `/disposal` | Opens an instant trash bin to dispose of unwanted items safely. |
 | **`/asse stats`** | `/assassin stats` | View your assigned bounty target, distance in blocks (or dimension), and total event kills. |
+| **`/scavenger stats`** | `/scav stats` | View your current scavenger target item, progress (e.g. 4/10), and items remaining. |
+| **`/scavenger leaderboard`** | `/scav lb` | View real-time standings of all participants in the active Scavenger Hunt. |
+| **`/scavenger claim`** | `/scav claim` | Claim your championship rewards after clearing inventory if it was full when winning. |
+| **`/pvp status`** | - | Check whether global PvP combat is currently enabled or disabled. |
 | **`/sb`** | - | Toggles the sidebar scoreboard on/off. |
 | **`/skin`** | `/skins` | Change your player skin via username or direct image URL. |
 
@@ -71,6 +75,8 @@ All rank kits are packaged inside permanent, color-coded Shulker Boxes.
 ### 🛡️ Fair Play Armor & Inventory Balancing
 - **No Thorns Across All Kits**: The Thorns enchantment has been **completely removed** from all rank kit armor sets to keep combat clean and enjoyable without annoying passive damage reflection.
 - **Protection Hard Cap (Max Protection V)**: All higher-tier armor sets are strictly capped at **Protection V maximum** to preserve PvP balance and eliminate pay-to-win armor advantages.
+- **Spear Lunge Hard Cap (Max Lunge III)**: All kit spears across all tiers (including high-rank Wither & Ender) are capped at **Lunge III maximum** to prevent unbalanced gap-closing lunges in PvP.
+- **Mace Enchantment Mutual Exclusivity (Density Only)**: Rank kit maces strictly feature **Density only** (`Density V`), with Breach completely removed to maintain fair armor damage calculations and respect vanilla mutual exclusivity rules.
 - **Quartz Armor Trims for Ender**: The supreme Tier VIII Ender Netherite armor features authentic **Quartz** material trims:
   - *Flow Trim*: Netherite Helmet & Netherite Boots
   - *Eye Trim*: Netherite Chestplate
@@ -192,7 +198,7 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 - **Attack Speed Modifier**: **Minimal Attack Cooldown** (Sword-speed 1.6 attack speed / fast combat cadence).
 - **Enchantments**: Impaling VII, Loyalty III, Channeling I, Sharpness VI, Unbreaking V, Mending I *(Trident Throw Disabled: Melee & Anywhere Riptide only)*.
 - **Passive 1 (Ocean's Sovereign & Anywhere Riptide)**: Permanent Water Breathing, Dolphin's Grace, and Conduit Power while held. Right-Click triggers **Anywhere Riptide Dash** with client cooldown protection and an Action Bar status indicator (`RIPTIDE READY` / `RECHARGING`).
-- **Passive 2 (Whirlpool Maelstrom)**: Always triggers on-hit, trapping the victim in an inescapable whirlpool applying Slowness IV and drowning damage for 6 seconds.
+- **Passive 2 (Abyssal Drown - 30% Chance On-Hit)**: **30% chance on every hit** to inflict true **drowning damage for 5 seconds** (1 heart/sec) and paralyze the target with **Slowness IV for 10 seconds**! Displays drowning bubbles, water splash particles, and drowning audio.
 - **Ultimate (Tsunami Cataclysm - Sneak + Right-Click, 2m Cooldown)**: Summons a surging 25-block tsunami tidal wave with lightning strikes, sweeping enemies up, dealing heavy water damage and Slowness III.
 
 ### 5. 💥 Doomherald, Oblivion Ballista (Crossbow)
@@ -205,9 +211,43 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 
 ---
 
+### 🛡️ Server-Unique Mythic Armors (`mythic_armors.sk`)
+
+In addition to the 5 Mythic Weapons, Scalyx SMP features **4 Server-Unique Mythic Armor Artifacts**, forged with legendary passives and singularity protection:
+
+#### 1. ⚡ Stormbreaker Aegis (Netherite Chestplate)
+- **Base Item**: `minecraft:netherite_chestplate`
+- **Lore**: *"Forged in the heart of the eternal tempest."*
+- **Enchantments**: Protection V, Unbreaking V, Mending I
+- **Combat Passive (Storm Surge Aura)**: Landing a 7-hit melee combo triggers an electrifying lightning storm around the wearer, calling down lightning bolts on all nearby hostiles within 8 blocks, inflicting heavy shock damage, and granting the wearer **Resistance I** for 10 seconds.
+- **Identifier**: `storm_chestplate`
+
+#### 2. 👁 All-Seeing Crown (Netherite Helmet)
+- **Base Item**: `minecraft:netherite_helmet`
+- **Lore**: *"The gaze of the ancient watchers pierces through all realms."*
+- **Enchantments**: Protection V, Respiration III, Aqua Affinity I, Unbreaking V, Mending I
+- **Ability (Hunter's Vision - 3m Cooldown)**: Crouching continuously for **10 seconds** unleashes ancient psychic radar, granting all online players within a massive **100-block radius** a **Glowing outline for 30 seconds** and broadcasting their exact coordinates and distance to the wearer.
+- **Identifier**: `oracle_helmet`
+
+#### 3. 🛡 Mirrorwalk Greaves (Netherite Leggings)
+- **Base Item**: `minecraft:netherite_leggings`
+- **Lore**: *"Walk the threshold between realities; mirror all strikes."*
+- **Enchantments**: Protection V, Swift Sneak III, Unbreaking V, Mending I
+- **Combat Passive (Mirror Barrier - 2m Cooldown)**: When the wearer's health falls below **5 hearts (10 HP)**, an iridescent crystalline energy barrier activates for **30 seconds**, reflecting **50% of all incoming damage directly back at the attackers** (capped at a total of 10 hearts deflected before shattering).
+- **Identifier**: `mirror_leggings`
+
+#### 4. ☄ Titanfall Boots (Netherite Boots)
+- **Base Item**: `minecraft:netherite_boots`
+- **Lore**: *"Drop from the heavens and crush the earth."*
+- **Enchantments**: Protection V, Feather Falling IV, Depth Strider III, Unbreaking V, Mending I
+- **Combat Passive (Seismic Titanfall)**: Falling from a height of **5 or more blocks completely negates all fall damage** and triggers a devastating **Density V Mace seismic impact** in a **5-block ground radius**, dealing heavy kinetic shock damage and launching nearby enemies high into the air.
+- **Identifier**: `titan_boots`
+
+---
+
 ## 🎯 Dynamic Server-Wide Events
 
-Scalyx SMP features 4 custom, fully-automated server events designed to drive community engagement, PvP warfare, and PvE survival:
+Scalyx SMP features 5 custom, fully-automated server events designed to drive community engagement, PvP warfare, and PvE survival:
 
 ---
 
@@ -247,6 +287,39 @@ Scalyx SMP features 4 custom, fully-automated server events designed to drive co
 * **Radar & Coordinate Pings**: Outlaw's exact coordinates are broadcasted to the entire server every 60 seconds. Hunters receive real-time action bar radar pointing directly to the Outlaw.
 * **Execution Rewards**: The hunter who executes the Outlaw claims **+10 Bounty Points**, the **Outlaw's Severed Head**, and **5 Diamonds**. If the Outlaw kills hunters in self-defense, they gain **+3 Survival Points**.
 * **Conclusion & Archive**: On `/bounty stop`, announces top podium winners with wither sound and appends records to `BOUNTY_EVENT.md`.
+
+---
+
+### 5. 🔍 The Scavenger Hunt Event System (`/scavenger`)
+* **Strict Sequential Search & Dynamic CSV Loading**: Initiated via `/scavenger start` (or `/scav start`), all online players are registered into the hunt. The 10 target items are **dynamically read directly from `SCAVENGER_ITEMS.csv` at runtime** whenever the event starts, allowing administrators to modify or reorder items in the CSV without restarting the server.
+* **Action Bar HUD Tracker**: Participating players have their current target item continuously displayed right above the locator/hotbar formatted exactly as:
+  `<#FFD700>#<serial_number> <#888888>-> <#00FFDD><item_name>` (e.g. `#1 -> Oak Log`).
+* **Pickup Progression**: Finding an item means picking it up into the player's inventory (`on pick up:`). Upon collecting the required item, celebratory audio rings out and the player is instantly promoted to the next item number.
+* **10-Item Official Registry (`SCAVENGER_ITEMS.csv`)**:
+  1. `1` - **Oak Log** (`oak_log`)
+  2. `2` - **Raw Iron** (`raw_iron`)
+  3. `3` - **Redstone Dust** (`redstone`)
+  4. `4` - **Amethyst Shard** (`amethyst_shard`)
+  5. `5` - **Golden Apple** (`golden_apple`)
+  6. `6` - **Obsidian** (`obsidian`)
+  7. `7` - **Blaze Rod** (`blaze_rod`)
+  8. `8` - **Ghast Tear** (`ghast_tear`)
+  9. `9` - **Ancient Debris** (`ancient_debris`)
+  10. `10` - **Echo Shard** (`echo_shard`)
+* **Victory & 4-Piece God Armor Trophy Rotation**:
+  * The first player to collect all 10 items wins the hunt!
+  * **🏆 Rotating God Armor Champion Trophy**:
+    * Each completed hunt rotates through **4 pieces of Server God Armor**:
+      1. 🛡 **God Chestplate**: Netherite Chestplate, **Every Protection Level IV** (`Protection IV`, `Fire Protection IV`, `Blast Protection IV`, `Projectile Protection IV`), `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
+      2. 👖 **God Leggings**: Netherite Leggings, **Every Protection Level IV**, `Swift Sneak III`, `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
+      3. 👢 **God Boots**: Netherite Boots, **Every Protection Level IV**, `Feather Falling IV`, `Depth Strider III`, `Soul Speed III`, `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
+      4. 👑 **God Helmet**: Netherite Helmet, **Every Protection Level IV**, `Respiration III`, `Aqua Affinity I`, `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
+    * **Rotation Sequence**: `Chestplate` ➔ `Leggings` ➔ `Boots` ➔ `Helmet` ➔ `Chestplate` (persisted in `SCAVENGER_HUNT.md`).
+  * **Free Space Check**: If the winner has open slots in their inventory, rewards are automatically delivered immediately (**God Armor Trophy Piece**, **$10,000 cash**, **16x Enchanted Golden Apples**, **4x Netherite Ingots**, **64x Diamonds**).
+  * **Full Inventory Protection**: If the winner's inventory is full, they are prominently alerted on screen with titles, sounds, and chat messages instructing them to clear space and run **`/scavenger claim`**!
+  * **Strict Claim Validation**: Running `/scavenger claim` matches the player's username against the recorded winner in `SCAVENGER_HUNT.md`. Once verified and slots are available, the exact rotated God Armor trophy piece and loot are delivered and the claim status updates to `[CLAIMED]`.
+* **Conclusion & Comprehensive Logging (`SCAVENGER_HUNT.md`)**:
+  * Event conclusions automatically record start/end timestamps, winner name, claim status, the specific God Armor trophy awarded, the next trophy piece in rotation, and a full markdown table detailing every player who participated, their final rank, items found (e.g. `7/10`), and last item reached.
 
 ---
 
@@ -345,9 +418,27 @@ Staff with OP or `scalyx.kit.admin` have complete administrative control over al
 | **`/bounty reset <player>`** | `scalyx.admin` / OP | Resets a player's bounty score and outlaw kill count. |
 | **`/bounty stats`** | Default (All Players) | Displays personal bounty score, kills, and current active outlaw. |
 
+#### E. 🔍 The Scavenger Hunt Event (`/scavenger`)
+| Command | Permission | Description |
+| :--- | :--- | :--- |
+| **`/scavenger start`** | `scalyx.scavenger.admin` / OP | Initiates the event, registers all online players, activates Action Bar tracking for Item #1, and plays dragon sound. |
+| **`/scavenger stop`** | `scalyx.scavenger.admin` / OP | Stops the hunt manually without a winner and logs final standings to `SCAVENGER_HUNT.md`. |
+| **`/scavenger claim`** | Default (All Players) | Validates winner name against `SCAVENGER_HUNT.md` and delivers full championship loot if inventory was cleared. |
+| **`/scavenger stats`** | Default (All Players) | Displays personal items found, target item number, name, and total items remaining. |
+| **`/scavenger leaderboard`** | Default (All Players) | Displays real-time standings of all participating players and items found. |
+| **`/scavenger reloaditems`** | `scalyx.scavenger.admin` / OP | Synchronizes and reloads the 10-item sequential registry from `SCAVENGER_ITEMS.csv`. |
+| **`/scalyxscavrecord <start> \| <end> \| <winner> \| <claimed> \| <data>`** | `scalyx.mechanics` / Console | Writes complete event standings, rotated God Armor piece, and claim status to `SCAVENGER_HUNT.md`. |
+| **`/scalyxscavclaim <player>`** | `scalyx.mechanics` / Console | Backend engine validator matching player against `SCAVENGER_HUNT.md` for God Armor & reward disbursement. |
+| **`/scalyxscavload`** | `scalyx.mechanics` / Console | Dynamically reads and registers all 10 scavenger items directly from `SCAVENGER_ITEMS.csv`. |
+
 ### 7. Moderation, Inspection & Player Utilities
 | Command | Permission | Description |
 | :--- | :--- | :--- |
+| **`/pvp [on\|off\|status]`** | `scalyx.pvp.admin` / OP | Globally enable, disable, or query PvP combat state across the server. |
+| **`/screenbroadcast <message>`** | `scalyx.broadcast.screen` / OP | Broadcast high-visibility center-screen title announcement with sound effects to all players (Aliases: `/cbroadcast`, `/sbroadcast`, `/titlebc`, `/bcscreen`). |
+| **`/locate <structure\|biome\|poi> <target>`** | `minecraft.command.locate` / OP | Locates vanilla/datapack structures, biomes, or POIs (automatically resolves plugin conflicts). |
+| **`/slocate <structure\|biome\|poi> <target>`** | `minecraft.command.locate` / OP | Dedicated vanilla locate alias directly bypassing any plugin overrides. |
+| **`/wglocate <player>`** | `worldguard.locate` / OP | WorldGuard player locator command. |
 | **`/ecsee <player>`** / **`/endersee`** | `enhancedechest.admin.view` | Live inspect and edit any player's 54-slot deluxe Ender Chest. |
 | **`/invsee <player>`** | `invseeplusplus.invsee` | Live inspect and edit any player's inventory and armor. |
 | **`/ping [player]`** | Default | Check connection latency in ms for yourself or another player. |
@@ -382,6 +473,32 @@ Staff with OP or `scalyx.kit.admin` have complete administrative control over al
 | **`sk reload <script\|all>`** | Minecraft Console / In-game OP | Hot-reloads Skript files (`sk reload mythic_weapons`, `sk reload lifestealer`, `sk reload smp_combat`, etc.). |
 | **`minecraft:reload`** | Minecraft Console / In-game OP | Hot-reloads custom datapacks, recipes, and advancement triggers. |
 | **`tab reload`** | Minecraft Console / In-game OP | Hot-reloads TAB player list, header/footer, animations, and scoreboard configurations. |
+
+---
+
+## 🗺️ World Generation, Dimensions & Structure Overhauls
+
+Scalyx SMP features an overhauled world generation ecosystem with dedicated vanilla structure overhauls:
+
+### 🏰 Dungeons & Taverns (DnT) Vanilla Structure Overhauls
+All standalone structure overhauls from **Dungeons and Taverns** (by NovaWostra) are active and generating across the Overworld and Nether:
+- **Nether Fortress Overhaul** (`DnT_Nether_Fortress_Overhaul.zip`): Expansive custom fortresses with multi-tiered bridges, citadel keeps, and enhanced blaze/wither spawner chambers.
+- **Stronghold Overhaul** (`DnT_Stronghold_Overhaul.zip`): Sprawling redesigned strongholds featuring puzzle chambers, grand libraries, and dramatic portal arenas.
+- **Ancient City Overhaul** (`DnT_Ancient_City_Overhaul.zip`): Immersive Deep Dark citadels with atmospheric sculk architecture and unique loot vaults.
+- **Ocean Monument Overhaul** (`DnT_Ocean_Monument_Overhaul.zip`): Majestic underwater temples with expanded guardian labyrinths and hidden core chambers.
+- **Mineshaft Overhaul** (`DnT_Mineshaft_Overhaul.zip`): Multi-level deep mineshafts with support beams, minecart tracks, and ore vein clusters.
+- **Woodland Mansion Overhaul** (`DnT_Woodland_Mansion_Overhaul.zip`): Vast illager castles with secret rooms, prisoner dungeons, and boss arenas.
+- **Pillager Outpost Overhaul** (`DnT_Pillager_Outpost_Overhaul.zip`): Fortified outpost watchtowers with encampments, cages, and watchpoints.
+- **Desert Temple Overhaul** (`DnT_Desert_Temple_Overhaul.zip`): Elaborate sand-swept pyramids with traps, burial crypts, and archeology sites.
+- **Jungle Temple Overhaul** (`DnT_Jungle_Temple_Overhaul.zip`): Overgrown jungle ruins with redstone dart traps and hidden relic alcoves.
+- **Swamp Hut Overhaul** (`DnT_Swamp_Hut_Overhaul.zip`): Eerie stilt witch huts with brewing cauldrons and swamp creature dens.
+- *(Note: All older `[RETIRED]` datapacks are omitted per development guidelines).*
+
+### 🌍 Landscape, Biome & Dimension Overhauls
+- **Terralith & Trek**: Complete Overworld terrain redesign with 85+ realistic biomes, canyons, and towering mountain ranges.
+- **Incendium**: Complete Nether overhaul with 8 new nether biomes and custom hellish structures.
+- **Stellarity & Nullscape**: Custom End dimension generation with void citadels, stellar biomes, and custom dragon battles (*The End was preserved intact*).
+- **Explorify & Structory**: Hundreds of small decorative ruins, towers, campsites, and world-enriching landmarks.
 
 ---
 
@@ -426,7 +543,7 @@ All in-game communication channels adhere to a unified, clean, and recognizable 
 When deploying Scalyx SMP to a dedicated VPS or cloud host:
 
 - **Event Record Logging**:
-  - Automated events (such as the Assassin's Event) record winners, podium statistics, and completion timestamps natively into markdown archives (`ASSASSINS_EVENT.md`, `WARLORD_EVENT.md`, `BLOOD_MOON_EVENT.md`, `BOUNTY_EVENT.md`) via the server plugin engine without requiring external Python daemon scripts.
+  - Automated events (Assassin's, Warlord, Blood Moon, High Bounty, and Scavenger Hunt) record winners, podium statistics, completion timestamps, and full participant standings natively into markdown archives (`ASSASSINS_EVENT.md`, `WARLORD_EVENT.md`, `BLOOD_MOON_EVENT.md`, `BOUNTY_EVENT.md`, `SCAVENGER_HUNT.md`) and load sequential targets from `SCAVENGER_ITEMS.csv` via the server plugin engine without requiring external Python daemon scripts.
 - **Background Daemon / Service Management**:
   - The server runs under a clean `tmux` or `systemd` unit file (managed via `make start`, `make stop`, and `make restart`).
   - Logs are persisted in `logs/latest.log` and compressed daily by Paper.
@@ -436,15 +553,17 @@ When deploying Scalyx SMP to a dedicated VPS or cloud host:
 ## ✅ SMP Launch Pre-Flight Checklist
 
 1. **KeepInventory**: Verified `false` globally across all worlds.
-2. **Kits Hierarchy**: Higher rank players can claim all lower rank kits with zero permission conflicts.
+2. **Kits Hierarchy**: Higher rank players can claim all lower rank kits with zero permission conflicts. No kits contain Density with Breach, and Lunge is strictly capped at Level 3.
 3. **Kit Armor Enchants**: No Thorns on any kit armor; Protection capped at Max Protection V; Quartz trims applied to Ender set.
 4. **Kit Inventories**: 64x XP Bottles on higher-tier kits; dual Fortune & Silk Touch 3x3 pickaxes included; 64x Oak Logs in Ender kit.
 5. **Super Pickaxes**: 3x3x1 mining active with bedrock protection enabled (Fortune and Silk Touch versions).
 6. **Rank Swords**: 60s independent cooldowns, 4-heart damage hard cap, and on-hit passives operational.
-7. **Mythic Weapons**: Crafting disabled/locked by default; released manually via `/mythics <weapon|all> start`; 30s stun cooldowns on Mace & Spear; balanced non-P2W damage.
-8. **Wilderness RTP**: Configured to 10k radius distribution; vanilla `spawn-protection=0` for clean WorldGuard region enforcement.
-9. **Chat & DMs**: Whispers formatted as `[M] Sender -> Recipient >> message`.
-10. **Security & Permissions**: `/op` and WorldGuard bypass rights strictly locked to verified administrators.
-11. **Ender Chest**: 54-slot deluxe storage saving correctly across sessions.
-12. **Homes**: GUI home manager with rank-scaled limits functioning smoothly.
-13. **Economy**: `/shop` prices and `/ah` functioning with safe trading protections.
+7. **Mythic Weapons & Armors**: Crafting disabled/locked by default; released manually via `/mythics <weapon|all> start`; 30s stun cooldowns on Mace & Spear; balanced non-P2W damage; 4 unique Mythic Armor pieces functional.
+8. **Server Events**: 5 automated events operational (`/asse`, `/warlord`, `/bloodmoon`, `/bounty`, `/scavenger`), including full inventory protection and `/scavenger claim` validation in `SCAVENGER_HUNT.md`.
+9. **Combat & Moderation**: `/pvp [on|off|status]` global toggle and `/screenbroadcast` title alerts active.
+10. **Wilderness RTP**: Configured to 10k radius distribution; vanilla `spawn-protection=0` for clean WorldGuard region enforcement.
+11. **Chat & DMs**: Whispers formatted as `[M] Sender -> Recipient >> message`.
+12. **Security & Permissions**: `/op` and WorldGuard bypass rights strictly locked to verified administrators.
+13. **Ender Chest**: 54-slot deluxe storage saving correctly across sessions.
+14. **Homes**: GUI home manager with rank-scaled limits functioning smoothly.
+15. **Economy**: `/shop` prices and `/ah` functioning with safe trading protections.

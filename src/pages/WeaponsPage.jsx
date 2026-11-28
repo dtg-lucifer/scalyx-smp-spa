@@ -160,10 +160,10 @@ export default function WeaponsPage() {
           desc: 'Permanent Water Breathing, Dolphin Grace & Conduit Power. Right-Click dashes with Anywhere Riptide (on land or in air) with action bar ready indicator.'
         },
         {
-          title: 'Whirlpool Maelstrom (On-Hit)',
+          title: 'Abyssal Drown (30% Chance On-Hit)',
           icon: Wind,
           color: 'text-blue-400',
-          desc: 'On-hit drowning vortex always traps victims in inescapable Slowness IV and water damage ticks for 6 seconds.'
+          desc: '30% chance on every hit to inflict true drowning damage for 5 seconds (1 heart/s) and paralyze victims with Slowness IV for 10 seconds!'
         }
       ],
       ultimate: {
@@ -895,6 +895,126 @@ export default function WeaponsPage() {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* 4 Server-Unique Mythic Armors Section */}
+      <div className="space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[#2d2f45] pb-4">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-cyan-950/60 border border-cyan-500/50 text-cyan-300 text-xs font-minecraft rounded-full mb-2">
+              <Shield className="w-3.5 h-3.5" />
+              <span>SINGULAR DEFENSE • SERVER RELICS</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-minecraft text-white font-bold tracking-wide">
+              THE 4 SERVER-UNIQUE MYTHIC ARMORS
+            </h2>
+          </div>
+          <span className="text-xs font-minecraft text-zinc-400">
+            Command: <code className="text-[#00ffff]">/artifacts</code> or <code className="text-[#00ffff]">/artifact give</code>
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Armor 1: Stormbreaker Aegis */}
+          <div className="mc-panel p-5 rounded-xl border border-yellow-500/40 bg-[#16141a] space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 bg-yellow-950/80 border border-yellow-600 rounded-lg text-yellow-400">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-minecraft text-base text-yellow-300 font-bold">⚡ Stormbreaker Aegis</h3>
+                  <span className="text-[11px] text-zinc-400 font-sans">Netherite Chestplate • Prot V, Unb V, Mending</span>
+                </div>
+              </div>
+              <span className="text-[10px] font-minecraft px-2 py-0.5 bg-yellow-950/80 border border-yellow-600 text-yellow-300 rounded">
+                CHESTPLATE
+              </span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans italic border-l-2 border-yellow-500/50 pl-2">
+              "Forged in the heart of the eternal tempest."
+            </p>
+            <div className="p-2.5 bg-black/40 rounded border border-yellow-900/40 text-xs text-zinc-300 font-sans leading-relaxed">
+              <strong className="text-yellow-400 font-minecraft text-[11px] block mb-1">⚡ Storm Surge Aura (7-Hit Combo)</strong>
+              Landing 7 melee hits triggers an electrifying lightning storm around the wearer, striking all nearby hostiles within 8 blocks and granting <span className="text-white font-bold">Resistance I for 10s</span>.
+            </div>
+          </div>
+
+          {/* Armor 2: All-Seeing Crown */}
+          <div className="mc-panel p-5 rounded-xl border border-purple-500/40 bg-[#16121f] space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 bg-purple-950/80 border border-purple-600 rounded-lg text-purple-400">
+                  <Eye className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-minecraft text-base text-purple-300 font-bold">👁 All-Seeing Crown</h3>
+                  <span className="text-[11px] text-zinc-400 font-sans">Netherite Helmet • Prot V, Resp III, Aqua Aff</span>
+                </div>
+              </div>
+              <span className="text-[10px] font-minecraft px-2 py-0.5 bg-purple-950/80 border border-purple-600 text-purple-300 rounded">
+                HELMET
+              </span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans italic border-l-2 border-purple-500/50 pl-2">
+              "The gaze of the ancient watchers pierces through all realms."
+            </p>
+            <div className="p-2.5 bg-black/40 rounded border border-purple-900/40 text-xs text-zinc-300 font-sans leading-relaxed">
+              <strong className="text-purple-400 font-minecraft text-[11px] block mb-1">👁 Hunter's Vision (10s Crouch • 3m CD)</strong>
+              Crouching for 10s unleashes psychic radar, giving all online players within <span className="text-white font-bold">100 blocks a Glowing outline for 30s</span> and broadcasting coordinates to the wearer.
+            </div>
+          </div>
+
+          {/* Armor 3: Mirrorwalk Greaves */}
+          <div className="mc-panel p-5 rounded-xl border border-cyan-500/40 bg-[#11171d] space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 bg-cyan-950/80 border border-cyan-600 rounded-lg text-cyan-400">
+                  <Shield className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-minecraft text-base text-cyan-300 font-bold">🛡 Mirrorwalk Greaves</h3>
+                  <span className="text-[11px] text-zinc-400 font-sans">Netherite Leggings • Prot V, Swift Sneak III</span>
+                </div>
+              </div>
+              <span className="text-[10px] font-minecraft px-2 py-0.5 bg-cyan-950/80 border border-cyan-600 text-cyan-300 rounded">
+                LEGGINGS
+              </span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans italic border-l-2 border-cyan-500/50 pl-2">
+              "Walk the threshold between realities; mirror all strikes."
+            </p>
+            <div className="p-2.5 bg-black/40 rounded border border-cyan-900/40 text-xs text-zinc-300 font-sans leading-relaxed">
+              <strong className="text-[#00ffff] font-minecraft text-[11px] block mb-1">🛡 Mirror Barrier (&lt;5 Hearts • 2m CD)</strong>
+              Falling below 5 hearts (10 HP) activates an iridescent barrier for 30s, reflecting <span className="text-white font-bold">50% incoming damage directly back</span> (capped at 10 hearts deflected).
+            </div>
+          </div>
+
+          {/* Armor 4: Titanfall Boots */}
+          <div className="mc-panel p-5 rounded-xl border border-emerald-500/40 bg-[#111915] space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 bg-emerald-950/80 border border-emerald-600 rounded-lg text-emerald-400">
+                  <Wind className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-minecraft text-base text-emerald-300 font-bold">☄ Titanfall Boots</h3>
+                  <span className="text-[11px] text-zinc-400 font-sans">Netherite Boots • Prot V, Feather Fall IV, Depth Strider</span>
+                </div>
+              </div>
+              <span className="text-[10px] font-minecraft px-2 py-0.5 bg-emerald-950/80 border border-emerald-600 text-emerald-300 rounded">
+                BOOTS
+              </span>
+            </div>
+            <p className="text-xs text-zinc-300 font-sans italic border-l-2 border-emerald-500/50 pl-2">
+              "Drop from the heavens and crush the earth."
+            </p>
+            <div className="p-2.5 bg-black/40 rounded border border-emerald-900/40 text-xs text-zinc-300 font-sans leading-relaxed">
+              <strong className="text-emerald-400 font-minecraft text-[11px] block mb-1">☄ Seismic Titanfall (5+ Block Fall)</strong>
+              Falling from 5+ blocks negates 100% fall damage and triggers a <span className="text-white font-bold">Density V Mace ground smash</span> in a 5-block radius, launching enemies into the air.
+            </div>
+          </div>
         </div>
       </div>
 

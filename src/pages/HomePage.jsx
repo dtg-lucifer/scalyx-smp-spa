@@ -321,19 +321,19 @@ export default function HomePage({ setActiveTab }) {
                 DYNAMIC EVENTS: COMPETE &amp; WIN REWARDS
               </h2>
               <p className="text-xs text-zinc-400 font-sans mt-0.5">
-                Join Assassin hunts, race for the 5000-block Warlord Crown, harvest Blood Moon essence, and claim big bounties!
+                Join Assassin hunts, race for the Warlord Crown, harvest Blood Moon essence, hunt bounties, and conquer dynamic Scavenger Hunts!
               </p>
             </div>
             <button
               onClick={() => { setActiveTab('events'); playClickSound(); }}
               className="mc-button mc-button-gold flex items-center gap-1.5 shrink-0"
             >
-              <span>EXPLORE ALL EVENTS</span>
+              <span>EXPLORE ALL 5 EVENTS</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="p-4 bg-[#171827] rounded-lg border border-red-900/60 hover:border-red-500 transition-colors">
               <div className="flex items-center gap-2 mb-2 text-red-400 font-minecraft font-bold text-sm">
                 <Target className="w-4 h-4 text-red-400" />
@@ -385,13 +385,26 @@ export default function HomePage({ setActiveTab }) {
                 /bounty stats
               </span>
             </div>
+
+            <div className="p-4 bg-[#171827] rounded-lg border border-emerald-900/60 hover:border-emerald-500 transition-colors">
+              <div className="flex items-center gap-2 mb-2 text-emerald-400 font-minecraft font-bold text-sm">
+                <Compass className="w-4 h-4 text-emerald-400" />
+                <span>Scavenger Hunt</span>
+              </div>
+              <p className="text-xs text-zinc-300 font-sans leading-relaxed mb-3">
+                Dynamic 10-item inventory race with Action Bar HUD. Win rotating pieces of All-Prot-IV God Armor!
+              </p>
+              <span className="text-[10px] font-minecraft text-[#00ffff] bg-black/50 px-2 py-0.5 rounded border border-[#2b2c3d]">
+                /scavenger stats
+              </span>
+            </div>
           </div>
 
           <div className="p-3.5 bg-black/50 border border-yellow-900/50 rounded-lg flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-sans">
             <div className="flex items-center gap-2.5 text-yellow-300">
               <Gift className="w-5 h-5 text-yellow-400 shrink-0" />
               <span>
-                <strong>Event Winners Receive:</strong> Mythic weapon crafting items (Dragon Eggs, Heavy Cores, Nether Stars), $50,000+ economy money, custom rank kits &amp; mythic rank swords!
+                <strong>Event Winners Receive:</strong> Full All-Prot-IV God Armor sets (Dune trim emerald), Mythic weapon crafting items (Dragon Eggs, Heavy Cores, Nether Stars), $50,000+ economy money, and rank rewards!
               </span>
             </div>
             <button
