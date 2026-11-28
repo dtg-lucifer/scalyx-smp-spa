@@ -47,10 +47,10 @@ export default function EventsPage({ setActiveTab }) {
         }
       },
       rewards: [
-        '💎 Ownership of the 1-of-a-Kind Mythic Relic in the universe',
-        '☠️ Guaranteed Severed Player Head Trophy of any slain victim',
-        '👑 Permanent Server Prestige, Dominance & Wielder Perks',
-        '💰 Loot all gear, armor, and inventory dropped by fallen rivals'
+        'Ownership of the 1-of-a-Kind Mythic Relic in the universe',
+        'Guaranteed Severed Player Head Trophy of slain victim',
+        'Permanent Server Prestige & Wielder Perks',
+        'Full dropped inventory and gear from fallen rivals'
       ]
     },
     {
@@ -88,10 +88,10 @@ export default function EventsPage({ setActiveTab }) {
         }
       },
       rewards: [
-        '💎 Mythic Crafting Catalysts (Nether Stars, Echo Shards)',
-        '💰 Massive Server Economy Cash ($50,000+ Pool)',
-        '👑 Custom Rank Promotions & Downward Kits',
-        '⚔️ Exclusive Mythic Rank Sword Claims'
+        'Mythic Crafting Catalysts (Nether Stars, Echo Shards)',
+        'Server Economy Cash ($50,000+ Pool)',
+        'Custom Rank Promotions & Downward Kits',
+        'Exclusive Mythic Rank Sword Claims'
       ]
     },
     {
@@ -129,10 +129,10 @@ export default function EventsPage({ setActiveTab }) {
         }
       },
       rewards: [
-        '💎 Heavy Core & Netherite Blocks (Mace Catalyst)',
-        '💰 $75,000 Server Treasury Jackpot',
-        '👑 Eternal / Wither Donor Rank Vouchers',
-        '⚔️ Dual 3x3x1 Super Pickaxe & Custom Armor Sets'
+        'Heavy Core & Netherite Blocks (Mace Catalyst)',
+        '$75,000 Server Treasury Jackpot',
+        'Eternal / Wither Donor Rank Vouchers',
+        'Dual 3x3x1 Super Pickaxe & Custom Armor Sets'
       ]
     },
     {
@@ -170,10 +170,10 @@ export default function EventsPage({ setActiveTab }) {
         }
       },
       rewards: [
-        '💎 Dragon\'s Breath & Hearts of the Sea (Weapon Catalysts)',
-        '💰 Top Slayer Cash Bounty & Rare Ore Caches',
-        '👑 Warden & Blaze Rank Shulker Kits',
-        '⚔️ Custom Netherite Swords with True Damage'
+        'Dragon\'s Breath & Hearts of the Sea (Weapon Catalysts)',
+        'Top Slayer Cash Bounty & Rare Ore Caches',
+        'Warden & Blaze Rank Shulker Kits',
+        'Custom Netherite Swords with True Damage'
       ]
     },
     {
@@ -211,10 +211,10 @@ export default function EventsPage({ setActiveTab }) {
         }
       },
       rewards: [
-        '💎 Nether Stars & God Apples',
-        '💰 Claim the Full Accumulated Bounty Pot',
-        '👑 Custom Rank Kits & Deluxe Shulker Boxes',
-        '☠️ Outlaw\'s Authentic Severed Player Head Trophy'
+        'Nether Stars & God Apples',
+        'Claim the Full Accumulated Bounty Pot',
+        'Custom Rank Kits & Deluxe Shulker Boxes',
+        'Outlaw\'s Authentic Severed Player Head Trophy'
       ]
     },
     {
@@ -252,10 +252,10 @@ export default function EventsPage({ setActiveTab }) {
         }
       },
       rewards: [
-        '🏆 Rotating Server God Armor (Dune Trim Emerald, All 4 Prot IVs)',
-        '💰 $10,000 Server Economy Cash',
-        '🍎 16x Enchanted Golden Apples & 64x Diamonds',
-        '🪙 4x Netherite Ingots'
+        'Rotating Server God Armor (Dune Trim Emerald, All 4 Prot IVs)',
+        '$10,000 Server Economy Cash',
+        '16x Enchanted Golden Apples & 64x Diamonds',
+        '4x Netherite Ingots'
       ]
     }
   ];
@@ -637,14 +637,14 @@ export default function EventsPage({ setActiveTab }) {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 shrink-0">
-              <div className="bg-[#111118] px-3.5 py-2 rounded border border-[#2b2b3d] font-minecraft">
-                <div className="text-[10px] text-zinc-400">PLAYER STATS CMD</div>
-                <div className="text-[#00ffff] text-xs font-bold">{currentEvent.command}</div>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0">
+              <div className="bg-[#111118] px-3 py-1.5 rounded border border-[#262838] font-minecraft flex items-center justify-between gap-3 text-xs">
+                <span className="text-zinc-400 text-[11px]">Command</span>
+                <span className="text-cyan-400 font-bold">{currentEvent.command}</span>
               </div>
-              <div className="bg-[#111118] px-3.5 py-2 rounded border border-[#2b2b3d] font-minecraft">
-                <div className="text-[10px] text-zinc-400">ARCHIVE FILE</div>
-                <div className="text-yellow-400 text-xs font-bold">{currentEvent.logFile}</div>
+              <div className="bg-[#111118] px-3 py-1.5 rounded border border-[#262838] font-minecraft flex items-center justify-between gap-3 text-xs">
+                <span className="text-zinc-400 text-[11px]">Archive</span>
+                <span className="text-amber-300 font-bold">{currentEvent.logFile}</span>
               </div>
             </div>
           </div>
@@ -652,9 +652,9 @@ export default function EventsPage({ setActiveTab }) {
           {/* VISUAL HUD SIMULATION (HOW IT LOOKS IN-GAME) */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs font-minecraft">
-              <span className="text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                <Radio className="w-3.5 h-3.5 text-red-500 animate-pulse" />
-                HOW IT LOOKS ON YOUR SCREEN (IN-GAME HUD SIMULATION)
+              <span className="text-zinc-400 flex items-center gap-1.5">
+                <Radio className="w-3.5 h-3.5 text-red-400" />
+                <span>In-Game HUD Simulation</span>
               </span>
               <span className="text-zinc-500 text-[10px]">Real-Time Action Bar Packet</span>
             </div>

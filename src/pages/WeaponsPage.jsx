@@ -16,7 +16,7 @@ export default function WeaponsPage() {
     {
       id: 'lifestealer',
       name: 'Lifestealer',
-      fullName: '⚔ Lifestealer ⚔',
+      fullName: 'Lifestealer',
       type: 'Netherite Sword',
       attackSpeed: '1.6 Attack Speed (Classic)',
       enchantments: 'Sharpness V, Sweeping Edge III, Looting III, Fire Aspect II, Unbreaking III, Mending I',
@@ -57,7 +57,7 @@ export default function WeaponsPage() {
     {
       id: 'mace',
       name: 'Worldbreaker Mace',
-      fullName: '⚡ Worldbreaker Mace ⚡',
+      fullName: 'Worldbreaker Mace',
       type: 'Heavy Mace',
       attackSpeed: 'Fast 1.6 Sword Speed (No Sluggish Cooldown)',
       enchantments: 'Density V, Breach IV, Wind Burst III, Sharpness V, Fire Aspect II, Knockback II, Unbreaking III, Mending I',
@@ -98,7 +98,7 @@ export default function WeaponsPage() {
     {
       id: 'spear',
       name: 'Gungnir, Sovereign Spear',
-      fullName: '🌿 Gungnir, Sovereign Spear 🌿',
+      fullName: 'Gungnir, Sovereign Spear',
       type: 'Netherite Spear',
       attackSpeed: 'Fast 1.6 Sword Speed (Lunge Animation)',
       enchantments: 'Sharpness V, Lunge III, Fire Aspect II, Knockback II, Unbreaking III, Mending I',
@@ -139,7 +139,7 @@ export default function WeaponsPage() {
     {
       id: 'trident',
       name: "Poseidon's Abyssal Tempest",
-      fullName: "🔱 Poseidon's Abyssal Tempest 🔱",
+      fullName: "Poseidon's Abyssal Tempest",
       type: 'Legendary Trident',
       attackSpeed: 'Fast 1.6 Sword Speed (Melee & Anywhere Riptide)',
       enchantments: 'Impaling V, Sharpness V, Loyalty III, Channeling I, Unbreaking III, Mending I',
@@ -180,7 +180,7 @@ export default function WeaponsPage() {
     {
       id: 'crossbow',
       name: 'Doomherald, Oblivion Ballista',
-      fullName: '💥 Doomherald, Oblivion Ballista 💥',
+      fullName: 'Doomherald, Oblivion Ballista',
       type: 'Heavy Crossbow',
       attackSpeed: 'Quick Charge III Heavy Artillery',
       enchantments: 'Quick Charge III, Piercing IV, Infinity I, Unbreaking III, Mending I',
@@ -411,10 +411,10 @@ export default function WeaponsPage() {
             </div>
 
             <div className="flex items-center gap-2.5 bg-[#111118] px-3.5 py-2 rounded border border-[#2b2b3d] shrink-0">
-              <Radio className="w-4 h-4 text-red-500 animate-pulse" />
+              <Radio className="w-4 h-4 text-red-400" />
               <div className="text-left font-minecraft">
                 <div className="text-[10px] text-zinc-400">IN-GAME COMMAND</div>
-                <div className="text-[#00ffff] text-xs font-bold">{currentWeapon.command}</div>
+                <div className="text-cyan-400 text-xs font-bold">{currentWeapon.command}</div>
               </div>
             </div>
           </div>
@@ -635,82 +635,82 @@ export default function WeaponsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
           
           {/* Warden Tier */}
-          <div className="p-4 bg-[#161824] rounded-lg border border-cyan-800/60 space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-cyan-950 text-[#00ffff] border border-cyan-700">
-                WARDEN (TIER V)
+          <div className="p-3.5 bg-[#141520] rounded-lg border border-cyan-900/40 space-y-2.5">
+            <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-800">
+                Warden (Tier V)
               </span>
-              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+              <span className="text-[10px] text-zinc-500 font-minecraft">Dual Set</span>
             </div>
-            <div className="space-y-1">
-              <div className="text-xs font-minecraft text-yellow-300 font-bold">
-                ⛏ Sculk Resonator
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-yellow-300 font-semibold truncate mr-2">Sculk Resonator</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Fortune III (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
-              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
-                ⛏ Sculk Silk Resonator
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-cyan-300 font-semibold truncate mr-2">Sculk Silk Resonator</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Silk Touch I (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
             </div>
           </div>
 
           {/* Eternal Tier */}
-          <div className="p-4 bg-[#161824] rounded-lg border border-yellow-800/60 space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-yellow-950 text-yellow-300 border border-yellow-700">
-                ETERNAL (TIER VI)
+          <div className="p-3.5 bg-[#141520] rounded-lg border border-yellow-900/40 space-y-2.5">
+            <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-yellow-950/80 text-yellow-300 border border-yellow-800">
+                Eternal (Tier VI)
               </span>
-              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+              <span className="text-[10px] text-zinc-500 font-minecraft">Dual Set</span>
             </div>
-            <div className="space-y-1">
-              <div className="text-xs font-minecraft text-yellow-300 font-bold">
-                ⛏ Eternal Nebula Pickaxe
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-yellow-300 font-semibold truncate mr-2">Eternal Nebula</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Fortune III (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
-              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
-                ⛏ Eternal Silk Nebula Pickaxe
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-cyan-300 font-semibold truncate mr-2">Eternal Silk Nebula</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Silk Touch I (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
             </div>
           </div>
 
           {/* Wither Tier */}
-          <div className="p-4 bg-[#161824] rounded-lg border border-purple-800/60 space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-700">
-                WITHER (TIER VII)
+          <div className="p-3.5 bg-[#141520] rounded-lg border border-purple-900/40 space-y-2.5">
+            <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-purple-950/80 text-purple-300 border border-purple-800">
+                Wither (Tier VII)
               </span>
-              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+              <span className="text-[10px] text-zinc-500 font-minecraft">Dual Set</span>
             </div>
-            <div className="space-y-1">
-              <div className="text-xs font-minecraft text-yellow-300 font-bold">
-                ⛏ Wither Core Obliterator
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-yellow-300 font-semibold truncate mr-2">Wither Obliterator</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Fortune III (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
-              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
-                ⛏ Wither Silk Core Obliterator
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-cyan-300 font-semibold truncate mr-2">Wither Silk Obliterator</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Silk Touch I (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
             </div>
           </div>
 
           {/* Ender Tier */}
-          <div className="p-4 bg-[#161824] rounded-lg border border-emerald-800/60 space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700">
-                ENDER (APEX TIER VIII)
+          <div className="p-3.5 bg-[#141520] rounded-lg border border-emerald-900/40 space-y-2.5">
+            <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+              <span className="text-[10px] font-minecraft px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-800">
+                Ender (Tier VIII)
               </span>
-              <span className="text-[10px] text-zinc-400 font-minecraft">DUAL SET</span>
+              <span className="text-[10px] text-zinc-500 font-minecraft">Dual Set</span>
             </div>
-            <div className="space-y-1">
-              <div className="text-xs font-minecraft text-yellow-300 font-bold">
-                ⛏ Void Sovereign World-Shaper
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-yellow-300 font-semibold truncate mr-2">Void World-Shaper</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Fortune III (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
-              <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
-                ⛏ Void Sovereign Silk Shaper
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-minecraft text-cyan-300 font-semibold truncate mr-2">Void Silk Shaper</span>
+                <span className="text-[11px] text-zinc-400 font-sans whitespace-nowrap">Silk Touch I (3x3)</span>
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Silk Touch I • 3x3x1 Clean Harvest</div>
             </div>
           </div>
 

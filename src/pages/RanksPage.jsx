@@ -186,7 +186,7 @@ export default function RanksPage() {
         </div>
         <div className="flex items-center gap-2 px-3 py-1.5 bg-black/50 border border-zinc-700 rounded text-xs font-minecraft text-zinc-300 shrink-0">
           <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>KeepInventory: <strong className="text-red-400">OFF (ALL RANKS)</strong></span>
+          <span>KeepInventory: <strong className="text-red-400">Off (All Ranks)</strong></span>
         </div>
       </div>
 
@@ -196,11 +196,11 @@ export default function RanksPage() {
           <div className="flex items-center gap-2.5">
             <ShieldCheck className="w-5 h-5 text-yellow-400 shrink-0" />
             <h3 className="font-minecraft text-sm sm:text-base text-white font-bold tracking-wider">
-              FAIR PLAY BALANCING (VANILLA LIMITS)
+              Fair Play Balancing (Vanilla Limits)
             </h3>
           </div>
           <span className="text-[10px] font-minecraft bg-black/50 border border-yellow-600/40 text-yellow-300 px-2.5 py-0.5 rounded">
-            NO OVER-ENCHANTED GEAR
+            Vanilla Limits Enforced
           </span>
         </div>
 
@@ -247,7 +247,7 @@ export default function RanksPage() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="font-minecraft text-base sm:text-lg text-white font-bold tracking-wider">
-            SELECT A RANK TO INSPECT
+            Select a Rank to Inspect
           </h3>
           <span className="text-xs text-zinc-400 font-sans hidden sm:inline">
             Click any tier to view perks
@@ -305,7 +305,7 @@ export default function RanksPage() {
             {/* Rank Perks */}
             <div className="p-4 bg-[#181926] border border-[#2c2d40] rounded-lg space-y-3">
               <h4 className="font-minecraft text-xs sm:text-sm text-yellow-300 font-bold uppercase tracking-wider">
-                RANK PRIVILEGES &amp; PERKS
+                Rank Privileges &amp; Perks
               </h4>
               <ul className="space-y-2">
                 {currentRank.perks.map((perk, i) => (
@@ -321,7 +321,7 @@ export default function RanksPage() {
             <div className="space-y-3">
               <div className="p-3.5 bg-[#181926] border border-[#2c2d40] rounded-lg space-y-1">
                 <h4 className="font-minecraft text-xs text-white font-bold tracking-wider">
-                  ARMOR SET PASSIVES &amp; HEALTH
+                  Armor Set Passives &amp; Health
                 </h4>
                 <p className="text-xs text-emerald-300 font-sans leading-relaxed">
                   {currentRank.setPerks}
@@ -333,7 +333,7 @@ export default function RanksPage() {
 
               <div className="p-3.5 bg-[#181926] border border-[#2c2d40] rounded-lg space-y-2">
                 <h4 className="font-minecraft text-xs text-white font-bold tracking-wider">
-                  INCLUDED KIT SHULKER REWARDS
+                  Included Kit Shulker Rewards
                 </h4>
                 <p className="text-xs text-zinc-300 font-sans leading-relaxed">
                   {currentRank.kitSummary}

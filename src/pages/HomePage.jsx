@@ -64,31 +64,31 @@ export default function HomePage({ setActiveTab }) {
 
   const artifactDetails = {
     lifestealer: {
-      name: '⚔ Lifestealer ⚔',
+      name: 'Lifestealer',
       type: 'Netherite Sword (1.6 Speed)',
       highlight: 'Steals up to 4 Hearts on-hit, Wither II decay, and 10-block Siphon Nova (+10 Hearts for 5m).',
       lore: 'Crafted via the solitary Dragon Egg, 4 Netherite Blocks, and 4 God Apples. The apex relic of Scalyx SMP.'
     },
     mace: {
-      name: '⚡ Worldbreaker Mace ⚡',
+      name: 'Worldbreaker Mace',
       type: 'Heavy Mace (1.6 Sword Speed)',
       highlight: '100% Lightning Stun (5s freeze), mid-air Double Jump, and 10-block Seismic Cataclysm explosion.',
       lore: 'Crafted with a Heavy Core, Breeze Rods, Netherite Blocks, and God Apples. Catastrophic aerial slam attack.'
     },
     spear: {
-      name: '🌿 Gungnir, Sovereign Spear 🌿',
+      name: 'Gungnir, Sovereign Spear',
       type: 'Netherite Spear (1.6 Speed)',
       highlight: 'Zero Hunger Cost, 100% fall damage negation, shield-breaker, and 35-block Verdant Harpoon beam.',
       lore: 'Crafted with a Nether Star, Netherite Blocks, Echo Shards, and Heart of the Sea. Ancient sovereign spear.'
     },
     trident: {
-      name: '🔱 Poseidon\'s Abyssal Tempest 🔱',
+      name: 'Poseidon\'s Abyssal Tempest',
       type: 'Legendary Trident (1.6 Speed)',
       highlight: 'Permanent water buffs, Anywhere Riptide on right-click, whirlpool trap, and 25-block Tsunami Cataclysm.',
       lore: 'Crafted with Heart of the Sea, 2 Tridents, Netherite Blocks, God Apples, and Conduit. Master of the seas.'
     },
     crossbow: {
-      name: '💥 Doomherald, Oblivion Ballista 💥',
+      name: 'Doomherald, Oblivion Ballista',
       type: 'Heavy Crossbow (Quick Charge III)',
       highlight: '2 Hearts pure true damage bypassing all armor, 30% Rapid Barrage burst, and 10-block Calamity Nuke.',
       lore: 'Crafted with Nether Star, Crossbow, Dragon\'s Breath, Netherite Blocks, and God Apple. Pure siege destruction.'
@@ -276,7 +276,7 @@ export default function HomePage({ setActiveTab }) {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                  <span><strong>☠️ Severed Head Trophies:</strong> Mythic kills guarantee dropping the victim's authentic player head!</span>
+                  <span><strong>Severed Head Trophies:</strong> Mythic kills guarantee dropping the victim's authentic player head</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00ffff]"></span>
