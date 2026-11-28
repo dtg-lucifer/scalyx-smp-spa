@@ -237,7 +237,7 @@ export default function WorldPage() {
       image: '/assets/images/gui/gui_inventory_loadout.png',
       badge: 'Active Buffs HUD',
       badgeColor: 'bg-emerald-950/80 text-emerald-300 border-emerald-600',
-      description: 'Full player inventory showcase featuring 4 tiers of custom armors, mythic weapons in hotbar, and active permanent potion buffs: Speed III, Fire Resistance, Strength II, Absorption II, and Night Vision.'
+      description: 'Full player inventory showcase featuring 4 tiers of custom armors, mythic weapons in hotbar, and active permanent potion buffs: Speed III, Fire Resistance, Strength II, and Night Vision.'
     }
   ];
 

@@ -58,7 +58,7 @@ export default function HomePage({ setActiveTab }) {
       bgColor: 'bg-purple-500/10 border-purple-500/30',
       title: 'Hierarchical Ranks',
       tagline: 'Earnable & Downward Kits',
-      desc: 'Higher ranks automatically claim all lower rank kits! Scale your health pool dynamically up to 20 full hearts (40 HP) with full god armor sets.'
+      desc: 'Higher ranks automatically claim all lower rank kits! Scale your health pool dynamically up to 20 full hearts (40 HP) with tiered custom armor sets.'
     }
   ];
 
@@ -89,7 +89,7 @@ export default function HomePage({ setActiveTab }) {
     },
     crossbow: {
       name: '💥 Doomherald, Oblivion Ballista 💥',
-      type: 'Heavy Crossbow (Quick Charge V)',
+      type: 'Heavy Crossbow (Quick Charge III)',
       highlight: '2 Hearts pure true damage bypassing all armor, 30% Rapid Barrage burst, and 10-block Calamity Nuke.',
       lore: 'Crafted with Nether Star, Crossbow, Dragon\'s Breath, Netherite Blocks, and God Apple. Pure siege destruction.'
     }
@@ -108,7 +108,7 @@ export default function HomePage({ setActiveTab }) {
         <div className="max-w-4xl mx-auto text-center px-4 relative z-10 space-y-5">
           
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#171822] border border-[#36384d] rounded-full text-[11px] font-minecraft text-[#00ffff] uppercase tracking-wider shadow-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             MINECRAFT JAVA 26.3 (LATEST) • ACTIVE REALM
           </div>
 
@@ -126,45 +126,45 @@ export default function HomePage({ setActiveTab }) {
           </div>
 
           {/* Quick Actions */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
             <button
               onClick={() => { setActiveTab('weapons'); playClickSound(); }}
-              className="mc-button mc-button-gold flex items-center gap-1.5"
+              className="mc-button mc-button-gold h-10 px-3.5 flex items-center gap-1.5 text-xs"
             >
               <Sword className="w-4 h-4" />
-              <span>THE 5 MYTHIC ARTIFACTS</span>
+              <span>Mythic Artifacts</span>
             </button>
 
             <button
               onClick={() => { setActiveTab('events'); playClickSound(); }}
-              className="mc-button mc-button-red flex items-center gap-1.5"
+              className="mc-button mc-button-red h-10 px-3.5 flex items-center gap-1.5 text-xs"
             >
-              <Flame className="w-4 h-4 text-orange-400" />
-              <span>SERVER EVENTS &amp; PRIZES</span>
+              <Flame className="w-4 h-4 text-orange-300" />
+              <span>Server Events</span>
             </button>
 
             <button
               onClick={() => { setActiveTab('world'); playClickSound(); }}
-              className="mc-button flex items-center gap-1.5"
+              className="mc-button h-10 px-3.5 flex items-center gap-1.5 text-xs"
             >
-              <Compass className="w-4 h-4 text-[#00ffff]" />
-              <span>EXPLORE CUSTOM WORLDS</span>
+              <Compass className="w-4 h-4 text-cyan-300" />
+              <span>Custom Worlds</span>
             </button>
 
             <button
               onClick={() => { setActiveTab('ranks'); playClickSound(); }}
-              className="mc-button mc-button-green flex items-center gap-1.5"
+              className="mc-button mc-button-green h-10 px-3.5 flex items-center gap-1.5 text-xs"
             >
-              <Trophy className="w-4 h-4" />
-              <span>VIEW RANKS &amp; KITS</span>
+              <Trophy className="w-4 h-4 text-emerald-200" />
+              <span>Ranks &amp; Kits</span>
             </button>
 
             <button
               onClick={() => { setActiveTab('rules'); playClickSound(); }}
-              className="mc-button flex items-center gap-1.5"
+              className="mc-button h-10 px-3.5 flex items-center gap-1.5 text-xs"
             >
-              <Scroll className="w-4 h-4 text-red-400" />
-              <span>SERVER RULES &amp; CODE</span>
+              <Scroll className="w-4 h-4 text-red-300" />
+              <span>Server Rules</span>
             </button>
           </div>
 
@@ -176,7 +176,7 @@ export default function HomePage({ setActiveTab }) {
         <div className="bg-gradient-to-r from-red-950/60 via-[#181216] to-red-950/60 border-2 border-red-700/60 p-5 rounded-lg shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3.5">
             <div className="p-2.5 bg-red-900/40 border border-red-500 rounded text-red-400 shrink-0">
-              <AlertTriangle className="w-6 h-6 animate-bounce" />
+              <AlertTriangle className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-minecraft text-sm sm:text-base text-red-400 font-bold tracking-wider">

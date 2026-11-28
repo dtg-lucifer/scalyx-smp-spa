@@ -74,7 +74,7 @@ All rank kits are packaged inside permanent, color-coded Shulker Boxes.
 
 ### 🛡️ Fair Play Armor & Inventory Balancing
 - **No Thorns Across All Kits**: The Thorns enchantment has been **completely removed** from all rank kit armor sets to keep combat clean and enjoyable without annoying passive damage reflection.
-- **Protection Hard Cap (Max Protection V)**: All higher-tier armor sets are strictly capped at **Protection V maximum** to preserve PvP balance and eliminate pay-to-win armor advantages.
+- **Protection Hard Cap (Max Protection IV)**: All higher-tier armor sets are strictly capped at vanilla **Protection IV maximum** to preserve PvP balance and eliminate pay-to-win armor advantages.
 - **Spear Lunge Hard Cap (Max Lunge III)**: All kit spears across all tiers (including high-rank Wither & Ender) are capped at **Lunge III maximum** to prevent unbalanced gap-closing lunges in PvP.
 - **Mace Enchantment Mutual Exclusivity (Density Only)**: Rank kit maces strictly feature **Density only** (`Density V`), with Breach completely removed to maintain fair armor damage calculations and respect vanilla mutual exclusivity rules.
 - **Quartz Armor Trims for Ender**: The supreme Tier VIII Ender Netherite armor features authentic **Quartz** material trims:
@@ -84,7 +84,7 @@ All rank kits are packaged inside permanent, color-coded Shulker Boxes.
 - **Higher Rank Kit Inventory Additions** *(Warden, Eternal, Wither, Ender only)*:
   - **64x Experience Bottles**: Added to all 4 high-rank kits that feature Super Pickaxes.
   - **Dual 3x3x1 Super Pickaxes**: Every high rank kit provides **TWO** distinct 3x3x1 Super Pickaxes:
-    - **1x Fortune Super Pickaxe**: Standard 3x3 area mining with Fortune IV (or III).
+    - **1x Fortune Super Pickaxe**: Standard 3x3 area mining with Fortune III.
     - **1x Silk Touch Super Pickaxe**: Dedicated 3x3 area mining with Silk Touch I.
   - **64x Oak Logs (1 Stack)**: Added exclusively to the highest rank kit (**Ender**).
   - *Lower-tier kits (Coal, Iron, Gold, Blaze) do NOT receive these items.*
@@ -92,9 +92,9 @@ All rank kits are packaged inside permanent, color-coded Shulker Boxes.
 ### 🩸 Armor Health Scaling & Set Perks
 Wearing a complete 4-piece set of ranked armor activates permanent potion effects, perks, and heart increases. Removing any piece immediately resets max health back to 10 hearts (20 HP) with no lingering glitches:
 
-- **Ender Set (Tier VIII)**: **20 Hearts (40 HP Max)**, Speed III, Strength II, Permanent Fire Resistance, No Fall Damage & Absorption II (+4 Absorption Hearts).
-- **Wither Set (Tier VII)**: **16 Hearts (32 HP)**, Speed II, Strength II, Resistance II, Wither Effect Immunity, No Fall Damage & Absorption I.
-- **Eternal Set (Tier VI)**: **14 Hearts (28 HP)**, Speed I, Strength I, Resistance I, No Fall Damage & Absorption I.
+- **Ender Set (Tier VIII)**: **20 Hearts (40 HP Max)**, Speed III, Strength II, Permanent Fire Resistance, and No Fall Damage.
+- **Wither Set (Tier VII)**: **16 Hearts (32 HP)**, Speed II, Strength II, Resistance II, Wither Effect Immunity, and No Fall Damage.
+- **Eternal Set (Tier VI)**: **14 Hearts (28 HP)**, Speed I, Strength I, Resistance I, and No Fall Damage.
 - **Warden Set (Tier V)**: **12 Hearts (24 HP)**, Night Vision, Resistance I, Blindness & Darkness Immunity.
 - **Blaze Set (Tier IV)**: Permanent Fire Resistance & Speed I (Auto-extinguishes fire/lava).
 - **Gold Set (Tier III)**: Resistance I & Haste I.
@@ -110,9 +110,9 @@ Custom area-mining pickaxes (modeled after DonutSMP) are equipped in high-tier k
 
 - **Dual Pickaxe Setup**: Each eligible kit includes both a **Fortune** version and a **Silk Touch** version:
   - *Warden (Tier V)*: **Sculk Resonator** (Fortune III) & **Sculk Silk Resonator** (Silk Touch I)
-  - *Eternal (Tier VI)*: **Eternal Nebula Pickaxe** (Fortune IV) & **Eternal Silk Nebula Pickaxe** (Silk Touch I)
-  - *Wither (Tier VII)*: **Wither Core Obliterator** (Fortune IV) & **Wither Silk Core Obliterator** (Silk Touch I)
-  - *Ender (Tier VIII)*: **Void Sovereign World-Shaper** (Fortune IV) & **Void Sovereign Silk Shaper** (Silk Touch I)
+  - *Eternal (Tier VI)*: **Eternal Nebula Pickaxe** (Fortune III) & **Eternal Silk Nebula Pickaxe** (Silk Touch I)
+  - *Wither (Tier VII)*: **Wither Core Obliterator** (Fortune III) & **Wither Silk Core Obliterator** (Silk Touch I)
+  - *Ender (Tier VIII)*: **Void Sovereign World-Shaper** (Fortune III) & **Void Sovereign Silk Shaper** (Silk Touch I)
 - **Ability**: Mines a 3-wide × 3-high × 1-deep (3×3×1) area centered on the target block.
 - **Toggle Mode**: Right-Clicking while holding any Super Pickaxe toggles between **Super Pickaxe Mode (3x3x1)** and **Normal Mining Mode (1x1)** with audio feedback and action bar confirmation.
 - **Full Enchantment Support**: Fortune multiplies ore yields for every broken block; Silk Touch extracts raw intact blocks natively across the entire 3x3 area.
@@ -154,7 +154,7 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 - **Unobtainable via P2W / Ranks**: Cannot be purchased, claimed from rank kits, or spawned by donor perks.
 - **Dedicated Artifacts GUI (`/artifacts` or `/mythics`)**: Full interactive 54-slot showcase showing status (`LOCKED`, `EVENT ACTIVE`, or `ALREADY FORGED`), live wielders, ability breakdowns, and interactive 3x3 crafting recipes.
 - **30-Second Stun Cooldown**: Stun abilities on the Mace and Spear feature an enforced **30-second cooldown** to prevent team stun-locking.
-- **Balanced Damage Scaling (Non-P2W)**: Weapons are tuned with high-tier enchantments (Sharpness VI, Density V, Breach IV, Lunge V) and unique abilities, while ensuring no weapon deals twice the damage of a maxed vanilla sword.
+- **Balanced Damage Scaling (Non-P2W)**: Weapons are tuned with high-tier enchantments (Sharpness V, Density V, Breach IV, Lunge III) and unique abilities, while ensuring no weapon deals twice the damage of a maxed vanilla sword.
 - **30-Minute Hunt & Drop on Death**:
   - Forging triggers an emergency global server broadcast!
   - Permanent glowing effect on the carrier.
@@ -169,7 +169,7 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 
 ### 1. ⚔️ Lifestealer (Netherite Sword)
 - **Crafting Recipe**: `1x Dragon Egg` surrounded by `4x Netherite Blocks` and `4x Enchanted Golden Apples`.
-- **Enchantments**: Sharpness VI, Sweeping Edge V, Looting V, Fire Aspect II, Unbreaking V, Mending I.
+- **Enchantments**: Sharpness V, Sweeping Edge III, Looting III, Fire Aspect II, Unbreaking III, Mending I.
 - **Passive 1 (Heart Theft)**: Steals 1 Heart (up to 4 Hearts) on-hit for 60 seconds.
 - **Passive 2 (Wither Decay)**: 10% chance on-hit to inflict Wither II decay.
 - **Ultimate (Heart Siphon Nova - 5m Cooldown)**: Hold Right-Click for 5s to siphon 1 Heart each from up to 10 entities in a 10-block radius, granting the wielder up to **+10 Max Hearts for 5 minutes**!
@@ -177,7 +177,7 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 ### 2. ⚡ Worldbreaker Mace (Mace)
 - **Crafting Recipe**: `1x Heavy Core` (center), `4x Netherite Blocks` (corners), `2x Breeze Rods` (top/bottom), `2x Enchanted Golden Apples` (sides).
 - **Attack Speed Modifier**: **Minimal Attack Cooldown** (Sword-speed 1.6 attack speed / fast combat cadence).
-- **Enchantments**: Density V, Breach IV, Wind Burst III, Sharpness VI, Fire Aspect II, Knockback II, Unbreaking V, Mending I.
+- **Enchantments**: Density V, Breach IV, Wind Burst III, Sharpness V, Fire Aspect II, Knockback II, Unbreaking III, Mending I.
 - **Passive 1 (Stun - 30s Cooldown)**: 100% chance on-hit against players and mobs to strike them with lightning and completely paralyze them (AI disabled for mobs; walk speed 0, jump locked, mining fatigue for players) for 5 seconds (30-second cooldown per player).
 - **Passive 2 (Double Jump)**: Press Jump twice in mid-air to launch 15 blocks into the sky with an explosive wind burst!
 - **Ultimate (Seismic Cataclysm - Crouch + Jump, 2m Cooldown)**: Crouch and Jump to rocket 20 blocks into the sky. Negates 100% fall damage on landing and detonates a massive **10-block ground explosion** dealing devastating damage to surrounding enemies! *(Normal vanilla fall smash attack remains uncapped).*
@@ -187,7 +187,7 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 - **Attack Speed Modifier**: **Minimal Attack Cooldown** (Sword-speed 1.6 attack speed / fast combat cadence).
 - **Infinite Stamina**: **Zero Hunger Cost** while carrying or wielding the spear.
 - **Crafting Recipe**: `1x Nether Star` (center), `4x Netherite Blocks` (sides), `4x Echo Shards` (corners), `1x Heart of the Sea` (bottom).
-- **Enchantments**: Sharpness VI, Lunge V, Fire Aspect II, Knockback II, Unbreaking V, Mending I.
+- **Enchantments**: Sharpness V, Lunge III, Fire Aspect II, Knockback II, Unbreaking III, Mending I.
 - **Passive 1 (Light Foot)**: Negates 100% of all fall damage while holding or carrying the spear!
 - **Passive 2 (Stun - 30s Cooldown)**: 100% chance on-hit against players and mobs to strike them with lightning and paralyze them for 5 seconds (30-second cooldown per player).
 - **Passive 3 (Breaker of Chains)**: Always shatters and disables enemy shields on-hit with audio-visual break feedback.
@@ -196,14 +196,14 @@ Across the entire realm of Scalyx SMP, there exist **only 5 Server-Unique Mythic
 ### 4. 🔱 Poseidon's Abyssal Tempest (Trident)
 - **Crafting Recipe**: `1x Heart of the Sea` (center), `2x Tridents` (top corners), `4x Netherite Blocks`, `2x Enchanted Golden Apples` (middle sides), `1x Conduit` (bottom).
 - **Attack Speed Modifier**: **Minimal Attack Cooldown** (Sword-speed 1.6 attack speed / fast combat cadence).
-- **Enchantments**: Impaling VII, Loyalty III, Channeling I, Sharpness VI, Unbreaking V, Mending I *(Trident Throw Disabled: Melee & Anywhere Riptide only)*.
+- **Enchantments**: Impaling V, Loyalty III, Channeling I, Sharpness V, Unbreaking III, Mending I *(Trident Throw Disabled: Melee & Anywhere Riptide only)*.
 - **Passive 1 (Ocean's Sovereign & Anywhere Riptide)**: Permanent Water Breathing, Dolphin's Grace, and Conduit Power while held. Right-Click triggers **Anywhere Riptide Dash** with client cooldown protection and an Action Bar status indicator (`RIPTIDE READY` / `RECHARGING`).
 - **Passive 2 (Abyssal Drown - 30% Chance On-Hit)**: **30% chance on every hit** to inflict true **drowning damage for 5 seconds** (1 heart/sec) and paralyze the target with **Slowness IV for 10 seconds**! Displays drowning bubbles, water splash particles, and drowning audio.
 - **Ultimate (Tsunami Cataclysm - Sneak + Right-Click, 2m Cooldown)**: Summons a surging 25-block tsunami tidal wave with lightning strikes, sweeping enemies up, dealing heavy water damage and Slowness III.
 
 ### 5. 💥 Doomherald, Oblivion Ballista (Crossbow)
 - **Crafting Recipe**: `1x Nether Star` (center), `1x Crossbow` (top), `4x Netherite Blocks` (sides), `4x Dragon's Breath` (corners), `1x Enchanted Golden Apple` (bottom).
-- **Enchantments**: Piercing IV, Quick Charge V, Infinity I, Unbreaking V, Mending I *(Multishot removed per design)*.
+- **Enchantments**: Piercing IV, Quick Charge III, Infinity I, Unbreaking III, Mending I *(Multishot removed per design)*.
 - **True Oblivion Pierce**: Every hit directly deals **2 Hearts (4 HP) of pure true damage**, completely bypassing all armor, protection, and enchantments!
 - **Passive 1 (Rapid Barrage)**: **30% chance** on shoot to grant 10 rapid-fire instant shots without needing to reload!
 - **Passive 2 (Void Toxin)**: 30% chance on arrow hit to inflict Darkness and Poison for 15 seconds.
@@ -218,28 +218,28 @@ In addition to the 5 Mythic Weapons, Scalyx SMP features **4 Server-Unique Mythi
 #### 1. ⚡ Stormbreaker Aegis (Netherite Chestplate)
 - **Base Item**: `minecraft:netherite_chestplate`
 - **Lore**: *"Forged in the heart of the eternal tempest."*
-- **Enchantments**: Protection V, Unbreaking V, Mending I
+- **Enchantments**: Protection IV, Unbreaking III, Mending I
 - **Combat Passive (Storm Surge Aura)**: Landing a 7-hit melee combo triggers an electrifying lightning storm around the wearer, calling down lightning bolts on all nearby hostiles within 8 blocks, inflicting heavy shock damage, and granting the wearer **Resistance I** for 10 seconds.
 - **Identifier**: `storm_chestplate`
 
 #### 2. 👁 All-Seeing Crown (Netherite Helmet)
 - **Base Item**: `minecraft:netherite_helmet`
 - **Lore**: *"The gaze of the ancient watchers pierces through all realms."*
-- **Enchantments**: Protection V, Respiration III, Aqua Affinity I, Unbreaking V, Mending I
+- **Enchantments**: Protection IV, Respiration III, Aqua Affinity I, Unbreaking III, Mending I
 - **Ability (Hunter's Vision - 3m Cooldown)**: Crouching continuously for **10 seconds** unleashes ancient psychic radar, granting all online players within a massive **100-block radius** a **Glowing outline for 30 seconds** and broadcasting their exact coordinates and distance to the wearer.
 - **Identifier**: `oracle_helmet`
 
 #### 3. 🛡 Mirrorwalk Greaves (Netherite Leggings)
 - **Base Item**: `minecraft:netherite_leggings`
 - **Lore**: *"Walk the threshold between realities; mirror all strikes."*
-- **Enchantments**: Protection V, Swift Sneak III, Unbreaking V, Mending I
+- **Enchantments**: Protection IV, Swift Sneak III, Unbreaking III, Mending I
 - **Combat Passive (Mirror Barrier - 2m Cooldown)**: When the wearer's health falls below **5 hearts (10 HP)**, an iridescent crystalline energy barrier activates for **30 seconds**, reflecting **50% of all incoming damage directly back at the attackers** (capped at a total of 10 hearts deflected before shattering).
 - **Identifier**: `mirror_leggings`
 
 #### 4. ☄ Titanfall Boots (Netherite Boots)
 - **Base Item**: `minecraft:netherite_boots`
 - **Lore**: *"Drop from the heavens and crush the earth."*
-- **Enchantments**: Protection V, Feather Falling IV, Depth Strider III, Unbreaking V, Mending I
+- **Enchantments**: Protection IV, Feather Falling IV, Depth Strider III, Unbreaking III, Mending I
 - **Combat Passive (Seismic Titanfall)**: Falling from a height of **5 or more blocks completely negates all fall damage** and triggers a devastating **Density V Mace seismic impact** in a **5-block ground radius**, dealing heavy kinetic shock damage and launching nearby enemies high into the air.
 - **Identifier**: `titan_boots`
 
@@ -261,7 +261,7 @@ Scalyx SMP features 5 custom, fully-automated server events designed to drive co
 
 ### 2. 👑 Crown of the Warlord (`/warlord`)
 * **~5000-Block Spawn Drop**: Initiated via `/warlord start`, the celestial **Crown of the Warlord** spawns at a randomized location ~5000 blocks away from world spawn to ensure a fair race for every player! Coordinates are broadcasted to chat.
-* **Warlord Transformation**: Holding or wearing the crown makes the player the **Warlord**, granting **Permanent Glowing**, **+4 Extra Hearts** (Absorption II), **Strength I**, and **Resistance I**.
+* **Warlord Transformation**: Holding or wearing the crown makes the player the **Warlord**, granting **Permanent Glowing**, **+4 Extra Hearts** (Warlord Crown Blessing), **Strength I**, and **Resistance I**.
 * **Curse of Burden**: To preserve fair combat, the Warlord **cannot teleport, throw ender pearls, or fly**.
 * **Score Accumulation**: Holding the crown earns **1 Point every 3 seconds**. Action bar radar tracks distance to the crown or current Warlord for all players.
 * **Drop on Death / Disconnect**: Dropped immediately upon death or quit. Slay the Warlord to seize it!
@@ -310,10 +310,10 @@ Scalyx SMP features 5 custom, fully-automated server events designed to drive co
   * The first player to collect all 10 items wins the hunt!
   * **🏆 Rotating God Armor Champion Trophy**:
     * Each completed hunt rotates through **4 pieces of Server God Armor**:
-      1. 🛡 **God Chestplate**: Netherite Chestplate, **Every Protection Level IV** (`Protection IV`, `Fire Protection IV`, `Blast Protection IV`, `Projectile Protection IV`), `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
-      2. 👖 **God Leggings**: Netherite Leggings, **Every Protection Level IV**, `Swift Sneak III`, `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
-      3. 👢 **God Boots**: Netherite Boots, **Every Protection Level IV**, `Feather Falling IV`, `Depth Strider III`, `Soul Speed III`, `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
-      4. 👑 **God Helmet**: Netherite Helmet, **Every Protection Level IV**, `Respiration III`, `Aqua Affinity I`, `Unbreaking IV`, `Mending I`, `Thorns III`, **Dune Armor Trim with Emerald**.
+      1. 🛡 **God Chestplate**: Netherite Chestplate, **Every Protection Level IV** (`Protection IV`, `Fire Protection IV`, `Blast Protection IV`, `Projectile Protection IV`), `Unbreaking III`, `Mending I`, **Dune Armor Trim with Emerald**.
+      2. 👖 **God Leggings**: Netherite Leggings, **Every Protection Level IV**, `Swift Sneak III`, `Unbreaking III`, `Mending I`, **Dune Armor Trim with Emerald**.
+      3. 👢 **God Boots**: Netherite Boots, **Every Protection Level IV**, `Feather Falling IV`, `Depth Strider III`, `Soul Speed III`, `Unbreaking III`, `Mending I`, **Dune Armor Trim with Emerald**.
+      4. 👑 **God Helmet**: Netherite Helmet, **Every Protection Level IV**, `Respiration III`, `Aqua Affinity I`, `Unbreaking III`, `Mending I`, **Dune Armor Trim with Emerald**.
     * **Rotation Sequence**: `Chestplate` ➔ `Leggings` ➔ `Boots` ➔ `Helmet` ➔ `Chestplate` (persisted in `SCAVENGER_HUNT.md`).
   * **Free Space Check**: If the winner has open slots in their inventory, rewards are automatically delivered immediately (**God Armor Trophy Piece**, **$10,000 cash**, **16x Enchanted Golden Apples**, **4x Netherite Ingots**, **64x Diamonds**).
   * **Full Inventory Protection**: If the winner's inventory is full, they are prominently alerted on screen with titles, sounds, and chat messages instructing them to clear space and run **`/scavenger claim`**!
@@ -554,7 +554,7 @@ When deploying Scalyx SMP to a dedicated VPS or cloud host:
 
 1. **KeepInventory**: Verified `false` globally across all worlds.
 2. **Kits Hierarchy**: Higher rank players can claim all lower rank kits with zero permission conflicts. No kits contain Density with Breach, and Lunge is strictly capped at Level 3.
-3. **Kit Armor Enchants**: No Thorns on any kit armor; Protection capped at Max Protection V; Quartz trims applied to Ender set.
+3. **Kit Armor Enchants**: No Thorns on any kit armor; Protection capped at Max Protection IV; Quartz trims applied to Ender set.
 4. **Kit Inventories**: 64x XP Bottles on higher-tier kits; dual Fortune & Silk Touch 3x3 pickaxes included; 64x Oak Logs in Ender kit.
 5. **Super Pickaxes**: 3x3x1 mining active with bedrock protection enabled (Fortune and Silk Touch versions).
 6. **Rank Swords**: 60s independent cooldowns, 4-heart damage hard cap, and on-hit passives operational.

@@ -19,7 +19,7 @@ export default function WeaponsPage() {
       fullName: '⚔ Lifestealer ⚔',
       type: 'Netherite Sword',
       attackSpeed: '1.6 Attack Speed (Classic)',
-      enchantments: 'Sharpness VIII, Sweeping Edge V, Looting V, Fire Aspect II, Unbreaking V, Mending I',
+      enchantments: 'Sharpness V, Sweeping Edge III, Looting III, Fire Aspect II, Unbreaking III, Mending I',
       badge: 'SERVER RELIC • LIMIT: 1 ONLY',
       badgeColor: 'bg-red-950/80 text-red-300 border-red-700',
       themeColor: 'text-red-500',
@@ -60,7 +60,7 @@ export default function WeaponsPage() {
       fullName: '⚡ Worldbreaker Mace ⚡',
       type: 'Heavy Mace',
       attackSpeed: 'Fast 1.6 Sword Speed (No Sluggish Cooldown)',
-      enchantments: 'Density V, Breach IV, Wind Burst III, Sharpness VII, Fire Aspect II, Knockback II, Unbreaking V, Mending I',
+      enchantments: 'Density V, Breach IV, Wind Burst III, Sharpness V, Fire Aspect II, Knockback II, Unbreaking III, Mending I',
       badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
       badgeColor: 'bg-amber-950/80 text-amber-300 border-amber-600',
       themeColor: 'text-amber-400',
@@ -101,7 +101,7 @@ export default function WeaponsPage() {
       fullName: '🌿 Gungnir, Sovereign Spear 🌿',
       type: 'Netherite Spear',
       attackSpeed: 'Fast 1.6 Sword Speed (Lunge Animation)',
-      enchantments: 'Sharpness VII, Lunge V, Fire Aspect II, Knockback II, Unbreaking V, Mending I',
+      enchantments: 'Sharpness V, Lunge III, Fire Aspect II, Knockback II, Unbreaking III, Mending I',
       badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
       badgeColor: 'bg-emerald-950/80 text-emerald-300 border-emerald-600',
       themeColor: 'text-emerald-400',
@@ -142,7 +142,7 @@ export default function WeaponsPage() {
       fullName: "🔱 Poseidon's Abyssal Tempest 🔱",
       type: 'Legendary Trident',
       attackSpeed: 'Fast 1.6 Sword Speed (Melee & Anywhere Riptide)',
-      enchantments: 'Impaling VII, Sharpness VII, Loyalty III, Channeling I, Unbreaking V, Mending I',
+      enchantments: 'Impaling V, Sharpness V, Loyalty III, Channeling I, Unbreaking III, Mending I',
       badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
       badgeColor: 'bg-cyan-950/80 text-cyan-300 border-cyan-600',
       themeColor: 'text-[#00ffff]',
@@ -182,8 +182,8 @@ export default function WeaponsPage() {
       name: 'Doomherald, Oblivion Ballista',
       fullName: '💥 Doomherald, Oblivion Ballista 💥',
       type: 'Heavy Crossbow',
-      attackSpeed: 'Quick Charge V Heavy Artillery',
-      enchantments: 'Quick Charge V, Piercing IV, Infinity I, Unbreaking V, Mending I',
+      attackSpeed: 'Quick Charge III Heavy Artillery',
+      enchantments: 'Quick Charge III, Piercing IV, Infinity I, Unbreaking III, Mending I',
       badge: 'SERVER UNIQUE • LIMIT: 1 ONLY',
       badgeColor: 'bg-rose-950/80 text-rose-300 border-rose-700',
       themeColor: 'text-rose-400',
@@ -431,7 +431,7 @@ export default function WeaponsPage() {
             </div>
             <div>
               <span className="text-[10px] font-minecraft text-zinc-400 uppercase tracking-wider block mb-1">
-                GOD ENCHANTMENTS PRE-APPLIED
+                VANILLA MAX ENCHANTMENTS PRE-APPLIED
               </span>
               <p className="text-xs text-yellow-300 font-minecraft leading-relaxed">
                 {currentWeapon.enchantments}
@@ -628,7 +628,7 @@ export default function WeaponsPage() {
         </div>
 
         <p className="text-zinc-300 font-sans text-xs sm:text-sm leading-relaxed max-w-3xl">
-          Equipped in all 4 high-tier rank kits (<strong className="text-cyan-400">Warden</strong>, <strong className="text-yellow-400">Eternal</strong>, <strong className="text-purple-400">Wither</strong>, and <strong className="text-emerald-400">Ender</strong>). Every eligible kit provides <strong className="text-white">TWO dedicated 3x3x1 Super Pickaxes</strong>—one for maximum ore yield (Fortune IV/III) and one for extracting pristine blocks (Silk Touch I). Full protection prevents breaking Bedrock, End Portal Frames, Spawners, and storage chests!
+          Equipped in all 4 high-tier rank kits (<strong className="text-cyan-400">Warden</strong>, <strong className="text-yellow-400">Eternal</strong>, <strong className="text-purple-400">Wither</strong>, and <strong className="text-emerald-400">Ender</strong>). Every eligible kit provides <strong className="text-white">TWO dedicated 3x3x1 Super Pickaxes</strong>—one for maximum ore yield (Fortune III) and one for extracting pristine blocks (Silk Touch I). Full protection prevents breaking Bedrock, End Portal Frames, Spawners, and storage chests!
         </p>
 
         {/* 4 Rank Dual Pickaxe Tiers Grid */}
@@ -666,7 +666,7 @@ export default function WeaponsPage() {
               <div className="text-xs font-minecraft text-yellow-300 font-bold">
                 ⛏ Eternal Nebula Pickaxe
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Fortune IV • 3x3x1 Area Mining</div>
+              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
               <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
                 ⛏ Eternal Silk Nebula Pickaxe
               </div>
@@ -686,7 +686,7 @@ export default function WeaponsPage() {
               <div className="text-xs font-minecraft text-yellow-300 font-bold">
                 ⛏ Wither Core Obliterator
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Fortune IV • 3x3x1 Area Mining</div>
+              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
               <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
                 ⛏ Wither Silk Core Obliterator
               </div>
@@ -706,7 +706,7 @@ export default function WeaponsPage() {
               <div className="text-xs font-minecraft text-yellow-300 font-bold">
                 ⛏ Void Sovereign World-Shaper
               </div>
-              <div className="text-[11px] text-zinc-400 font-sans">Fortune IV • 3x3x1 Area Mining</div>
+              <div className="text-[11px] text-zinc-400 font-sans">Fortune III • 3x3x1 Area Mining</div>
               <div className="text-xs font-minecraft text-[#00ffff] font-bold pt-1">
                 ⛏ Void Sovereign Silk Shaper
               </div>
@@ -824,7 +824,7 @@ export default function WeaponsPage() {
                 title: 'Custom Armor Progression & Active Potion Effects HUD',
                 image: '/assets/images/gui/gui_inventory_loadout.png',
                 tag: 'Inventory & Perks HUD',
-                desc: 'Server inventory inspection highlighting all 4 custom gear tiers, mythic weapon storage, and active permanent status buffs: Speed III, Fire Resistance, Strength II, Absorption II, and Night Vision.'
+                desc: 'Server inventory inspection highlighting all 4 custom gear tiers, mythic weapon storage, and active permanent status buffs: Speed III, Fire Resistance, Strength II, and Night Vision.'
               });
               playClickSound();
             }}
@@ -851,7 +851,7 @@ export default function WeaponsPage() {
                 Gear Tiers &amp; Active Buffs
               </h4>
               <p className="text-xs text-zinc-400 font-sans leading-relaxed line-clamp-2">
-                4-tier custom armor sets with Speed III, Strength II, and Absorption HUD.
+                4-tier custom armor sets with Speed III, Strength II, and Night Vision HUD.
               </p>
             </div>
           </div>

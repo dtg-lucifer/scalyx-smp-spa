@@ -132,7 +132,7 @@ export default function EventsPage({ setActiveTab }) {
         '💎 Heavy Core & Netherite Blocks (Mace Catalyst)',
         '💰 $75,000 Server Treasury Jackpot',
         '👑 Eternal / Wither Donor Rank Vouchers',
-        '⚔️ Dual 3x3x1 Super Pickaxe & God Armor Sets'
+        '⚔️ Dual 3x3x1 Super Pickaxe & Custom Armor Sets'
       ]
     },
     {

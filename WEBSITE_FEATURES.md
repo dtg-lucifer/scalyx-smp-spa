@@ -35,11 +35,11 @@ The undisputed crown jewels of Scalyx SMP. Each mythic weapon can only ever be f
 
 | Mythic Weapon | Type & Attack Speed | Ultimate Ability & Cooldown | Unique Passives & Combat Mechanics | 3x3 Crafting Recipe |
 | :--- | :--- | :--- | :--- | :--- |
-| **⚔️ Lifestealer** | Netherite Sword<br>*(Sharp VI, Sweep V, Loot V, Fire Asp II)* | **Heart Siphon Nova** *(5m CD)*:<br>Hold Right-Click for 5s to siphon 1 Heart each from up to 10 entities within 10 blocks, granting up to **+10 Max Hearts for 5 minutes**! | • **Heart Theft**: Steals 1 Heart (up to 4) on-hit for 60s.<br>• **Wither Decay**: 10% chance to inflict Wither II decay on-hit. | **1x Dragon Egg** (center)<br>+ 4x Netherite Blocks (corners)<br>+ 4x Enchanted Golden Apples (sides) |
-| **⚡ Worldbreaker Mace** | Heavy Mace<br>*(Fast 1.6 Sword Speed, Sharp VI)* | **Seismic Cataclysm** *(2m CD)*:<br>Crouch + Jump to launch 20 blocks into the sky. Negates 100% fall damage on landing and detonates a massive **10-block ground explosion** dealing devastating uncapped area damage! | • **100% Lightning Stun (30s CD)**: Strikes target with lightning and freezes them for 5s (AI disabled for mobs; walk speed 0, jump locked for players).<br>• **Double Jump**: Press Jump twice in mid-air to launch 15 blocks into the air with an explosive wind burst! | **1x Heavy Core** (center)<br>+ 4x Netherite Blocks (corners)<br>+ 2x Breeze Rods (top/bottom)<br>+ 2x Enchanted Golden Apples (sides) |
-| **🌿 Gungnir, Sovereign Spear** | Netherite Spear<br>*(Fast 1.6 Sword Speed, Sharp VI, Lunge V)* | **Verdant Harpoon** *(1m CD)*:<br>Sneak + Right-Click fires a 35-block vine beam. Hooking an enemy pulls them violently **directly into melee range**; hitting blocks hoists you up to ledges! | • **Infinite Stamina**: **Zero Hunger Cost** while carrying or wielding!<br>• **Light Foot**: Negates 100% of all fall damage!<br>• **100% Lightning Stun (30s CD)**: Paralyzes enemies for 5s.<br>• **Breaker of Chains**: Always shatters & disables enemy shields on-hit! | **1x Nether Star** (center)<br>+ 4x Netherite Blocks (sides)<br>+ 4x Echo Shards (corners)<br>+ 1x Heart of the Sea (bottom) |
-| **🔱 Poseidon's Abyssal Tempest** | Legendary Trident<br>*(Fast 1.6 Sword Speed, Impaling VII, Sharp VI)* | **Tsunami Cataclysm** *(2m CD)*:<br>Sneak + Right-Click summons a crushing 25-block tidal surge with lightning strikes, dealing heavy water damage & Slowness III. | • **Ocean Sovereign & Anywhere Riptide**: Permanent Water Breathing, Dolphin Grace & Conduit Power. Right-Click dashes with **Anywhere Riptide** (action bar ready indicator; throw disabled to eliminate dupes/losses).<br>• **Abyssal Drown (30% On-Hit)**: 30% chance on every hit to inflict **true drowning damage for 5 seconds** (1 heart/s) and paralyze victims with **Slowness IV for 10 seconds**! | **1x Heart of the Sea** (center)<br>+ 2x Tridents (top corners)<br>+ 4x Netherite Blocks<br>+ 2x Enchanted Golden Apples (sides)<br>+ 1x Conduit (bottom) |
-| **💥 Doomherald, Oblivion Ballista** | Heavy Crossbow<br>*(Quick Charge V, Piercing IV, Infinity I)* | **Calamity Nuke** *(1m CD)*:<br>Sneak + Shoot fires a primed warhead detonating a massive **10-block oblivion explosion** dealing devastating uncapped area damage, knockback, and fire! | • **True Oblivion Pierce**: Every shot directly deals **2 Hearts (4 HP) of pure true damage**, completely bypassing all armor, protection, and enchantments!<br>• **Rapid Barrage**: 30% chance on shoot to grant **10 free rapid-fire shots** without reloading!<br>• **Void Toxin**: 30% chance on arrow hit to inflict Darkness and Poison for 15s. | **1x Nether Star** (center)<br>+ 1x Crossbow (top)<br>+ 4x Netherite Blocks (sides)<br>+ 4x Dragon's Breath (corners)<br>+ 1x Enchanted Golden Apple (bottom) |
+| **⚔️ Lifestealer** | Netherite Sword<br>*(Sharp V, Sweep III, Loot III, Fire Asp II)* | **Heart Siphon Nova** *(5m CD)*:<br>Hold Right-Click for 5s to siphon 1 Heart each from up to 10 entities within 10 blocks, granting up to **+10 Max Hearts for 5 minutes**! | • **Heart Theft**: Steals 1 Heart (up to 4) on-hit for 60s.<br>• **Wither Decay**: 10% chance to inflict Wither II decay on-hit. | **1x Dragon Egg** (center)<br>+ 4x Netherite Blocks (corners)<br>+ 4x Enchanted Golden Apples (sides) |
+| **⚡ Worldbreaker Mace** | Heavy Mace<br>*(Fast 1.6 Sword Speed, Sharp V)* | **Seismic Cataclysm** *(2m CD)*:<br>Crouch + Jump to launch 20 blocks into the sky. Negates 100% fall damage on landing and detonates a massive **10-block ground explosion** dealing devastating uncapped area damage! | • **100% Lightning Stun (30s CD)**: Strikes target with lightning and freezes them for 5s (AI disabled for mobs; walk speed 0, jump locked for players).<br>• **Double Jump**: Press Jump twice in mid-air to launch 15 blocks into the air with an explosive wind burst! | **1x Heavy Core** (center)<br>+ 4x Netherite Blocks (corners)<br>+ 2x Breeze Rods (top/bottom)<br>+ 2x Enchanted Golden Apples (sides) |
+| **🌿 Gungnir, Sovereign Spear** | Netherite Spear<br>*(Fast 1.6 Sword Speed, Sharp V, Lunge III)* | **Verdant Harpoon** *(1m CD)*:<br>Sneak + Right-Click fires a 35-block vine beam. Hooking an enemy pulls them violently **directly into melee range**; hitting blocks hoists you up to ledges! | • **Infinite Stamina**: **Zero Hunger Cost** while carrying or wielding!<br>• **Light Foot**: Negates 100% of all fall damage!<br>• **100% Lightning Stun (30s CD)**: Paralyzes enemies for 5s.<br>• **Breaker of Chains**: Always shatters & disables enemy shields on-hit! | **1x Nether Star** (center)<br>+ 4x Netherite Blocks (sides)<br>+ 4x Echo Shards (corners)<br>+ 1x Heart of the Sea (bottom) |
+| **🔱 Poseidon's Abyssal Tempest** | Legendary Trident<br>*(Fast 1.6 Sword Speed, Impaling V, Sharp V)* | **Tsunami Cataclysm** *(2m CD)*:<br>Sneak + Right-Click summons a crushing 25-block tidal surge with lightning strikes, dealing heavy water damage & Slowness III. | • **Ocean Sovereign & Anywhere Riptide**: Permanent Water Breathing, Dolphin Grace & Conduit Power. Right-Click dashes with **Anywhere Riptide** (action bar ready indicator; throw disabled to eliminate dupes/losses).<br>• **Abyssal Drown (30% On-Hit)**: 30% chance on every hit to inflict **true drowning damage for 5 seconds** (1 heart/s) and paralyze victims with **Slowness IV for 10 seconds**! | **1x Heart of the Sea** (center)<br>+ 2x Tridents (top corners)<br>+ 4x Netherite Blocks<br>+ 2x Enchanted Golden Apples (sides)<br>+ 1x Conduit (bottom) |
+| **💥 Doomherald, Oblivion Ballista** | Heavy Crossbow<br>*(Quick Charge III, Piercing IV, Infinity I)* | **Calamity Nuke** *(1m CD)*:<br>Sneak + Shoot fires a primed warhead detonating a massive **10-block oblivion explosion** dealing devastating uncapped area damage, knockback, and fire! | • **True Oblivion Pierce**: Every shot directly deals **2 Hearts (4 HP) of pure true damage**, completely bypassing all armor, protection, and enchantments!<br>• **Rapid Barrage**: 30% chance on shoot to grant **10 free rapid-fire shots** without reloading!<br>• **Void Toxin**: 30% chance on arrow hit to inflict Darkness and Poison for 15s. | **1x Nether Star** (center)<br>+ 1x Crossbow (top)<br>+ 4x Netherite Blocks (sides)<br>+ 4x Dragon's Breath (corners)<br>+ 1x Enchanted Golden Apple (bottom) |
 
 ---
 
@@ -84,9 +84,9 @@ Wear full custom sets to ascend your maximum vitality:
 - **True Health Scaling**: Unlock up to **20 Hearts (40 HP)** with the legendary Ender Set!
 - **Zero-Glitch Logic**: Custom skript tracking ensures health seamlessly resets to 10 hearts (20 HP) the moment armor is unequipped.
 - **Tiered Passive Buffs**:
-  - **Ender Set**: Speed III, Strength II, Fire Resistance, No Fall Damage & Absorption II (+4 Absorption Hearts). Trimmed with authentic Quartz.
-  - **Wither Set**: Speed II, Strength II, Resistance II, Wither Immunity & Absorption I.
-  - **Eternal Set**: Speed I, Strength I, Resistance I & Absorption I.
+  - **Ender Set**: Speed III, Strength II, Fire Resistance, and No Fall Damage. Trimmed with authentic Quartz.
+  - **Wither Set**: Speed II, Strength II, Resistance II, and Wither Immunity.
+  - **Eternal Set**: Speed I, Strength I, and Resistance I.
   - **Warden Set**: Night Vision, Resistance I & Darkness Immunity.
   - **Blaze Set**: Permanent Fire Resistance & Speed I.
 
@@ -97,7 +97,7 @@ Wear full custom sets to ascend your maximum vitality:
 - **Permanent Shulker Delivery**: Kits are delivered inside color-coded shulker boxes packed with god armor, potions, maces, tridents, and golden apples.
 - **Fair Play Balancing**:
   - **Thorns Removed**: No Thorns on rank kit armor to eliminate armor durability grinding.
-  - **Protection V Capped**: Maximum protection enchantment is strictly capped at Protection V.
+  - **Protection IV Capped**: Maximum protection enchantment is strictly capped at vanilla Protection IV.
   - **Lunge Capped at Level 3**: No rank kit or spear features Lunge higher than Level 3.
   - **Density with Breach Prohibited**: Rank kits feature pure Density without Breach to prevent unfair burst damage stacking.
 
@@ -138,7 +138,7 @@ Scalyx SMP features 5 custom, fully-automated server events designed to drive co
    - **🏆 Rotating 4-Piece God Armor Champion Trophy**:
      - Conquering all 10 items awards one of 4 pieces of Server God Armor:
        $$\text{Netherite Chestplate} \longrightarrow \text{Netherite Leggings} \longrightarrow \text{Netherite Boots} \longrightarrow \text{Netherite Helmet} \dots$$
-     - Each piece features **Every Protection Enchantment at Level IV** (`Protection IV`, `Fire Protection IV`, `Blast Protection IV`, `Projectile Protection IV`), `Unbreaking IV`, `Mending I`, `Thorns III`, piece masteries, and an authentic **Dune Armor Trim with Emerald**!
+     - Each piece features **Every Protection Enchantment at Level IV** (`Protection IV`, `Fire Protection IV`, `Blast Protection IV`, `Projectile Protection IV`), `Unbreaking III`, `Mending I`, piece masteries, and an authentic **Dune Armor Trim with Emerald**!
      - Rotation state and winner claim status are persisted in `SCAVENGER_HUNT.md`.
    - **Full Inventory Protection**: If the winner's inventory is full, they are prompted to clear space and run `/scavenger claim`, matching their username against `SCAVENGER_HUNT.md`!
 
@@ -175,5 +175,5 @@ Scalyx SMP features 5 custom, fully-automated server events designed to drive co
 
 Connect now and begin your journey on the most exhilarating SMP of the year:
 - **Server IP**: `smp.scalyx.in` *(or `play.scalyxsmp.com`)*
-- **Store**: `shop.sclayx.net`
-- **Discord**: `discord.gg/sclayx`
+- **Store**: `shop.scalyx.net`
+- **Discord**: `discord.gg/scalyx`
